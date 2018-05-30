@@ -18,7 +18,7 @@ import michael from '../images/michael.jpg';
 
 const styles = {
   topBar: {
-    backgroundColor: '#3849A2',
+    backgroundColor: '#32408F',
     padding: '10px 5px',
     display: 'flex',
     alignItems: 'center',
@@ -42,6 +42,7 @@ const styles = {
   portfolioImg: {
     width: '175px',
     height: '175px',
+    marginTop: '15px',
     border:'5px solid white',
     borderRadius: '50%'
   },
@@ -83,7 +84,12 @@ const styles = {
     display: 'flex',
     justifyContent: 'center'
   },
-  navBtn: { color: 'rgba(255, 255, 255, 0.8)' }
+  navBtn: { color: 'rgba(255, 255, 255, 0.8)' },
+
+  '@media screen and (max-width: 600px)': {
+    contactContent: { flexDirection: 'column' },
+    contactItem: { margin: '0', padding: '5px 0' }
+  }
 };
 
 const Jumbotron = props => {

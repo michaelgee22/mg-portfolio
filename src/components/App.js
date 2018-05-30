@@ -12,12 +12,32 @@ const styles = {
       margin: '0',
       fontSize: '62.5%',
       fontFamily: 'Roboto, Arial, Helvetica, sans-serif',
-      backgroundColor: '#F5F5F5'
+      backgroundColor: '#F5F5F5',
+      overflow: 'hidden'
     },
     h1: { margin: '0' },
     h2: { margin: '0' }
   },
 
+  container: {
+    height: '100vh',
+    overflowY: 'scroll',
+
+    '&::-webkit-scrollbar-track': {
+      '- webkit - box - shadow': 'inset 0 0 6px rgba(0, 0, 0, 0.3)',
+      borderRadius: '10px',
+      backgroundColor: '#282828'
+    },
+    '&::-webkit-scrollbar': {
+      width: '12px',
+      backgroundColor: '#282828'
+    },
+    '&::-webkit-scrollbar-thumb': {
+      borderRadius: '10px',
+      '-webkit-box-shadow': 'inset 0 0 6px rgba(0,0,0,.3)',
+      backgroundColor: '#3F51B5'
+    }
+  },
   portfolioSection: {
     backgroundColor: 'white',
     maxWidth: '1000px',
@@ -26,6 +46,13 @@ const styles = {
     fontSize: '2em',
     borderRadius: '3px',
     boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.14)'
+  },
+
+  '@media screen and (max-width: 600px)': {
+    portfolioSection: {
+      width: 'calc(100% - 40px)',
+      margin: '25px auto'
+    }
   }
 };
 
@@ -40,7 +67,7 @@ const App = props => {
   const { classes } = props;
 
   return (
-    <div>
+    <div className={classes.container}>
       <Jumbotron triggerComponentScroll={triggerComponentScroll} />
       <main>
         <section id="experience" className={classes.portfolioSection}>
