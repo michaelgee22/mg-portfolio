@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { withStyles } from '@material-ui/core';
 
-import LargeIcon from './LargeIcon';
+import LargeIcon from '../LargeIcon';
 import { JAVASCRIPT, REACT, NODEJS } from '../IconList';
 
 const styles = {
@@ -90,9 +90,7 @@ const Skills = (props) => {
 
         <h3 className={classes.topSkillsTitle}>Other Skills</h3>
         <div className={classes.otherSkills}>
-          {skills.map(item => {
-            return <div className={classes.otherSkill}>{item}</div>
-          })}
+          {skills.map(item => <div key={item} className={classes.otherSkill}>{item}</div>)}
         </div>
       </div>
     </div>

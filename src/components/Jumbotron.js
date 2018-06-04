@@ -87,6 +87,10 @@ const styles = {
   },
   navBtn: { color: 'rgba(255, 255, 255, 0.8)' },
 
+  '@media screen and (max-width: 768px)': {
+    navSection: { display: 'none' }
+  },
+
   '@media screen and (max-width: 600px)': {
     contactContent: { flexDirection: 'column' },
     contactItem: { margin: '0', padding: '5px 0' }
