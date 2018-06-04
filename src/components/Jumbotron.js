@@ -48,7 +48,8 @@ const styles = {
   },
   mainTitle: {
     fontSize: '4.8em',
-    padding: '15px 0 5px 0'
+    padding: '15px 0 5px 0',
+    textAlign: 'center'
   },
   secondaryTitle: {
     fontSize: '2.8em',
@@ -114,7 +115,7 @@ const Jumbotron = props => {
 
         <Button className={classes.topBarBtn} href="https://drive.google.com/file/d/1_c5XlaReGkwkzgRngFk6cukfmYB9twY3/view" target="_blank">
           <Icon icon={VIEWPAGE} />
-          <span className={classes.btnText}>View My Resume</span>
+          <span className={classes.btnText}>Resume</span>
         </Button>
       </div>
 
@@ -136,7 +137,7 @@ const Jumbotron = props => {
           </div>
           <div className={classes.contactItem}>
             <Icon icon={PHONE} />
-            <span className={classes.contactText}>678 446 1512</span>
+            <span className={classes.contactText}>678-446-1512</span>
           </div>
           <div className={classes.contactItem}>
             <Icon icon={LOCATION} />
