@@ -14,6 +14,7 @@ import {
   EMAIL,
   PHONE,
   LOCATION } from './IconList';
+  
 import michael from '../images/michael.jpg';
 
 const styles = {

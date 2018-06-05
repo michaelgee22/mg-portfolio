@@ -88,7 +88,7 @@ const Skills = (props) => {
             <LargeIcon icon={NODEJS} color="#3849A2" />
             <h4 className={classes.skillTitle}>NodeJS</h4>
             <div className={classes.skillDesc}>
-              Considering my passion for the JavaScript language, it was an easy decision to continue using it on the back-end creating both REST and GraphQL projects using Express & MongoDB.
+              Considering my passion for the JavaScript language, it was an easy decision to continue using it on the back-end creating both REST and GraphQL projects with Express & MongoDB.
             </div>
           </div> 
         </div>
