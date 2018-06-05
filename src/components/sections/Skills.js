@@ -48,13 +48,18 @@ const styles = {
     padding: '6px 30px',
     margin: '0 15px 15px 0',
     border: '1px solid #f5f5f5'
+  },
+
+  '@media screen and (max-width: 768px)': {
+    topSkills: { flexDirection: 'column', marginBottom: '15px' },
+    skillDesc: { paddingBottom: '15px' }
   }
 };
 
 const Skills = (props) => {
   const { classes } = props;
 
-  const skills = [ 'HTML5', 'CSS3', 'MongoDB', 'Vue', 'REST', 'Git', 'GraphQL', 'Apollo', 'Polymer', 'Firebase' ];
+  const skills = ['HTML5', 'CSS3', 'MongoDB', 'REST', 'Git', 'GraphQL', 'Apollo', 'Vue', 'Polymer', 'Firebase' ];
 
   return (
     <div className={classes.sectionContainer}>
@@ -67,7 +72,7 @@ const Skills = (props) => {
             <LargeIcon icon={JAVASCRIPT} color="#3849A2" />
             <h4 className={classes.skillTitle}>JavaScript</h4>
             <div className={classes.skillDesc}>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+              It is my main priority to be proficient in the JavaScript language which enabled me become familiar with the vast ecosystem of libraries and frameworks and to write best practice code.
             </div>
           </div>
 
@@ -75,7 +80,7 @@ const Skills = (props) => {
             <LargeIcon icon={REACT} color="#3849A2" />
             <h4 className={classes.skillTitle}>React</h4>
             <div className={classes.skillDesc}>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+              Placing heavy emphasis on JavaScript, a hugely supportive community and being backed by Facebook, React quickly became my favorite JS library which I use on all my current projects today.
             </div>
           </div>
 
@@ -83,7 +88,7 @@ const Skills = (props) => {
             <LargeIcon icon={NODEJS} color="#3849A2" />
             <h4 className={classes.skillTitle}>NodeJS</h4>
             <div className={classes.skillDesc}>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+              Considering my passion for the JavaScript language, it was an easy decision to continue using it on the back-end creating both REST and GraphQL projects using Express & MongoDB.
             </div>
           </div> 
         </div>

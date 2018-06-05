@@ -19,7 +19,7 @@ const styles = {
   },
 
   expIntro: {
-    width: '30%'
+    width: '25%'
   },
   expIntroTitle: {
     fontSize: '1.8em',
@@ -32,7 +32,7 @@ const styles = {
   },
 
   expItem: {
-    width: '70%',
+    width: '75%',
     paddingLeft: '35px',
     borderLeft: '3px solid #3F51B5',
     color: '#666'
@@ -71,35 +71,35 @@ const Experience = (props) => {
   const descriptions = {
     cegmag: [
       { id: 'ceg1',
-        bullet: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
+        bullet: 'Developed web applications using full-stack JavaScript in cohesion with other leading-edge web technologies to provide progressive, fast, and user-focused solutions.'
       },
       { id: 'ceg2',
-        bullet: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
+        bullet: 'Responsibilities included all aspects of application development including planning, development, design, testing, performance improvement, maintenance, security, etc.'
       },
       { id: 'ceg3',
-        bullet: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
+        bullet: 'Researched and learned various front-end JS frameworks and libraries such as React, Vue, Polymer, Angular, and jQuery to determine the best project solutions.'
       },
       { id: 'ceg4',
-        bullet: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
+        bullet: 'Worked directly with various company representatives to integrate their exact user interface feature requests.'
       }
     ],
 
     chingu: [
       {
         id: 'chingu1',
-        bullet: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
+        bullet: 'Active and dedicated community of like-minded developers who come together to build or clone projects to gain development experience.'
       },
       {
         id: 'chingu2',
-        bullet: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
+        bullet: 'Worked in a team setting of 4-5 individuals using Git/Github & Slack for collaboration to plan and implement project features with assigned deadlines.'
       },
       {
         id: 'chingu3',
-        bullet: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
+        bullet: 'Individually organized and implemented the front-end & back-end file structure of projects and provided documentation for the entire team to set up locally to contribute.'
       },
       {
         id: 'chingu4',
-        bullet: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
+        bullet: 'Engaged in pair-programming to implement and share ideas on project featues which enabled team building experience working with another developer directly.'
       }
     ]
   };
@@ -110,7 +110,7 @@ const Experience = (props) => {
 
       <div className={classes.expRow}>
         <div className={classes.expIntro}>
-          <div className={classes.expIntroTitle}>JavaScript Web Developer</div>
+          <div className={classes.expIntroTitle}>JavaScript Developer</div>
           <div className={classes.expIntroTime}>March 2017 - March 2018</div>
         </div>
 
@@ -118,7 +118,7 @@ const Experience = (props) => {
           <div className={classes.expItemTitle}>CEGMAG Solutions Inc.</div>
           
           <div className={classes.mobileIntro}>
-            <div className={classes.expIntroTitle}>JavaScript Web Developer</div>
+            <div className={classes.expIntroTitle}>JavaScript Developer</div>
             <div className={classes.expIntroTime}>March 2017 - March 2018</div>
           </div>
 
@@ -133,7 +133,7 @@ const Experience = (props) => {
       <div className={classes.expRow}>
         <div className={classes.expIntro}>
           <div className={classes.expIntroTitle}>Full-Stack Developer</div>
-          <div className={classes.expIntroTime}>February 2018 - May 2018</div>
+          <div className={classes.expIntroTime}>February 2018 - Present</div>
         </div>
 
         <div className={classes.expItem}>
