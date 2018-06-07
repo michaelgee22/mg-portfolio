@@ -59,7 +59,8 @@ const styles = {
     contactDesc: {
       width: 'calc(100% - 50px)',
       padding: '0 25px',
-      margin: '20px 0 5px 0'
+      margin: '20px 0 5px 0',
+      textAlign: 'center'
     }
   }
 };
@@ -73,7 +74,7 @@ const Contact = (props) => {
 
       <div className={classes.contactWrapper}>
         <img className={classes.contactImg} src={michael} alt="Michael Gee Headshot" />
-        <p className={classes.contactDesc}>I am currently on the market actively searching for a Junior Developer position (preferably Contract-To-Hire or Direct Hire) or open source contribution opportunities to continue growing as a developer. I look to use the MERN (MongoDB, Express, React, Node) tech stack in all my current and future projects moving forward although I do have experience with much more of the web development ecosystem and am usually open to change and try new things if the circumstances were right. If you are interested in hiring me or just talking about code in general feel free to get in touch with me through the methods below!</p>
+        <p className={classes.contactDesc}>I am currently actively searching for a Junior Developer position (preferably Contract-To-Hire or Direct Hire) or open source contribution opportunities to continue growing as a developer. I look to use the MERN (MongoDB, Express, React, Node) web development stack in all my current and future projects moving forward although I do have experience with much more of the web development ecosystem and am always open to learn and try new things. If you are interested in hiring me or just talking about code in general feel free to get in touch with me through the methods below!</p>
       </div>
 
       <h3 className={classes.contactText}><span className={classes.blueText}>Email</span> -  michaelgee221@gmail.com</h3>
