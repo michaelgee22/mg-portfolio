@@ -51,7 +51,11 @@ const styles = {
   },
 
   '@media screen and (max-width: 768px)': {
-    topSkills: { flexDirection: 'column', marginBottom: '15px' },
+    sectionTitle: { marginBottom: '15px' },
+    topSkillsTitle: { marginBottom: '15px' },
+    skillTitle: { margin: '10px 0' },
+    topSkills: { flexDirection: 'column', marginBottom: '0' },
+    topSkill: { marginBottom: '15px' },
     skillDesc: { paddingBottom: '15px' }
   }
 };

@@ -56,8 +56,7 @@ const styles = {
   '@media screen and (max-width: 768px)': {
     portfolioSection: {
       width: 'calc(100% - 50px)',
-      margin: '25px auto',
-      padding: '25px 0'
+      margin: '25px auto'
     }
   }
 };

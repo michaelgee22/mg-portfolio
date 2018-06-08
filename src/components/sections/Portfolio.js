@@ -90,6 +90,7 @@ const styles = {
   projectImg: {
     width: '350px',
     height: '350px',
+    maxWidth: 'calc(100% - 20px)',
     borderRadius: '50%',
     border: '10px solid #3F51B5'
   },
@@ -126,6 +127,26 @@ const styles = {
     "&:hover": {
       backgroundColor: 'black'
     }
+  },
+
+  '@media screen and (max-width: 768px)': {
+    sectionTitle: { margin: '0' },
+    project: {
+      flexDirection: 'column',
+      alignItems: 'center',
+      padding: '25px 0',
+      borderBottom: '2px solid #3F51B5'
+    },
+    projectReverse: {
+      flexDirection: 'column',
+      alignItems: 'center',
+      padding: '25px 0',
+      borderBottom: '2px solid #3F51B5'
+    },
+    projectImgWrapper:{ width: '100%' },
+    projectImg: { height: '100%' },
+    projectTitle: { textAlign: 'center' },
+    projectInfo: { width: '100%' }
   }
 };
 

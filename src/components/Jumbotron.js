@@ -63,7 +63,7 @@ const styles = {
     fontSize: '1.6em',
     lineHeight: '1.5',
     textAlign: 'center',
-    padding: '0 15px 25px 15px'
+    padding: '0 15px 15px 15px'
   },
 
   contactSection: {
@@ -89,12 +89,15 @@ const styles = {
   navBtn: { color: 'rgba(255, 255, 255, 0.8)' },
 
   '@media screen and (max-width: 768px)': {
-    navSection: { display: 'none' }
+    navSection: { display: 'none' },
+    mainTitle: { fontSize: '3.2em' },
+    secondaryTitle: { fontSize: '2.4em' }
   },
 
   '@media screen and (max-width: 600px)': {
     contactContent: { flexDirection: 'column' },
-    contactItem: { margin: '0', padding: '5px 0' }
+    contactItem: { margin: '0', padding: '5px 0' },
+    contactSection: { padding: '10px 0' }
   }
 };
 
