@@ -1,55 +1,63 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { withStyles } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
+import Tooltip from '@material-ui/core/Tooltip';
 
+import ProjectDialog from '../ProjectDialog';
 import Icon from '../Icon';
 import { GITHUB, GO_ARROW, OPEN_BOOK } from '../IconList';
 
 import cegmag from '../../images/cegmag.png';
+import chatbox from '../../images/chatbox.png';
+import portfolio from '../../images/portfolio.png';
+import lp from '../../images/lp.png';
 
 const projects = [
   {
-    id: 'cegmag',
+    id: 'cegmag-0',
     className:'project',
     title: 'CEGMAG Solutions Inc',
     tags: [ 'JavaScript', 'Polymer', 'HTML5', 'CSS3', 'Git' ],
     codeHref: false,
     href: 'https://website-eeb2b.firebaseapp.com/',
     image: cegmag,
-    imageAlt: 'CEGMAG Solutions Inc. Project'
+    imageAlt: 'CEGMAG Solutions Inc. Project',
+    desc: 'CEGMAG SOLUTIONS'
   },
   {
-    id: 'portfolio',
+    id: 'portfolio-1',
     className: 'projectReverse',
     title: 'Portfolio (Current Application)',
     tags: ['JavaScript', 'React', 'HTML5', 'CSS3', 'Git'],
-    codeHref: '',
+    codeHref: 'https://github.com/michaelgee22/portfolio',
     href: false,
-    image: cegmag,
-    imageAlt: 'Portfolio Project'
+    image: portfolio,
+    imageAlt: 'Portfolio Project',
+    desc: 'PORTFOLIO'
   },
   {
-    id: 'chat-box',
+    id: 'chat-box-2',
     className: 'project',
     title: 'Chat-box',
     tags: ['JavaScript', 'Polymer', 'Firebase', 'HTML5', 'CSS3', 'Git'],
-    codeHref: '',
+    codeHref: 'https://github.com/michaelgee22/chat-box',
     href: 'https://mgchatbox.com/',
-    image: cegmag,
-    imageAlt: 'Chat-Box Project'
+    image: chatbox,
+    imageAlt: 'Chat-Box Project',
+    desc: 'CHAT-BOX'
   },
   {
-    id: 'lp-tribute',
+    id: 'lp-tribute-3',
     className: 'projectReverse',
     title: 'Linkin Park Tribute',
     tags: ['JavaScript', 'Vue', 'Firebase', 'HTML5', 'CSS3', 'Git'],
-    codeHref: '',
-    href: 'https://website-eeb2b.firebaseapp.com/',
-    image: cegmag,
-    imageAlt: 'Linkin Park Project'
+    codeHref: 'https://github.com/michaelgee22/lp_tribute',
+    href: 'https://linkin-park-tribute.firebaseapp.com/',
+    image: lp,
+    imageAlt: 'Linkin Park Project',
+    desc: 'LP'
   }
 ];
 
@@ -121,48 +129,107 @@ const styles = {
   }
 };
 
-const Portfolio = (props) => {
-  const { classes } = props;
+class Portfolio extends Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <div>
-      <h2 className={classes.sectionTitle}>Portfolio</h2>
+    this.state = {
+      open: false,
+      desc: ''
+    };
 
-      <div className={classes.projectsContainer}>
-        {projects.map(item => {
-          return <div key={item.id} className={classes[item.className]}>
+    this.handleDialogOpen = this.handleDialogOpen.bind(this);
+    this.handleDialogClose = this.handleDialogClose.bind(this);
+  }
 
-            <div className={classes.projectImgWrapper}>
-              <img src={item.image} className={classes.projectImg} alt={item.imageAlt} />
-            </div>
+  handleDialogOpen(e) {
+    let index = e.currentTarget.id.replace(/^\D+/g, '');
+    index = parseInt(index);
 
-            <div className={classes.projectInfo}>
-              <h3 className={classes.projectTitle}>{item.title}</h3>
-              <div className={classes.projectTags}>
-                {item.tags.map(tag => {
-                  return <div className={classes.tag} key={tag}>{tag}</div>
-                })}
+    this.setState({
+      open: true,
+      desc: projects[index].desc
+    });
+  };
+
+  handleDialogClose() {
+    this.setState({ open: false, desc: '' });
+  };
+
+  renderGithubIconButton(href, classes) {
+    if(!href) {
+      return false;
+    }
+
+    return (
+      <Tooltip title="Source Code">
+        <IconButton href={href} target="_blank" className={classes.projectBtn}>
+          <Icon icon={GITHUB} />
+        </IconButton>
+      </Tooltip>
+    );
+  }
+
+  renderVisitIconButton(href, classes) {
+    if (!href) {
+      return false;
+    }
+
+    return (
+      <Tooltip title="View Project">
+        <IconButton href={href} target="_blank" className={classes.projectBtn}>
+          <Icon icon={GO_ARROW} />
+        </IconButton>
+      </Tooltip>
+    );
+  }
+
+  render() {
+    const { classes } = this.props;
+
+    return (
+      <div>
+        <h2 className={classes.sectionTitle}>Portfolio</h2>
+
+        <div className={classes.projectsContainer}>
+          {projects.map(item => {
+            return <div key={item.id} className={classes[item.className]}>
+
+              <div className={classes.projectImgWrapper}>
+                <img src={item.image} className={classes.projectImg} alt={item.imageAlt} />
               </div>
 
-              <div>
-                <IconButton href={item.codeHref} target="_blank" className={classes.projectBtn}>
-                  <Icon icon={GITHUB} />
-                </IconButton>
+              <div className={classes.projectInfo}>
+                <h3 className={classes.projectTitle}>{item.title}</h3>
+                <div className={classes.projectTags}>
+                  {item.tags.map(tag => {
+                    return <div className={classes.tag} key={tag}>{tag}</div>
+                  })}
+                </div>
 
-                <IconButton className={classes.projectBtn}>
-                  <Icon icon={OPEN_BOOK} />
-                </IconButton>
+                <div>
+                  {this.renderGithubIconButton(item.codeHref, classes)}
 
-                <IconButton href={item.href} target="_blank" className={classes.projectBtn}>
-                  <Icon icon={GO_ARROW} />
-                </IconButton>
+                  <Tooltip title="Description">
+                    <IconButton id={item.id} onClick={this.handleDialogOpen} className={classes.projectBtn}>
+                      <Icon icon={OPEN_BOOK} />
+                    </IconButton>
+                  </Tooltip>
+                  <ProjectDialog
+                    open={this.state.open}
+                    onClose={this.handleDialogClose}
+                    desc={this.state.desc}
+                  />
+
+                  {this.renderVisitIconButton(item.href, classes)}
+                </div>
               </div>
             </div>
-          </div>
-        })}
+          })}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 Portfolio.propTypes = {
