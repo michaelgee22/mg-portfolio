@@ -24,7 +24,7 @@ const projects = [
     href: 'https://website-eeb2b.firebaseapp.com/',
     image: cegmag,
     imageAlt: 'CEGMAG Solutions Inc. Project',
-    desc: 'CEGMAG SOLUTIONS'
+    desc: 'A group of projects & websites built from scratch using a variety JavaScript libraries/frameworks or Wordpress. I worked as a sole developer remotely building user interfaces mainly with JavaScript Web Components with the Polymer Library. I also worked directly with clients to implement feature requests in Wordpress websites using React components.  I spent a lot of time becoming vastly familiar with the JavaScript ecosystem and being involved in all aspects of development including planning, development, design, testing, performance improvement, maintenance, security, etc. '
   },
   {
     id: 'portfolio-1',
@@ -35,7 +35,7 @@ const projects = [
     href: false,
     image: portfolio,
     imageAlt: 'Portfolio Project',
-    desc: 'PORTFOLIO'
+    desc: 'A second version of my personal portfolio (previous version was built with JavaScript Web Components using Polymer) built with React. Due to the fact that I plan on moving forward on all my current and future projects using React and the MERN stack (MongoDB, Express, React, Node) I chose to start with this project. I prioritized application and component structure, Material Design implementation with React components, testing with Jest & Enzyme, implementing animations and responsive styling and creating a simple single page representation of my experience and projects.'
   },
   {
     id: 'chat-box-2',
@@ -46,7 +46,7 @@ const projects = [
     href: 'https://mgchatbox.com/',
     image: chatbox,
     imageAlt: 'Chat-Box Project',
-    desc: 'CHAT-BOX'
+    desc: 'A multi-thread chat application built with web components (Polymer library) along with Firebase to provide real-time data messaging between users and an easy authentication method. My main focus with project was to make a fast and functional chat experience while implementing a great user experience that works across all platforms.'
   },
   {
     id: 'lp-tribute-3',
@@ -57,7 +57,7 @@ const projects = [
     href: 'https://linkin-park-tribute.firebaseapp.com/',
     image: lp,
     imageAlt: 'Linkin Park Project',
-    desc: 'LP'
+    desc: 'A Vue.js project utilizing the Vuetify framework to implement Material Design components. Simple UI/UX, component organization and utilizing/learning the core features of Vue were the main focuses of this project. This is another project I elected to use Firebase to provide an easy web hosting solution along with lightning fast data fetching to display all of the band’s songs and albums. '
   }
 ];
 
