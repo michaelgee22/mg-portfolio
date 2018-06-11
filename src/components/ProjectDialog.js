@@ -6,7 +6,7 @@ import Dialog from '@material-ui/core/Dialog';
 
 const styles = {
   contentWrapper: {
-    minWidth: '500px',
+    maxWidth: '500px',
     fontSize: '1.6em',
     textAlign: 'center',
     padding: '25px'

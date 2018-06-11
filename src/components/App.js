@@ -18,32 +18,12 @@ const styles = {
       margin: '0',
       fontSize: '62.5%',
       fontFamily: 'Roboto, Arial, Helvetica, sans-serif',
-      backgroundColor: '#F5F5F5',
-      overflow: 'hidden'
+      backgroundColor: '#F5F5F5'
     },
     h1: { margin: '0' },
     h2: { margin: '0' }
   },
-
-  container: {
-    height: '100vh',
-    overflowY: 'scroll',
-
-    '&::-webkit-scrollbar-track': {
-      '- webkit - box - shadow': 'inset 0 0 6px rgba(0, 0, 0, 0.3)',
-      borderRadius: '10px',
-      backgroundColor: '#282828'
-    },
-    '&::-webkit-scrollbar': {
-      width: '12px',
-      backgroundColor: '#282828'
-    },
-    '&::-webkit-scrollbar-thumb': {
-      borderRadius: '10px',
-      '-webkit-box-shadow': 'inset 0 0 6px rgba(0,0,0,.3)',
-      backgroundColor: '#3F51B5'
-    }
-  },
+  
   portfolioSection: {
     backgroundColor: 'white',
     maxWidth: '1000px',
