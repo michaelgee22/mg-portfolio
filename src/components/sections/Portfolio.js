@@ -25,7 +25,7 @@ const projects = [
     image: cegmag,
     imageAlt: "CEGMAG Solutions Inc. Project",
     desc:
-      "A group of projects & websites built from scratch using a variety JavaScript libraries/frameworks or Wordpress. I worked as a sole developer remotely building user interfaces mainly with JavaScript Web Components with the Polymer Library. I also worked directly with clients to implement feature requests in Wordpress websites using React components.  I spent a lot of time becoming vastly familiar with the JavaScript ecosystem and being involved in all aspects of development including planning, development, design, testing, performance improvement, maintenance, security, etc. "
+      "A group of projects & websites built from scratch using a variety of JavaScript libraries/frameworks or Wordpress. I worked as a sole developer remotely building user interfaces mainly with JavaScript Web Components with the Polymer Library. I also worked directly with clients to implement feature requests in Wordpress websites using React components.  I spent a lot of time becoming vastly familiar with the JavaScript ecosystem and being involved in all aspects of development including planning, development, design, testing, performance improvement, maintenance, security, etc. "
   },
   {
     id: "portfolio-1",
@@ -37,7 +37,7 @@ const projects = [
     image: portfolio,
     imageAlt: "Portfolio Project",
     desc:
-      "A second version of my personal portfolio (previous version was built with JavaScript Web Components using Polymer) built with React. Due to the fact that I plan on moving forward on all my current and future projects using React and the MERN stack (MongoDB, Express, React, Node) I chose to start with this project. I prioritized application and component structure, Material Design implementation with React components, testing with Jest & Enzyme, implementing animations and responsive styling and creating a simple single page representation of my experience and projects."
+      "The second version of my personal portfolio(the previous version was built with JavaScript Web Components using Polymer) built with React. Due to the fact that I plan on moving forward on all my current and future projects using React and the MERN stack(MongoDB, Express, React, Node) I chose to start with this project.I prioritized application and component structure, Material Design implementation with React components, testing with Jest & Enzyme, implementing animations and responsive styling and creating a simple single page representation of my experience and projects."
   },
   {
     id: "chat-box-2",
@@ -218,27 +218,27 @@ class Portfolio extends Component {
           {projects.map(item => (
             <div key={item.id} className={classes[item.className]}>
               <div className={classes.projectImgWrapper}>
-                    <img
-                src={item.image}
-                className={classes.projectImg}
-                alt={item.imageAlt}
-              />
-                  </div>
+                <img
+                  src={item.image}
+                  className={classes.projectImg}
+                  alt={item.imageAlt}
+                />
+              </div>
 
               <div className={classes.projectInfo}>
-                    <h3 className={classes.projectTitle}>{item.title}</h3>
-                    <div className={classes.projectTags}>
-                {item.tags.map(tag => (
+                <h3 className={classes.projectTitle}>{item.title}</h3>
+                <div className={classes.projectTags}>
+                  {item.tags.map(tag => (
                     <div className={classes.tag} key={tag}>
                       {tag}
                     </div>
                   ))}
-              </div>
+                </div>
 
-                    <div>
-                {this.renderGithubIconButton(item.codeHref, classes)}
+                <div>
+                  {this.renderGithubIconButton(item.codeHref, classes)}
 
-                <Tooltip title="Description">
+                  <Tooltip title="Description">
                     <IconButton
                       id={item.id}
                       onClick={this.handleDialogOpen}
@@ -247,15 +247,15 @@ class Portfolio extends Component {
                       <Icon icon={OPEN_BOOK} />
                     </IconButton>
                   </Tooltip>
-                <ProjectDialog
+                  <ProjectDialog
                     open={this.state.open}
                     onClose={this.handleDialogClose}
                     desc={this.state.desc}
                   />
 
-                {this.renderVisitIconButton(item.href, classes)}
+                  {this.renderVisitIconButton(item.href, classes)}
+                </div>
               </div>
-                  </div>
             </div>
           ))}
         </div>

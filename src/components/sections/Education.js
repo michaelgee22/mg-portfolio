@@ -67,8 +67,8 @@ const Education = props => {
           content you are currently learning. While video courses and
           documentation were great to start off with, I learned that reading
           community questions on Stack Overflow, sifting through Github
-          repositories and actually building my own projects were the fastest
-          way to improvement. Learning this own my own greatly improved my
+          repositories and actually building my own projects was the fastest way
+          to improvement. Learning this own my own greatly improved my
           problem-solving skills and enabled me to quickly find solutions to
           problems much faster whenever I get stuck.
         </p>
@@ -82,8 +82,8 @@ const Education = props => {
           the developer I am today. I have the passion to learn outside of work
           hours and the knowledge of how to teach myself something that I am not
           familiar with in a timely manner. I am certain that I am not the most
-          experienced or knowledgable Junior developer, but I believe I have put
-          myself in a position to grow as a developer faster than others.
+          experienced or knowledgeable Junior developer, but I believe I have
+          put myself in a position to grow as a developer faster than others.
         </p>
       </div>
     </div>

@@ -88,7 +88,7 @@ const Skills = props => {
             <h4 className={classes.skillTitle}>JavaScript</h4>
             <div className={classes.skillDesc}>
               It is my main priority to be proficient in the JavaScript language
-              which enabled me become familiar with the vast ecosystem of
+              which enabled me to become familiar with the vast ecosystem of
               libraries and frameworks and to write best practice code.
             </div>
           </div>

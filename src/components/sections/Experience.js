@@ -96,7 +96,7 @@ const Experience = props => {
       {
         id: "chingu1",
         bullet:
-          "Active and dedicated community of like-minded developers who come together to build or clone projects to gain development experience."
+          "An active and dedicated community of like-minded developers who come together to build or clone projects to gain development experience."
       },
       {
         id: "chingu2",
@@ -111,7 +111,7 @@ const Experience = props => {
       {
         id: "chingu4",
         bullet:
-          "Engaged in pair-programming to implement and share ideas on project featues which enabled team building experience working with another developer directly."
+          "Engaged in pair-programming to implement and share ideas on project features which enabled team building experience working with another developer directly."
       }
     ]
   };
@@ -135,7 +135,9 @@ const Experience = props => {
           </div>
 
           <ul className={classes.expItemDesc}>
-            {descriptions.cegmag.map(item => <li key={item.id}>{item.bullet}</li>)}
+            {descriptions.cegmag.map(item => (
+              <li key={item.id}>{item.bullet}</li>
+            ))}
           </ul>
         </div>
       </div>
@@ -155,7 +157,9 @@ const Experience = props => {
           </div>
 
           <ul className={classes.expItemDesc}>
-            {descriptions.chingu.map(item => <li key={item.id}>{item.bullet}</li>)}
+            {descriptions.chingu.map(item => (
+              <li key={item.id}>{item.bullet}</li>
+            ))}
           </ul>
         </div>
       </div>

@@ -149,7 +149,7 @@ const Jumbotron = props => {
         <h2 className={classes.secondaryTitle}>Full Stack Developer</h2>
 
         <p className={classes.introDesc}>
-          I am a passionate, energetic, and self motivated Full-Stack JavaScript
+          I am a passionate, energetic, and self-motivated Full Stack JavaScript
           developer eager to turn ideas into applications. My ambitions are to
           eventually become a core contributor in a development team within a
           company, contribute heavily to open source projects & my community and
