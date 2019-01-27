@@ -150,7 +150,7 @@ const Jumbotron = props => {
           alt="Michael Gee Headshot"
         />
         <h1 className={classes.mainTitle}>Michael Gee</h1>
-        <h2 className={classes.secondaryTitle}>Full Stack Developer</h2>
+        <h2 className={classes.secondaryTitle}>Software Developer</h2>
 
         <p className={classes.introDesc}>
           I am a passionate, energetic, and self-motivated full-stack software
@@ -173,7 +173,7 @@ const Jumbotron = props => {
           </div>
           <div className={classes.contactItem}>
             <Icon icon={PHONE} />
-            <span className={classes.contactText}>678-446-1512</span>
+            <span className={classes.contactText}>(678) 446 1512</span>
           </div>
           <div className={classes.contactItem}>
             <Icon icon={LOCATION} />

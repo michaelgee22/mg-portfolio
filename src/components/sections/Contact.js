@@ -92,11 +92,11 @@ const Contact = props => {
       </div>
 
       <h3 className={classes.contactText}>
-        <span className={classes.blueText}>Email</span> -
+        <span className={classes.blueText}>Email</span>:
         michael.gee@coreview.com
       </h3>
       <h3 className={classes.contactText}>
-        <span className={classes.blueText}>Phone</span> - 678-446-1512
+        <span className={classes.blueText}>Phone</span>: (678) 446 1512
       </h3>
 
       <div className={classes.btnSection}>

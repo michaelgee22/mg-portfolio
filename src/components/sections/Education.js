@@ -66,9 +66,9 @@ const Education = props => {
           which proved that learning how to learn is just as important than the
           content you are currently learning. While video courses and
           documentation were great to start off with, I learned that reading
-          community questions on Stack Overflow, sifting through Github
+          community questions on various forums, sifting through Github
           repositories and actually building my own projects was the fastest way
-          to improvement. Learning this own my own greatly improved my
+          to improvement. Learning this on my own greatly improved my
           problem-solving skills and enabled me to quickly find solutions to
           problems much faster whenever I get stuck.
         </p>
@@ -82,8 +82,8 @@ const Education = props => {
           the developer I am today. I have the passion to learn outside of work
           hours and the knowledge of how to teach myself something that I am not
           familiar with in a timely manner. I am certain that I am not the most
-          experienced or knowledgeable Junior developer, but I believe I have
-          put myself in a position to grow as a developer faster than others.
+          experienced or knowledgeable developer, but I believe I have put
+          myself in a position to rapidly grow as a developer.
         </p>
       </div>
     </div>

@@ -69,6 +69,22 @@ const Experience = props => {
   const { classes } = props;
 
   const descriptions = {
+    coreview: [
+      {
+        id: "cv1",
+        bullet: "Current Employment"
+      },
+      {
+        id: "cv2",
+        bullet:
+          "Developing exciting new primitive features of the Coreview platform utilizing various technolgies listed in the Skills section."
+      },
+      {
+        id: "cv3",
+        bullet: "(to be continued...)"
+      }
+    ],
+
     cegmag: [
       {
         id: "ceg1",
@@ -122,6 +138,28 @@ const Experience = props => {
 
       <div className={classes.expRow}>
         <div className={classes.expIntro}>
+          <div className={classes.expIntroTitle}>Full-Stack Developer</div>
+          <div className={classes.expIntroTime}>July 2018 - Present</div>
+        </div>
+
+        <div className={classes.expItem}>
+          <div className={classes.expItemTitle}>Coreview</div>
+
+          <div className={classes.mobileIntro}>
+            <div className={classes.expIntroTitle}>Full-Stack Developer</div>
+            <div className={classes.expIntroTime}>July 2018 - Present</div>
+          </div>
+
+          <ul className={classes.expItemDesc}>
+            {descriptions.coreview.map(item => (
+              <li key={item.id}>{item.bullet}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div className={classes.expRow}>
+        <div className={classes.expIntro}>
           <div className={classes.expIntroTitle}>JavaScript Developer</div>
           <div className={classes.expIntroTime}>March 2017 - March 2018</div>
         </div>
@@ -145,7 +183,7 @@ const Experience = props => {
       <div className={classes.expRow}>
         <div className={classes.expIntro}>
           <div className={classes.expIntroTitle}>Full-Stack Developer</div>
-          <div className={classes.expIntroTime}>February 2018 - Present</div>
+          <div className={classes.expIntroTime}>February 2018 - July 2018</div>
         </div>
 
         <div className={classes.expItem}>
