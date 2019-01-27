@@ -5,7 +5,7 @@ import { withStyles } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 
 import Icon from "../Icon";
-import { LINKEDIN, TWITTER, GITHUB } from "../IconList";
+import { LINKEDIN, MEDIUM, GITHUB } from "../IconList";
 
 import michael from "../../images/michael.jpg";
 
@@ -79,21 +79,21 @@ const Contact = props => {
           alt="Michael Gee Headshot"
         />
         <p className={classes.contactDesc}>
-          I am currently actively searching for a Junior Developer position
-          (preferably Contract-To-Hire or Direct Hire) or open source
-          contribution opportunities to continue growing as a developer. I look
-          to use the MERN (MongoDB, Express, React, Node) web development stack
-          in all my current and future projects moving forward although I do
-          have experience with much more of the web development ecosystem and am
-          always open to learn and try new things. If you are interested in
-          hiring me or just talking about code in general feel free to get in
-          touch with me through the methods below!
+          I am currently working as a full-stack developer with my current
+          employer Coreview. Although a majority of my time does go into
+          building exciting new work related features and applications during
+          work hours, I still try to take time to work on side projects,
+          continuously learn new things, and write blog posts whenever I have
+          some spare time. I am always interested in hearing new ideas that
+          anyone might have to build exciting new projects and contributing to
+          open source projects so if interested in working with me or just
+          having a discussion please don't hesitate to reach out.
         </p>
       </div>
 
       <h3 className={classes.contactText}>
         <span className={classes.blueText}>Email</span> -
-        michaelgee221@gmail.com
+        michael.gee@coreview.com
       </h3>
       <h3 className={classes.contactText}>
         <span className={classes.blueText}>Phone</span> - 678-446-1512
@@ -111,10 +111,10 @@ const Contact = props => {
         <Button
           variant="fab"
           className={classes.contactBtn}
-          href="https://twitter.com/michaelgee7"
+          href="https://medium.com/@michael.gee"
           target="_blank"
         >
-          <Icon icon={TWITTER} />
+          <Icon icon={MEDIUM} />
         </Button>
         <Button
           variant="fab"

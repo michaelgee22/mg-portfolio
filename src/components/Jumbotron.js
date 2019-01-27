@@ -9,7 +9,7 @@ import Icon from "./Icon";
 import {
   LINKEDIN,
   GITHUB,
-  TWITTER,
+  MEDIUM,
   VIEWPAGE,
   EMAIL,
   PHONE,
@@ -21,7 +21,7 @@ import michael from "../images/michael.jpg";
 const styles = {
   topBar: {
     backgroundColor: "#32408F",
-    padding: "10px 5px",
+    padding: "10px",
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between"
@@ -108,6 +108,8 @@ const Jumbotron = props => {
   return (
     <header>
       <div className={classes.topBar}>
+        <div />
+
         <div>
           <IconButton
             href="https://www.linkedin.com/in/michael-gee/"
@@ -118,10 +120,10 @@ const Jumbotron = props => {
 
           <IconButton
             className={classes.topBarIcon}
-            href="https://twitter.com/michaelgee7"
+            href="https://medium.com/@michael.gee"
             target="_blank"
           >
-            <Icon icon={TWITTER} />
+            <Icon icon={MEDIUM} />
           </IconButton>
 
           <IconButton href="https://github.com/michaelgee22" target="_blank">
@@ -129,14 +131,16 @@ const Jumbotron = props => {
           </IconButton>
         </div>
 
+        {/* RESUME --- OUT OF DATE
         <Button
           className={classes.topBarBtn}
           href="https://drive.google.com/file/d/1_c5XlaReGkwkzgRngFk6cukfmYB9twY3/view"
           target="_blank"
+          style={{ backgroundColor: "lightgray", color: "gray" }}
         >
           <Icon icon={VIEWPAGE} />
           <span className={classes.btnText}>Resume</span>
-        </Button>
+        </Button> */}
       </div>
 
       <div className={classes.introSection}>
@@ -149,13 +153,13 @@ const Jumbotron = props => {
         <h2 className={classes.secondaryTitle}>Full Stack Developer</h2>
 
         <p className={classes.introDesc}>
-          I am a passionate, energetic, and self-motivated Full Stack JavaScript
+          I am a passionate, energetic, and self-motivated full-stack software
           developer eager to turn ideas into applications. My ambitions are to
-          eventually become a core contributor in a development team within a
-          company, contribute heavily to open source projects & my community and
-          to stay on the leading edge of technology to create solutions nobody
-          has ever solved before. I always look to find new learning
-          opportunities or projects to rapidly keep improving as a developer.
+          stay on the leading edge of the web development industry which include
+          utilizing serverless technologies, building elegant user interfaces,
+          and eventually incorporating artificial intelligence in the software I
+          build. I always look to find new learning opportunities or projects to
+          rapidly keep improving as a developer.
         </p>
       </div>
 
@@ -163,7 +167,9 @@ const Jumbotron = props => {
         <div className={classes.contactContent}>
           <div className={classes.contactItem}>
             <Icon icon={EMAIL} />
-            <span className={classes.contactText}>michaelgee221@gmail.com</span>
+            <span className={classes.contactText}>
+              michael.gee@coreview.com
+            </span>
           </div>
           <div className={classes.contactItem}>
             <Icon icon={PHONE} />
