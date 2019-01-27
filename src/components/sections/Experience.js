@@ -72,15 +72,11 @@ const Experience = props => {
     coreview: [
       {
         id: "cv1",
-        bullet: "Current Employment"
-      },
-      {
-        id: "cv2",
         bullet:
           "Developing exciting new primitive features of the Coreview platform utilizing various technolgies listed in the Skills section."
       },
       {
-        id: "cv3",
+        id: "cv2",
         bullet: "(to be continued...)"
       }
     ],
