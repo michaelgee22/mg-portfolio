@@ -132,7 +132,7 @@ const Skills = props => {
             While Node.js would be my first choice in choosing a back-end
             language, learning and using C# has taught me various OOP
             methodologies and patterns which has made me become a better
-            developer and has proven to be quiet an elegant language.
+            developer and has proven to be quite an elegant language.
           </div>
         </div>
 
