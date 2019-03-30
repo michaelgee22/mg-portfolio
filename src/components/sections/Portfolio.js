@@ -28,20 +28,8 @@ const projects = [
       "A group of projects & websites built from scratch using a variety of JavaScript libraries/frameworks or Wordpress. I worked as a sole developer remotely building user interfaces mainly with JavaScript Web Components with the Polymer Library. I also worked directly with clients to implement feature requests in Wordpress websites using React components.  I spent a lot of time becoming vastly familiar with the JavaScript ecosystem and being involved in all aspects of development including planning, development, design, testing, performance improvement, maintenance, security, etc. "
   },
   {
-    id: "portfolio-1",
-    className: "projectReverse",
-    title: "Portfolio (Current Application)",
-    tags: ["JavaScript", "React", "HTML5", "CSS3", "Git"],
-    codeHref: "https://github.com/michaelgee22/portfolio",
-    href: false,
-    image: portfolio,
-    imageAlt: "Portfolio Project",
-    desc:
-      "The second version of my personal portfolio(the previous version was built with JavaScript Web Components using Polymer) built with React. Due to the fact that I plan on moving forward on all my current and future projects using React and the MERN stack(MongoDB, Express, React, Node) I chose to start with this project.I prioritized application and component structure, Material Design implementation with React components, testing with Jest & Enzyme, implementing animations and responsive styling and creating a simple single page representation of my experience and projects."
-  },
-  {
     id: "chat-box-2",
-    className: "project",
+    className: "projectReverse",
     title: "Chat-box",
     tags: ["JavaScript", "Polymer", "Firebase", "HTML5", "CSS3", "Git"],
     codeHref: "https://github.com/michaelgee22/chat-box",
@@ -53,7 +41,7 @@ const projects = [
   },
   {
     id: "lp-tribute-3",
-    className: "projectReverse",
+    className: "project",
     title: "Linkin Park Tribute",
     tags: ["JavaScript", "Vue", "Firebase", "HTML5", "CSS3", "Git"],
     codeHref: "https://github.com/michaelgee22/lp_tribute",

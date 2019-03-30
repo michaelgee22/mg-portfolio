@@ -7,30 +7,21 @@ import Button from "@material-ui/core/Button";
 import Icon from "../Icon";
 import { LINKEDIN, MEDIUM, GITHUB } from "../IconList";
 
-import michael from "../../images/michael.jpg";
-
 const styles = {
   sectionTitle: {
     fontWeight: 500,
     fontSize: "2.4em",
-    marginBottom: "35px",
+    marginBottom: "16px",
     textAlign: "center"
   },
   contactWrapper: {
     display: "flex"
   },
-  contactImg: {
-    width: "175px",
-    height: "175px",
-    borderRadius: "50%"
-  },
   contactDesc: {
     fontSize: "1.6em",
     lineHeight: 1.5,
-    width: "calc(100% - 175px)",
-    paddingLeft: "35px",
-    margin: "5px 0",
-    color: "#666"
+    color: "#666",
+    padding: "0 24px"
   },
   contactText: {
     textAlign: "center",
@@ -73,11 +64,6 @@ const Contact = props => {
       <h2 className={classes.sectionTitle}>Get In Touch</h2>
 
       <div className={classes.contactWrapper}>
-        <img
-          className={classes.contactImg}
-          src={michael}
-          alt="Michael Gee Headshot"
-        />
         <p className={classes.contactDesc}>
           I am currently working as a full-stack developer with my current
           employer Coreview. Although a majority of my time does go into

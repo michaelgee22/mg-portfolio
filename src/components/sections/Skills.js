@@ -87,8 +87,9 @@ const Skills = props => {
           <h4 className={classes.skillTitle}>JavaScript</h4>
           <div className={classes.skillDesc}>
             It is my main priority to be proficient in the JavaScript language
-            which enabled me to become familiar with the vast ecosystem of
-            libraries and frameworks and to write best practice code.
+            which enables me to build great full-stack web applications using
+            best practice code with an assortment of different libraries and
+            frameworks.
           </div>
         </div>
 
@@ -96,9 +97,10 @@ const Skills = props => {
           <LargeIcon icon={REACT} color="#3849A2" />
           <h4 className={classes.skillTitle}>React</h4>
           <div className={classes.skillDesc}>
-            Placing heavy emphasis on JavaScript, a hugely supportive community
-            and being backed by Facebook, React quickly became my favorite JS
-            library which I use on all my current projects today.
+            Placing heavy emphasis on JavaScript, with a vast ecosystem of
+            supported external UI solution libraries, and a large supportive
+            community, React quickly became my favorite JS library which I use
+            on all current projects.
           </div>
         </div>
 
@@ -106,22 +108,23 @@ const Skills = props => {
           <LargeIcon icon={NODEJS} color="#3849A2" />
           <h4 className={classes.skillTitle}>NodeJS</h4>
           <div className={classes.skillDesc}>
-            Naturually I chose continue using JavaScript not only for client
-            code, but also for building out REST APIs and serverless back-end
-            code through AWS with Node.js as my backend language of choice.
+            Naturually I chose to continue using JavaScript not only for the
+            client side, but also is my first choice for building REST APIs and
+            serverless back-end projects utilizing its rich ecosystem of npm
+            packages.
           </div>
         </div>
       </div>
 
       <div className={classes.topSkills}>
         <div className={classes.topSkill}>
-          <LargeIcon icon={AMAZON} color="#3849A2" />
-          <h4 className={classes.skillTitle}>Amazon Web Services</h4>
+          <LargeIcon icon={CSS} color="#3849A2" />
+          <h4 className={classes.skillTitle}>CSS</h4>
           <div className={classes.skillDesc}>
-            Being very excited about the rapid growth in serverless
-            technologies, I actively use AWS due to it being one step ahead of
-            its competitors and providing an extensive amount of tools and
-            technologies to simplify the web development process.
+            One of my greatest strengths as a developer is having the ability to
+            bring ideas and user requested features to life visually. Bringing
+            the designs front white board to browser screen seemlessly is what I
+            take greate pride in using CSS to do so.
           </div>
         </div>
 
@@ -137,13 +140,13 @@ const Skills = props => {
         </div>
 
         <div className={classes.topSkill}>
-          <LargeIcon icon={CSS} color="#3849A2" />
-          <h4 className={classes.skillTitle}>CSS</h4>
+          <LargeIcon icon={AMAZON} color="#3849A2" />
+          <h4 className={classes.skillTitle}>Amazon Web Services</h4>
           <div className={classes.skillDesc}>
-            One of my greatest strengths as a developer is having the ability to
-            bring ideas and user requested features to life visually. Bringing
-            the designs front white board to browser screen seemlessly is what I
-            take greate pride in using CSS to do so.
+            Being very excited about the rapid growth in serverless
+            technologies, I actively use AWS due to it being one step ahead of
+            its competitors and providing an extensive amount of tools and
+            technologies to simplify the web development process.
           </div>
         </div>
       </div>

@@ -90,12 +90,12 @@ const Experience = props => {
       {
         id: "ceg2",
         bullet:
-          "Responsibilities included all aspects of application development including planning, development, design, testing, performance improvement, maintenance, security, etc."
+          "Responsibilities included all aspects of application development including planning, development, design, testing, performance improvement, maintenance, etc."
       },
       {
         id: "ceg3",
         bullet:
-          "Researched and learned various front-end JS frameworks and libraries such as React, Vue, Polymer, Angular, and jQuery to determine the best project solutions."
+          "Primarily utilized React & Vue as the JavaScript library of choice with external material design libraries to build out user interfaces."
       },
       {
         id: "ceg4",
