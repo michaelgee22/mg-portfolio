@@ -4,57 +4,10 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 
-import Icon from "../Icon";
-import { LINKEDIN, MEDIUM, GITHUB } from "../IconList";
+import Icon from "../../components/Icon/Icon";
+import { LINKEDIN, MEDIUM, GITHUB } from "../../components/Icon/IconList";
 
-const styles = {
-  sectionTitle: {
-    fontWeight: 500,
-    fontSize: "2.4em",
-    marginBottom: "16px",
-    textAlign: "center"
-  },
-  contactWrapper: {
-    display: "flex"
-  },
-  contactDesc: {
-    fontSize: "1.6em",
-    lineHeight: 1.5,
-    color: "#666",
-    padding: "0 24px"
-  },
-  contactText: {
-    textAlign: "center",
-    fontWeight: 500,
-    fontSize: "1.8em"
-  },
-  btnSection: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  blueText: { color: "#3F51B5" },
-  contactBtn: {
-    margin: "0 10px",
-    backgroundColor: "#3F51B5",
-
-    "&:hover": {
-      backgroundColor: "black"
-    }
-  },
-
-  "@media screen and (max-width: 768px)": {
-    sectionTitle: { marginBottom: "15px" },
-    contactWrapper: { flexDirection: "column" },
-    contactImg: { margin: "0 auto" },
-    contactDesc: {
-      width: "calc(100% - 50px)",
-      padding: "0 25px",
-      margin: "20px 0 5px 0",
-      textAlign: "center"
-    }
-  }
-};
+import ContactStyles from "./styles";
 
 const Contact = props => {
   const { classes } = props;
@@ -119,4 +72,4 @@ Contact.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Contact);
+export default withStyles(ContactStyles)(Contact);

@@ -3,62 +3,17 @@ import PropTypes from "prop-types";
 
 import { withStyles } from "@material-ui/core";
 
-import LargeIcon from "../LargeIcon";
-import { JAVASCRIPT, REACT, NODEJS, AMAZON, CSHARP, CSS } from "../IconList";
+import LargeIcon from "../../components/Icon/LargeIcon";
+import {
+  JAVASCRIPT,
+  REACT,
+  NODEJS,
+  AMAZON,
+  CSHARP,
+  CSS
+} from "../../components/Icon/IconList";
 
-const styles = {
-  sectionContainer: {
-    textAlign: "center"
-  },
-  sectionTitle: {
-    fontWeight: 500,
-    fontSize: "2.4em",
-    marginBottom: "34px"
-  },
-  topSkillsTitle: {
-    fontSize: "2em",
-    color: "#8a8a8a",
-    fontWeight: 300,
-    marginBottom: "34px"
-  },
-  topSkills: {
-    display: "flex",
-    justifyContent: "space-around",
-    marginBottom: "50px"
-  },
-  skillTitle: {
-    fontWeight: 500,
-    fontSize: "2.2em",
-    margin: "20px 0"
-  },
-  skillDesc: {
-    color: "#666",
-    padding: "0 25px",
-    fontSize: "1.4em"
-  },
-  otherSkills: {
-    maxWidth: "650px",
-    margin: "0 auto"
-  },
-  otherSkill: {
-    boxShadow: "0 1px 4px 0 rgba(0, 0, 0, 0.14)",
-    display: "inline-block",
-    fontSize: "1.6em",
-    fontWeight: 500,
-    padding: "6px 30px",
-    margin: "0 15px 15px 0",
-    border: "1px solid #f5f5f5"
-  },
-
-  "@media screen and (max-width: 768px)": {
-    sectionTitle: { marginBottom: "15px" },
-    topSkillsTitle: { marginBottom: "15px" },
-    skillTitle: { margin: "10px 0" },
-    topSkills: { flexDirection: "column", marginBottom: "0" },
-    topSkill: { marginBottom: "15px" },
-    skillDesc: { paddingBottom: "15px" }
-  }
-};
+import SkillsStyles from "./styles";
 
 const Skills = props => {
   const { classes } = props;
@@ -167,4 +122,4 @@ Skills.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Skills);
+export default withStyles(SkillsStyles)(Skills);

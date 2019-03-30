@@ -3,43 +3,7 @@ import PropTypes from "prop-types";
 
 import { withStyles } from "@material-ui/core";
 
-const styles = {
-  sectionContainer: { padding: "0 15px" },
-  introContainer: {
-    maxWidth: "405px",
-    margin: "0 auto"
-  },
-  sectionTitle: {
-    fontWeight: 500,
-    fontSize: "2.4em",
-    marginBottom: "25px",
-    textAlign: "center"
-  },
-  eduTitle: {
-    fontWeight: 500,
-    color: "#3F51B5",
-    fontSize: "2em",
-    margin: "0"
-  },
-  eduTags: {
-    fontSize: "1.6em"
-  },
-  eduTime: {
-    color: "#8a8a8a",
-    marginBottom: "15px",
-    fontSize: "1.5em"
-  },
-  eduDesc: {
-    fontSize: "1.6em",
-    lineHeight: 1.5,
-    padding: "0 25px",
-    color: "#666"
-  },
-
-  "@media screen and (max-width: 600px)": {
-    sectionContainer: { textAlign: "center" }
-  }
-};
+import EducationStyles from "./styles";
 
 const Education = props => {
   const { classes } = props;
@@ -94,4 +58,4 @@ Education.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Education);
+export default withStyles(EducationStyles)(Education);
