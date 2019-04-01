@@ -1,47 +1,47 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
-import { withStyles } from "@material-ui/core";
-import IconButton from "@material-ui/core/IconButton";
-import Tooltip from "@material-ui/core/Tooltip";
+import { withStyles } from '@material-ui/core'
+import IconButton from '@material-ui/core/IconButton'
+import Tooltip from '@material-ui/core/Tooltip'
 
-import CustomDialog from "../../components/CustomDialog";
-import Icon from "../../components/Icon/Icon";
-import { GITHUB, GO_ARROW, OPEN_BOOK } from "../../components/Icon/IconList";
+import CustomDialog from '../../components/CustomDialog'
+import Icon from '../../components/Icon/Icon'
+import { GITHUB, GO_ARROW, OPEN_BOOK } from '../../components/Icon/IconList'
 
-import PortfolioData from "./static";
-import PortfolioStyles from "./styles";
+import PortfolioData from './static'
+import PortfolioStyles from './styles'
 
 class Portfolio extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       open: false,
-      desc: ""
-    };
+      desc: ''
+    }
 
-    this.handleDialogOpen = this.handleDialogOpen.bind(this);
-    this.handleDialogClose = this.handleDialogClose.bind(this);
+    this.handleDialogOpen = this.handleDialogOpen.bind(this)
+    this.handleDialogClose = this.handleDialogClose.bind(this)
   }
 
   handleDialogOpen(e) {
-    let index = e.currentTarget.id.replace(/^\D+/g, "");
-    index = parseInt(index);
+    let index = e.currentTarget.id.replace(/^\D+/g, '')
+    index = parseInt(index)
 
     this.setState({
       open: true,
       desc: PortfolioData[index].desc
-    });
+    })
   }
 
   handleDialogClose() {
-    this.setState({ open: false, desc: "" });
+    this.setState({ open: false, desc: '' })
   }
 
   renderGithubIconButton(href, classes) {
     if (!href) {
-      return false;
+      return false
     }
 
     return (
@@ -50,12 +50,12 @@ class Portfolio extends Component {
           <Icon icon={GITHUB} />
         </IconButton>
       </Tooltip>
-    );
+    )
   }
 
   renderVisitIconButton(href, classes) {
     if (!href) {
-      return false;
+      return false
     }
 
     return (
@@ -64,11 +64,11 @@ class Portfolio extends Component {
           <Icon icon={GO_ARROW} />
         </IconButton>
       </Tooltip>
-    );
+    )
   }
 
   render() {
-    const { classes } = this.props;
+    const { classes } = this.props
 
     return (
       <div>
@@ -78,11 +78,7 @@ class Portfolio extends Component {
           {PortfolioData.map(item => (
             <div key={item.id} className={classes[item.className]}>
               <div className={classes.projectImgWrapper}>
-                <img
-                  src={item.image}
-                  className={classes.projectImg}
-                  alt={item.imageAlt}
-                />
+                <img src={item.image} className={classes.projectImg} alt={item.imageAlt} />
               </div>
 
               <div className={classes.projectInfo}>
@@ -99,19 +95,11 @@ class Portfolio extends Component {
                   {this.renderGithubIconButton(item.codeHref, classes)}
 
                   <Tooltip title="Description">
-                    <IconButton
-                      id={item.id}
-                      onClick={this.handleDialogOpen}
-                      className={classes.projectBtn}
-                    >
+                    <IconButton id={item.id} onClick={this.handleDialogOpen} className={classes.projectBtn}>
                       <Icon icon={OPEN_BOOK} />
                     </IconButton>
                   </Tooltip>
-                  <CustomDialog
-                    open={this.state.open}
-                    onClose={this.handleDialogClose}
-                    content={this.state.desc}
-                  />
+                  <CustomDialog open={this.state.open} onClose={this.handleDialogClose} content={this.state.desc} />
 
                   {this.renderVisitIconButton(item.href, classes)}
                 </div>
@@ -120,12 +108,12 @@ class Portfolio extends Component {
           ))}
         </div>
       </div>
-    );
+    )
   }
 }
 
 Portfolio.propTypes = {
   classes: PropTypes.object.isRequired
-};
+}
 
-export default withStyles(PortfolioStyles)(Portfolio);
+export default withStyles(PortfolioStyles)(Portfolio)

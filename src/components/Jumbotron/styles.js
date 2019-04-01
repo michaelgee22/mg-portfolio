@@ -1,83 +1,83 @@
 export default {
   topBar: {
-    backgroundColor: "#32408F",
-    padding: "10px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between"
+    backgroundColor: '#32408F',
+    padding: '10px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between'
   },
-  topBarIcon: { margin: "0 3px 0 2px" },
+  topBarIcon: { margin: '0 3px 0 2px' },
   topBarBtn: {
-    color: "white",
-    marginRight: "5px"
+    color: 'white',
+    marginRight: '5px'
   },
-  btnText: { marginLeft: "5px" },
+  btnText: { marginLeft: '5px' },
 
   introSection: {
-    backgroundColor: "#3849A2",
-    color: "white",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "column"
+    backgroundColor: '#3849A2',
+    color: 'white',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column'
   },
   portfolioImg: {
-    width: "175px",
-    height: "175px",
-    marginTop: "15px",
-    border: "5px solid white",
-    borderRadius: "50%"
+    width: '175px',
+    height: '175px',
+    marginTop: '15px',
+    border: '5px solid white',
+    borderRadius: '50%'
   },
   mainTitle: {
-    fontSize: "4.8em",
-    padding: "15px 0 5px 0",
-    textAlign: "center"
+    fontSize: '4.8em',
+    padding: '15px 0 5px 0',
+    textAlign: 'center'
   },
   secondaryTitle: {
-    fontSize: "2.8em",
-    padding: "5px 0",
-    fontWeight: "300",
-    color: "rgba(255, 255, 255, 0.8)"
+    fontSize: '2.8em',
+    padding: '5px 0',
+    fontWeight: '300',
+    color: 'rgba(255, 255, 255, 0.8)'
   },
   introDesc: {
-    maxWidth: "800px",
-    fontSize: "1.6em",
-    lineHeight: "1.5",
-    textAlign: "center",
-    padding: "0 15px 15px 15px"
+    maxWidth: '800px',
+    fontSize: '1.6em',
+    lineHeight: '1.5',
+    textAlign: 'center',
+    padding: '0 15px 15px 15px'
   },
 
   contactSection: {
-    backgroundColor: "#32408F",
-    color: "white",
-    fontSize: "1.6em",
-    padding: "25px 0"
+    backgroundColor: '#32408F',
+    color: 'white',
+    fontSize: '1.6em',
+    padding: '25px 0'
   },
   contactContent: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center"
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-  contactItem: { display: "flex", marginRight: "30px" },
-  contactText: { marginLeft: "10px", marginTop: "3px" },
+  contactItem: { display: 'flex', marginRight: '30px' },
+  contactText: { marginLeft: '10px', marginTop: '3px' },
 
   navSection: {
-    backgroundColor: "#2B387C",
-    padding: "10px 0",
-    display: "flex",
-    justifyContent: "center"
+    backgroundColor: '#2B387C',
+    padding: '10px 0',
+    display: 'flex',
+    justifyContent: 'center'
   },
-  navBtn: { color: "rgba(255, 255, 255, 0.8)" },
+  navBtn: { color: 'rgba(255, 255, 255, 0.8)' },
 
-  "@media screen and (max-width: 768px)": {
-    navSection: { display: "none" },
-    mainTitle: { fontSize: "3.2em" },
-    secondaryTitle: { fontSize: "2.4em" }
+  '@media screen and (max-width: 768px)': {
+    navSection: { display: 'none' },
+    mainTitle: { fontSize: '3.2em' },
+    secondaryTitle: { fontSize: '2.4em' }
   },
 
-  "@media screen and (max-width: 600px)": {
-    contactContent: { flexDirection: "column" },
-    contactItem: { margin: "0", padding: "5px 0" },
-    contactSection: { padding: "10px 0" }
+  '@media screen and (max-width: 600px)': {
+    contactContent: { flexDirection: 'column' },
+    contactItem: { margin: '0', padding: '5px 0' },
+    contactSection: { padding: '10px 0' }
   }
-};
+}

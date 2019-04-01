@@ -1,25 +1,18 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import { withStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
+import { withStyles } from '@material-ui/core/styles'
+import Button from '@material-ui/core/Button'
+import IconButton from '@material-ui/core/IconButton'
 
-import Icon from "../Icon/Icon";
-import {
-  LINKEDIN,
-  GITHUB,
-  MEDIUM,
-  EMAIL,
-  PHONE,
-  LOCATION
-} from "../Icon/IconList";
+import Icon from '../Icon/Icon'
+import { LINKEDIN, GITHUB, MEDIUM, EMAIL, PHONE, LOCATION } from '../Icon/IconList'
 
-import JumbotronStyles from "./styles";
+import JumbotronStyles from './styles'
 
 const Jumbotron = props => {
-  const { classes } = props;
-  const portfolioImg = process.env.PUBLIC_URL + "/images/michael.jpg";
+  const { classes } = props
+  const portfolioImg = process.env.PUBLIC_URL + '/images/michael.jpg'
 
   return (
     <header>
@@ -27,18 +20,11 @@ const Jumbotron = props => {
         <div />
 
         <div>
-          <IconButton
-            href="https://www.linkedin.com/in/michael-gee/"
-            target="_blank"
-          >
+          <IconButton href="https://www.linkedin.com/in/michael-gee/" target="_blank">
             <Icon icon={LINKEDIN} />
           </IconButton>
 
-          <IconButton
-            className={classes.topBarIcon}
-            href="https://medium.com/@michael.gee"
-            target="_blank"
-          >
+          <IconButton className={classes.topBarIcon} href="https://medium.com/@michael.gee" target="_blank">
             <Icon icon={MEDIUM} />
           </IconButton>
 
@@ -60,22 +46,16 @@ const Jumbotron = props => {
       </div>
 
       <div className={classes.introSection}>
-        <img
-          className={classes.portfolioImg}
-          src={portfolioImg}
-          alt="Michael Gee Headshot"
-        />
+        <img className={classes.portfolioImg} src={portfolioImg} alt="Michael Gee Headshot" />
         <h1 className={classes.mainTitle}>Michael Gee</h1>
         <h2 className={classes.secondaryTitle}>Software Developer</h2>
 
         <p className={classes.introDesc}>
-          I am a passionate, energetic, and self-motivated full-stack software
-          developer eager to turn ideas into applications. My ambitions are to
-          stay on the leading edge of the web development industry which include
-          utilizing serverless technologies, building elegant user interfaces,
-          and eventually incorporating artificial intelligence in the software I
-          build. I always look to find new learning opportunities or projects to
-          rapidly keep improving as a developer.
+          I am a passionate, energetic, and self-motivated full-stack software developer eager to turn ideas into
+          applications. My ambitions are to stay on the leading edge of the web development industry which include
+          utilizing serverless technologies, building elegant user interfaces, and eventually incorporating artificial
+          intelligence in the software I build. I always look to find new learning opportunities or projects to rapidly
+          keep improving as a developer.
         </p>
       </div>
 
@@ -83,9 +63,7 @@ const Jumbotron = props => {
         <div className={classes.contactContent}>
           <div className={classes.contactItem}>
             <Icon icon={EMAIL} />
-            <span className={classes.contactText}>
-              michael.gee@coreview.com
-            </span>
+            <span className={classes.contactText}>michael.gee@coreview.com</span>
           </div>
           <div className={classes.contactItem}>
             <Icon icon={PHONE} />
@@ -99,44 +77,29 @@ const Jumbotron = props => {
       </div>
 
       <div className={classes.navSection}>
-        <Button
-          className={classes.navBtn}
-          onClick={() => props.triggerComponentScroll("experience")}
-        >
+        <Button className={classes.navBtn} onClick={() => props.triggerComponentScroll('experience')}>
           Experience
         </Button>
-        <Button
-          className={classes.navBtn}
-          onClick={() => props.triggerComponentScroll("skills")}
-        >
+        <Button className={classes.navBtn} onClick={() => props.triggerComponentScroll('skills')}>
           Skills
         </Button>
-        <Button
-          className={classes.navBtn}
-          onClick={() => props.triggerComponentScroll("portfolio")}
-        >
+        <Button className={classes.navBtn} onClick={() => props.triggerComponentScroll('portfolio')}>
           Portfolio
         </Button>
-        <Button
-          className={classes.navBtn}
-          onClick={() => props.triggerComponentScroll("education")}
-        >
+        <Button className={classes.navBtn} onClick={() => props.triggerComponentScroll('education')}>
           Education
         </Button>
-        <Button
-          className={classes.navBtn}
-          onClick={() => props.triggerComponentScroll("contact")}
-        >
+        <Button className={classes.navBtn} onClick={() => props.triggerComponentScroll('contact')}>
           Contact
         </Button>
       </div>
     </header>
-  );
-};
+  )
+}
 
 Jumbotron.propTypes = {
   classes: PropTypes.object.isRequired,
   triggerComponentScroll: PropTypes.func.isRequired
-};
+}
 
-export default withStyles(JumbotronStyles)(Jumbotron);
+export default withStyles(JumbotronStyles)(Jumbotron)

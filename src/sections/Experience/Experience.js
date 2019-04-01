@@ -1,13 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import { withStyles } from "@material-ui/core";
+import { withStyles } from '@material-ui/core'
 
-import ExperienceData from "./static";
-import ExperienceStyles from "./styles";
+import ExperienceData from './static'
+import ExperienceStyles from './styles'
 
 const Experience = props => {
-  const { classes } = props;
+  const { classes } = props
 
   return (
     <div className={classes.sectionContainer}>
@@ -79,11 +79,11 @@ const Experience = props => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 Experience.propTypes = {
   classes: PropTypes.object.isRequired
-};
+}
 
-export default withStyles(ExperienceStyles)(Experience);
+export default withStyles(ExperienceStyles)(Experience)

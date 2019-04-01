@@ -1,20 +1,20 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import { withStyles } from "@material-ui/core/styles";
+import { withStyles } from '@material-ui/core/styles'
 
-import Jumbotron from "../Jumbotron";
+import Jumbotron from '../Jumbotron'
 
-import ExperienceSection from "../../sections/Experience";
-import SkillsSection from "../../sections/Skills";
-import PortfolioSection from "../../sections/Portfolio";
-import EducationSection from "../../sections/Education";
-import ContactSection from "../../sections/Contact";
+import ExperienceSection from '../../sections/Experience'
+import SkillsSection from '../../sections/Skills'
+import PortfolioSection from '../../sections/Portfolio'
+import EducationSection from '../../sections/Education'
+import ContactSection from '../../sections/Contact'
 
-import AppStyles from "./styles";
+import AppStyles from './styles'
 
 const App = props => {
-  const { classes } = props;
+  const { classes } = props
 
   return (
     <div className={classes.container}>
@@ -37,18 +37,18 @@ const App = props => {
         </section>
       </main>
     </div>
-  );
-};
+  )
+}
 
 function triggerComponentScroll(component) {
   document.getElementById(component).scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
+    behavior: 'smooth',
+    block: 'start'
+  })
 }
 
 App.propTypes = {
   classes: PropTypes.object.isRequired
-};
+}
 
-export default withStyles(AppStyles)(App);
+export default withStyles(AppStyles)(App)
