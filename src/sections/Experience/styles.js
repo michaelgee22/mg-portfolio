@@ -1,4 +1,6 @@
-export default {
+import { makeStyles } from '@material-ui/styles'
+
+export const useStyles = makeStyles({
   sectionContainer: {
     padding: '0 24px'
   },
@@ -58,4 +60,4 @@ export default {
     expItemTitle: { margin: '0' },
     mobileIntro: { display: 'block' }
   }
-}
+})

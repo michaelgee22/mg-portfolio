@@ -3,7 +3,7 @@ export default {
     {
       id: 'cv1',
       bullet:
-        'Developing exciting new primary features of the Coreview platform utilizing various technolgies listed in the Skills section.'
+        'Developing exciting new primary features of the CoreView platform utilizing various technolgies listed in the Skills section.'
     },
     {
       id: 'cv2',

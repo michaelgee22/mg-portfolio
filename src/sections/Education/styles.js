@@ -1,4 +1,6 @@
-export default {
+import { makeStyles } from '@material-ui/styles'
+
+export const useStyles = makeStyles({
   sectionContainer: { padding: '0 16px' },
   introContainer: {
     maxWidth: '406px',
@@ -34,4 +36,4 @@ export default {
   '@media screen and (max-width: 600px)': {
     sectionContainer: { textAlign: 'center' }
   }
-}
+})

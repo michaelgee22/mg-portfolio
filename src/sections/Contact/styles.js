@@ -1,4 +1,6 @@
-export default {
+import { makeStyles } from '@material-ui/styles'
+
+export const useStyles = makeStyles({
   sectionTitle: {
     fontWeight: 500,
     fontSize: '2.4em',
@@ -45,4 +47,4 @@ export default {
       textAlign: 'center'
     }
   }
-}
+})

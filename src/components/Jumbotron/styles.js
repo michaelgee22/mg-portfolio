@@ -12,7 +12,7 @@ export const useStyles = makeStyles({
     alignItems: 'center',
     justifyContent: 'flex-end'
   },
-  topBarIcon: { marginRight: '6px' },
+  topBarIcon: { marginRight: '4px' },
   // topBarBtn: {
   //   color: 'white',
   //   marginRight: '5px'

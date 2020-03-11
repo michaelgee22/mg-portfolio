@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 
 import Icon from '../Icon/Icon'
-import { LINKEDIN, GITHUB, MEDIUM, EMAIL, PHONE, LOCATION } from '../Icon/IconList'
+import { LINKEDIN, GITHUB, EMAIL, PHONE, LOCATION } from '../Icon/IconList'
 
 import { useStyles } from './styles'
 

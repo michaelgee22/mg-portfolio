@@ -1,4 +1,6 @@
-export default {
+import { makeStyles } from '@material-ui/styles'
+
+export const useStyles = makeStyles({
   sectionContainer: {
     textAlign: 'center'
   },
@@ -50,4 +52,4 @@ export default {
     topSkill: { marginBottom: '16px' },
     skillDesc: { paddingBottom: '16px' }
   }
-}
+})
