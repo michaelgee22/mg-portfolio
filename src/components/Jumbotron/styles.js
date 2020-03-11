@@ -1,17 +1,23 @@
-export default {
+import { makeStyles } from '@material-ui/styles'
+
+export const useStyles = makeStyles({
   topBar: {
     backgroundColor: '#32408F',
-    padding: '10px',
+    padding: '8px'
+  },
+  topBarIcons: {
+    maxWidth: '1000px',
+    margin: '0 auto',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'flex-end'
   },
-  topBarIcon: { margin: '0 3px 0 2px' },
-  topBarBtn: {
-    color: 'white',
-    marginRight: '5px'
-  },
-  btnText: { marginLeft: '5px' },
+  topBarIcon: { marginRight: '6px' },
+  // topBarBtn: {
+  //   color: 'white',
+  //   marginRight: '5px'
+  // },
+  // btnText: { marginLeft: '5px' },
 
   introSection: {
     backgroundColor: '#3849A2',
@@ -80,4 +86,4 @@ export default {
     contactItem: { margin: '0', padding: '5px 0' },
     contactSection: { padding: '10px 0' }
   }
-}
+})

@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton'
 import Tooltip from '@material-ui/core/Tooltip'
 
-import CustomDialog from '../../components/CustomDialog'
+import Dialog from '../../components/Dialog'
 import Icon from '../../components/Icon/Icon'
 import { GITHUB, GO_ARROW, OPEN_BOOK } from '../../components/Icon/IconList'
 
@@ -99,7 +99,7 @@ class Portfolio extends Component {
                       <Icon icon={OPEN_BOOK} />
                     </IconButton>
                   </Tooltip>
-                  <CustomDialog open={this.state.open} onClose={this.handleDialogClose} content={this.state.desc} />
+                  <Dialog open={this.state.open} onClose={this.handleDialogClose} content={this.state.desc} />
 
                   {this.renderVisitIconButton(item.href, classes)}
                 </div>

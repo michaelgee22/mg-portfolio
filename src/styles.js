@@ -1,4 +1,6 @@
-export default {
+import { makeStyles } from '@material-ui/styles'
+
+export const useStyles = makeStyles({
   '@global': {
     body: {
       padding: '0',
@@ -14,8 +16,8 @@ export default {
   portfolioSection: {
     backgroundColor: 'white',
     maxWidth: '1000px',
-    margin: '44px auto',
-    padding: '44px 25px',
+    margin: '40px auto',
+    padding: '40px 24px',
     borderRadius: '3px',
     boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.14)'
   },
@@ -26,4 +28,4 @@ export default {
       margin: '24px auto'
     }
   }
-}
+})
