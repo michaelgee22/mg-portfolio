@@ -33,18 +33,13 @@ const Contact = () => {
       </h3>
 
       <div className={classes.btnSection}>
-        <Button
-          variant="fab"
-          className={classes.contactBtn}
-          href="https://www.linkedin.com/in/michael-gee/"
-          target="_blank"
-        >
+        <Button className={classes.contactBtn} href="https://www.linkedin.com/in/michael-gee/" target="_blank">
           <Icon icon={LINKEDIN} />
         </Button>
         {/* <Button variant="fab" className={classes.contactBtn} href="https://medium.com/@michael.gee" target="_blank">
           <Icon icon={MEDIUM} />
         </Button> */}
-        <Button variant="fab" className={classes.contactBtn} href="https://github.com/michaelgee22" target="_blank">
+        <Button className={classes.contactBtn} href="https://github.com/michaelgee22" target="_blank">
           <Icon icon={GITHUB} />
         </Button>
       </div>

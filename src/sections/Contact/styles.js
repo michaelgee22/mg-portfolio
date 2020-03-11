@@ -4,7 +4,7 @@ export const useStyles = makeStyles({
   sectionTitle: {
     fontWeight: 500,
     fontSize: '2.4em',
-    marginBottom: '16px',
+    marginBottom: '8px',
     textAlign: 'center'
   },
   contactWrapper: {

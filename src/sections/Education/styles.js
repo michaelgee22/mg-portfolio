@@ -9,7 +9,7 @@ export const useStyles = makeStyles({
   sectionTitle: {
     fontWeight: 500,
     fontSize: '2.4em',
-    marginBottom: '24px',
+    marginBottom: '16px',
     textAlign: 'center'
   },
   eduTitle: {
