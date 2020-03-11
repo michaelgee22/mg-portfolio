@@ -7,18 +7,18 @@ export const useStyles = makeStyles({
   sectionTitle: {
     fontWeight: 500,
     fontSize: '2.4em',
-    marginBottom: '34px'
+    marginBottom: '24px'
   },
   topSkillsTitle: {
     fontSize: '2em',
     color: '#8a8a8a',
     fontWeight: 300,
-    marginBottom: '34px'
+    marginBottom: '32px'
   },
   topSkills: {
     display: 'flex',
     justifyContent: 'space-around',
-    marginBottom: '50px'
+    marginBottom: '32px'
   },
   skillTitle: {
     fontWeight: 500,

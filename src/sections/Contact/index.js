@@ -16,7 +16,7 @@ const Contact = () => {
 
       <div className={classes.contactWrapper}>
         <p className={classes.contactDesc}>
-          I am currently working as a full-stack developer with my current employer Coreview. Although a majority of my
+          I am currently working as a full-stack developer with my current employer CoreView. Although a majority of my
           time does go into building exciting new work related features and applications during work hours, I still try
           to take time to work on side projects, continuously learn new things, and write blog posts whenever I have
           some spare time. I am always interested in hearing new ideas that anyone might have to build exciting new

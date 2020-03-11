@@ -3,11 +3,7 @@ export default {
     {
       id: 'cv1',
       bullet:
-        'Developing exciting new primary features of the CoreView platform utilizing various technolgies listed in the Skills section.'
-    },
-    {
-      id: 'cv2',
-      bullet: '(to be continued...)'
+        'Currently developing exciting new primary features of the CoreView platform utilizing various technolgies listed in the Skills section.'
     }
   ],
 
