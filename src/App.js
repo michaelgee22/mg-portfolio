@@ -1,47 +1,17 @@
 import React from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import Jumbotron from './components/Jumbotron'
-import Experience from './sections/Experience'
-import Skills from './sections/Skills'
-import Portfolio from './sections/Portfolio'
-import Education from './sections/Education'
-import Contact from './sections/Contact'
-
-import { useStyles } from './styles'
+import routes from './routes'
 
 const App = () => {
-  const classes = useStyles()
-
   return (
-    <>
-      <Jumbotron triggerComponentScroll={_triggerComponentScroll} />
-
-      <main>
-        <section id="experience" className={classes.portfolioSection}>
-          <Experience />
-        </section>
-        <section id="skills" className={classes.portfolioSection}>
-          <Skills />
-        </section>
-        <section id="portfolio" className={classes.portfolioSection}>
-          <Portfolio />
-        </section>
-        <section id="education" className={classes.portfolioSection}>
-          <Education />
-        </section>
-        <section id="contact" className={classes.portfolioSection}>
-          <Contact />
-        </section>
-      </main>
-    </>
+    <Router>
+      {routes.map(route => {
+        const { exact, path, component } = route
+        return <Route exact={exact || false} path={path} component={component} key={path} />
+      })}
+    </Router>
   )
-
-  function _triggerComponentScroll(component) {
-    document.getElementById(component).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
-  }
 }
 
 export default App
