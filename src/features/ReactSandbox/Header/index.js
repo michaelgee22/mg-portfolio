@@ -22,7 +22,7 @@ const ReactSandboxHeader = () => {
         <Button
           variant="icon"
           icon="home"
-          onClick={() => navigateTo(MG_ROUTE_PATHS.portfolio)}
+          onClick={() => navigateTo(MG_ROUTE_PATHS.homepage)}
           customColor="react"
         />
 

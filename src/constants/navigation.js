@@ -1,5 +1,5 @@
 export const MG_ROUTE_PATHS = {
-  portfolio: '/',
+  homepage: '/',
 
   // ReactSandbox routes
   reactSandbox: '/react-sandbox',

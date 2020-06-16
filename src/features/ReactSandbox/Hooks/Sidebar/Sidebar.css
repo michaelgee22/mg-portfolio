@@ -20,9 +20,9 @@
 
 #mg-hooks-custom #mg-hooks-sidebar {
   background-color: #FFF;
-  color: var(--mg-canada-red);
-  border-right: 10px solid var(--mg-canada-red);
-  border-top: 8px solid var(--mg-canada-red);
+  color: var(--mg-falcons-red);
+  border-right: 10px solid var(--mg-falcons-red);
+  border-top: 8px solid var(--mg-falcons-red);
 }
 
 .mg-hook-item {

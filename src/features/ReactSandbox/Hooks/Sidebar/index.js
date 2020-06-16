@@ -12,7 +12,7 @@ const HooksSidebar = props => {
         text="Back to Categories"
         onClick={props.onResetCategory}
         icon="arrow left"
-        customColor={props.isCustom ? 'canada' : 'react'}
+        customColor={props.isCustom ? 'primary' : 'react'}
         id="mg-hooks-sidebar-backBtn"
       />
 

@@ -6,7 +6,7 @@ import { MG_ROUTE_PATHS } from 'constants/navigation'
 const routes = _configureRoutes()
 
 export default [
-  { path: MG_ROUTE_PATHS.portfolio, component: routes.Portfolio, exact: true },
+  { path: MG_ROUTE_PATHS.homepage, component: routes.Homepage, exact: true },
   {
     path: [MG_ROUTE_PATHS.reactSandbox, MG_ROUTE_PATHS.reactSandboxPage],
     component: routes.ReactSandbox,
@@ -15,15 +15,15 @@ export default [
 ]
 
 function _configureRoutes() {
-  const Portfolio = () => (
+  const Homepage = () => (
     <Loadable
       render={componentProps => {
-        const Component = lazy(() => import('./features/Portfolio'))
+        const Component = lazy(() => import('./features/Homepage'))
         return <Component {...componentProps} />
       }}
       fallback={() => (
         <div
-          id="mg-portfolio-loading"
+          id="mg-homepage-loading"
           style={{ width: '100%', height: '100vh', backgroundColor: '#3749A2' }}
         />
       )}
@@ -46,7 +46,7 @@ function _configureRoutes() {
   )
 
   return {
-    Portfolio,
+    Homepage,
     ReactSandbox
   }
 }
