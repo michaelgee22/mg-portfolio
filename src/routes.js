@@ -6,8 +6,9 @@ import { MG_ROUTE_PATHS } from 'constants/navigation'
 const routes = _configureRoutes()
 
 export default [
-  { path: MG_ROUTE_PATHS.homepage, component: routes.Homepage, exact: true },
+  { id: 'homepage', path: MG_ROUTE_PATHS.homepage, component: routes.Homepage, exact: true },
   {
+    id: 'react-sandbox',
     path: [MG_ROUTE_PATHS.reactSandbox, MG_ROUTE_PATHS.reactSandboxPage],
     component: routes.ReactSandbox,
     exact: true

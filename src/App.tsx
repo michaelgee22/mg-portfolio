@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import routes from './routes'
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <Router>
       {routes.map(route => {
-        const { exact, path, component } = route
-        return <Route exact={exact || false} path={path} component={component} key={path} />
+        const { id, path, component, exact } = route
+        return <Route exact={exact || false} path={path} component={component} key={id} />
       })}
     </Router>
   )
