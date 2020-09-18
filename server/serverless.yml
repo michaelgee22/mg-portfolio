@@ -1,0 +1,19 @@
+service:
+  name: mg-sandbox-server
+
+plugins:
+  - serverless-webpack
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: us-east-1
+
+functions:
+  hello:
+    handler: src/handlers/handler.hello
+    description: Initial test handler with serverless framework
+    events:
+      - http:
+          method: get
+          path: hello
