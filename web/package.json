@@ -4,9 +4,11 @@
   "dependencies": {
     "@chakra-ui/core": "^1.0.0-rc.3",
     "@chakra-ui/icons": "^1.0.0-next.3",
-    "next": "latest",
+    "next": "^9.5.5",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-icons": "^3.11.0",
+    "react-tsparticles": "^1.18.4"
   },
   "scripts": {
     "dev": "next",
