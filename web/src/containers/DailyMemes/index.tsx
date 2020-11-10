@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import { Header } from './Header'
+import { Footer } from './Footer'
 
 export const DailyMemes = () => {
   return (
@@ -12,16 +14,11 @@ export const DailyMemes = () => {
       </Head>
 
       <main>
-        <h1>Daily Memes</h1>
+        <Header />
 
-        <div>Welcome Page - Category Selection</div>
+        <div>Body</div>
 
-        <h3>Categories</h3>
-        <ul>
-          <li>Dev</li>
-          <li>Dank</li>
-          <li>Normal</li>
-        </ul>
+        <Footer />
       </main>
     </>
   )
