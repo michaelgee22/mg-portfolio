@@ -6,5 +6,5 @@ type Props = {
 }
 
 export const ImageRenderer = (props: Props) => {
-  return <Flex w="100%" h="calc(100vh - 128px)" bgColor="reddit.black"></Flex>
+  return <Flex w="100%" h="calc(100vh - 88px)" bgColor="reddit.black"></Flex>
 }

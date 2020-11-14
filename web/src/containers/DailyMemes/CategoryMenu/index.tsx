@@ -1,6 +1,16 @@
 import { useState, useEffect } from 'react'
-import { Menu, MenuButton, MenuList, MenuGroup, MenuItem, IconButton } from '@chakra-ui/core'
+import Link from 'next/link'
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuGroup,
+  MenuDivider,
+  MenuItem,
+  IconButton
+} from '@chakra-ui/core'
 import { FiMenu } from 'react-icons/fi'
+import { FaHome } from 'react-icons/fa'
 
 type Props = {
   children?: React.ReactChild | React.ReactChild[]
@@ -56,6 +66,13 @@ export const CategoryMenu = (props: Props) => {
             General
           </MenuItem>
         </MenuGroup>
+
+        <MenuDivider />
+        <Link href="/">
+          <MenuItem as="a" icon={<FaHome />}>
+            Go To Homepage
+          </MenuItem>
+        </Link>
       </MenuList>
     </Menu>
   )

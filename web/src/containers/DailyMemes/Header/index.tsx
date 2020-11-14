@@ -1,34 +1,11 @@
-import { Flex, Box, Heading, IconButton, Tag, TagLabel } from '@chakra-ui/core'
+import { Flex, Box, IconButton, Tag, TagLabel } from '@chakra-ui/core'
 import { FaRedditAlien } from 'react-icons/fa'
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'
 
 export const Header = () => {
   return (
-    <>
-      <Flex
-        as="header"
-        h="64px"
-        justify="center"
-        align="center"
-        bgColor="reddit.black"
-        color="#fff"
-      >
-        <Box
-          as={FaRedditAlien}
-          bgColor="reddit.orange"
-          color="white"
-          p="8px"
-          mr="12px"
-          borderRadius="50%"
-          fontSize="2.5em"
-        />
-
-        <Heading as="h1" size="xl">
-          Daily Memes
-        </Heading>
-      </Flex>
-
-      <Flex as="nav" justifyContent="space-between" padding="16px" backgroundColor="reddit.gray">
+    <Box as="header" bgColor="reddit.black" color="white">
+      <Flex as="nav" justify="center" p="8px 16px" bgColor="reddit.gray">
         <IconButton
           icon={<BiChevronLeft />}
           size="sm"
@@ -40,7 +17,7 @@ export const Header = () => {
           aria-label=""
         />
 
-        <Tag rounded="full" p="0 16px" bgColor="reddit.orange" color="white">
+        <Tag p="0 16px" m="0 16px" bgColor="reddit.orange" color="white">
           <TagLabel>Dev - 1 / 100</TagLabel>
         </Tag>
 
@@ -55,6 +32,11 @@ export const Header = () => {
           aria-label=""
         />
       </Flex>
-    </>
+
+      <Flex justify="center" align="center" py="8px">
+        <Box as={FaRedditAlien} w={5} h={5} color="white" mr="10px" />
+        <span>Daily Memes</span>
+      </Flex>
+    </Box>
   )
 }
