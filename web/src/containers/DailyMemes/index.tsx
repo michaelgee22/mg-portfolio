@@ -1,25 +1,27 @@
-import Head from 'next/head'
+import { PageHead } from '../../components/PageHead'
 import { Header } from './Header'
-import { Footer } from './Footer'
+import { ImageRenderer } from './ImageRenderer'
+import { CategoryMenu } from './CategoryMenu'
 
-export const DailyMemes = () => {
+type Props = {
+  children?: React.ReactChild | React.ReactChild[]
+}
+
+export const DailyMemes = (props: Props) => {
   return (
     <>
-      <Head>
-        <title>Daily Memes | MG Sandbox</title>
-        <meta
-          name="description"
-          content="Michael Gee's sandbox project where I learn and build new things with various web technologies."
-        />
-      </Head>
+      <PageHead
+        title="Daily Memes | MG Sandbox"
+        description="Michael Gee's sandbox project where I learn and build new things with various web technologies."
+        type="article"
+        url="https://mg-sandbox.com/dailymemes"
+      />
 
-      <main>
-        <Header />
-
-        <div>Body</div>
-
-        <Footer />
-      </main>
+      <main>{props.children}</main>
     </>
   )
 }
+
+DailyMemes.CategoryMenu = CategoryMenu
+DailyMemes.Header = Header
+DailyMemes.ImageRenderer = ImageRenderer

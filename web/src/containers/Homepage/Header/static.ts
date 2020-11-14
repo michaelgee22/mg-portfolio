@@ -69,17 +69,25 @@ export const icons = [
   {
     icon: FaGithub,
     href: 'https://www.github.com/michaelgee22',
-    ariaLabel: 'Github Profile Button Link'
+    ariaLabel: 'Github Profile Button Link',
+    key: 'github'
   },
-  { icon: FaDev, href: 'https://dev.to/michaelgee', ariaLabel: 'Dev.to Profile Button Link' },
+  {
+    icon: FaDev,
+    href: 'https://dev.to/michaelgee',
+    ariaLabel: 'Dev.to Profile Button Link',
+    key: 'dev.to'
+  },
   {
     icon: FaTwitter,
     href: 'https://twitter.com/michaelgee7',
-    ariaLabel: 'Twitter Profile Button Link'
+    ariaLabel: 'Twitter Profile Button Link',
+    key: 'twitter'
   },
   {
     icon: FaLinkedin,
     href: 'https://www.linkedin.com/in/michael-gee',
-    ariaLabel: 'LinkedIn Profile Button Link'
+    ariaLabel: 'LinkedIn Profile Button Link',
+    key: 'linkedIn'
   }
 ]

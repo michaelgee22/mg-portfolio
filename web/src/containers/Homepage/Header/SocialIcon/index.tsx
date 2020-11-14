@@ -1,12 +1,12 @@
 import { IconButton } from '@chakra-ui/core'
 
-type SocialIconProps = {
+type Props = {
   icon: React.ElementType
   href: string
   ariaLabel: string
 }
 
-export const SocialIcon = (props: SocialIconProps) => {
+export const SocialIcon = (props: Props) => {
   return (
     <IconButton
       icon={<props.icon />}
@@ -15,8 +15,8 @@ export const SocialIcon = (props: SocialIconProps) => {
       target="_blank"
       rel="noopener noreferrer"
       size="lg"
+      m="0 8px"
       isRound
-      margin="0 8px"
       aria-label={props.ariaLabel}
     />
   )

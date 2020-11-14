@@ -8,15 +8,22 @@ import styles from './Header.module.css'
 export const Header = () => {
   return (
     <Flex as="header" h={400} flexDirection="column" justifyContent="center" alignItems="center">
-      <Particles id={styles.tsParticles} style={{ height: 400 }} options={particles} />
+      <Particles className={styles.tsParticles} options={particles} />
 
-      <Heading color="whitesmoke" fontSize="6em" lineHeight="1em" paddingBottom="8px">
+      <Heading color="whitesmoke" fontSize="6em" lineHeight="1em" pb="8px">
         MG Sandbox
       </Heading>
 
       <Flex>
         {icons.map(item => {
-          return <SocialIcon icon={item.icon} href={item.href} ariaLabel={item.ariaLabel} />
+          return (
+            <SocialIcon
+              icon={item.icon}
+              href={item.href}
+              ariaLabel={item.ariaLabel}
+              key={item.key}
+            />
+          )
         })}
       </Flex>
     </Flex>
