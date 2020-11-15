@@ -33,7 +33,7 @@ export const Nav = (props: Props) => {
 
         <Tag p="0 16px" m="0 16px" bgColor="reddit.orange" color="white">
           <TagLabel>
-            Dev - {props.memeIndex + 1} / {props.memeTotal}
+            Dank - {props.memeIndex + 1} / {props.memeTotal}
           </TagLabel>
         </Tag>
 

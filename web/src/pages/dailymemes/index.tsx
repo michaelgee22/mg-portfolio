@@ -29,7 +29,7 @@ const DailyMemesPage = (props: Props) => {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`https://www.reddit.com/r/programmerhumor/.json?&limit=100`)
+  const res = await fetch(`https://www.reddit.com/r/dankmemes/.json?&limit=100`)
   const { data } = await res.json()
 
   const memes = data.children
