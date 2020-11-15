@@ -6,7 +6,7 @@ type Props = {
 }
 
 const DailyMemesPage = (props: Props) => {
-  const [memes, setMemes] = useState(props.memes)
+  const [memes] = useState(props.memes)
   const [memeIndex, setMemeIndex] = useState(0)
   const [imageSrc, setImageSrc] = useState(memes[memeIndex])
 

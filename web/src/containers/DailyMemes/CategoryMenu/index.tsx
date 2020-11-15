@@ -4,18 +4,14 @@ import { Menu, MenuButton, MenuList, MenuGroup, MenuItem, IconButton } from '@ch
 import { FiMenu } from 'react-icons/fi'
 import { FaHome } from 'react-icons/fa'
 
-type Props = {
-  children?: React.ReactChild | React.ReactChild[]
-}
-
 const CATEGORIES = {
   dev: 'dev',
   dank: 'dank',
   general: 'general'
 }
 
-export const CategoryMenu = (props: Props) => {
-  const [currentCategory, setCurrentCategory] = useState(CATEGORIES.dev)
+export const CategoryMenu = () => {
+  const [currentCategory] = useState(CATEGORIES.dev)
 
   useEffect(() => {}, [currentCategory])
 
