@@ -1,14 +1,6 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import {
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuGroup,
-  MenuDivider,
-  MenuItem,
-  IconButton
-} from '@chakra-ui/core'
+import { Menu, MenuButton, MenuList, MenuGroup, MenuItem, IconButton } from '@chakra-ui/core'
 import { FiMenu } from 'react-icons/fi'
 import { FaHome } from 'react-icons/fa'
 
