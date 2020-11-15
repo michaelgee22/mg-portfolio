@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { DailyMemes } from '../../containers/DailyMemes'
 
 type Props = {
@@ -7,17 +7,28 @@ type Props = {
 
 const DailyMemesPage = (props: Props) => {
   const [memes, setMemes] = useState(props.memes)
+  const [memeIndex, setMemeIndex] = useState(0)
+  const [imageSrc, setImageSrc] = useState(memes[memeIndex])
+
+  useEffect(() => {
+    setImageSrc(memes[memeIndex])
+  }, [memeIndex])
 
   return (
     <DailyMemes>
-      <DailyMemes.Header />
-      <DailyMemes.ImageRenderer />
       <DailyMemes.CategoryMenu />
+      <DailyMemes.ImageRenderer src={imageSrc} key={`image-${memeIndex}`} />
+      <DailyMemes.Nav
+        next={() => setMemeIndex(memeIndex + 1)}
+        prev={() => setMemeIndex(memeIndex - 1)}
+        memeIndex={memeIndex}
+        memeTotal={memes.length}
+      />
     </DailyMemes>
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(`https://www.reddit.com/r/programmerhumor/.json?&limit=100`)
   const { data } = await res.json()
 

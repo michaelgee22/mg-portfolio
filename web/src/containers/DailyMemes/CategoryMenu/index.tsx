@@ -25,20 +25,18 @@ const CATEGORIES = {
 export const CategoryMenu = (props: Props) => {
   const [currentCategory, setCurrentCategory] = useState(CATEGORIES.dev)
 
-  useEffect(() => {
-    console.log(currentCategory)
-  }, [currentCategory])
+  useEffect(() => {}, [currentCategory])
 
   return (
     <Menu>
-      <MenuButton pos="absolute" right="20px" bottom="24px">
+      <MenuButton pos="absolute" top="8px" right="8px" zIndex={50}>
         <IconButton
           as="span"
           icon={<FiMenu />}
           bgColor="reddit.orange"
           _hover={{ opacity: 0.8 }}
-          fontSize="2em"
-          p="28px 12px"
+          fontSize="1.2em"
+          p="20px 8px"
           color="white"
           isRound
           aria-label="Category Selection Menu Button"
@@ -46,8 +44,8 @@ export const CategoryMenu = (props: Props) => {
       </MenuButton>
 
       <MenuList>
-        <MenuGroup title="Categories">
-          <MenuItem
+        <MenuGroup title="More Categories Coming Soon...">
+          {/* <MenuItem
             onClick={() => setCurrentCategory(CATEGORIES.dev)}
             disabled={currentCategory === CATEGORIES.dev}
           >
@@ -64,10 +62,10 @@ export const CategoryMenu = (props: Props) => {
             disabled={currentCategory === CATEGORIES.general}
           >
             General
-          </MenuItem>
+          </MenuItem> */}
         </MenuGroup>
 
-        <MenuDivider />
+        {/* <MenuDivider /> */}
         <Link href="/">
           <MenuItem as="a" icon={<FaHome />}>
             Go To Homepage

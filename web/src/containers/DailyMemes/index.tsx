@@ -1,5 +1,5 @@
 import { PageHead } from '../../components/PageHead'
-import { Header } from './Header'
+import { Nav } from './Nav'
 import { ImageRenderer } from './ImageRenderer'
 import { CategoryMenu } from './CategoryMenu'
 
@@ -23,5 +23,5 @@ export const DailyMemes = (props: Props) => {
 }
 
 DailyMemes.CategoryMenu = CategoryMenu
-DailyMemes.Header = Header
+DailyMemes.Nav = Nav
 DailyMemes.ImageRenderer = ImageRenderer
