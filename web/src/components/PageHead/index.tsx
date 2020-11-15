@@ -5,6 +5,7 @@ type Props = {
   description: string
   url?: string
   type?: string
+  children?: React.ReactChild | React.ReactChild[]
 }
 
 export const PageHead = (props: Props) => {
@@ -16,6 +17,7 @@ export const PageHead = (props: Props) => {
       <meta property="og:description" content={props.description} />
       {props.type && <meta property="og:type" content={props.type} />}
       {props.url && <meta property="og:url" content={props.url} />}
+      {props.children}
     </Head>
   )
 }

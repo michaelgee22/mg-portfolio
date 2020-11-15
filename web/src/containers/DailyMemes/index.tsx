@@ -15,7 +15,9 @@ export const DailyMemes = (props: Props) => {
         description="Michael Gee's sandbox project where I learn and build new things with various web technologies."
         type="article"
         url="https://mg-sandbox.com/dailymemes"
-      />
+      >
+        <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
+      </PageHead>
 
       <main>{props.children}</main>
     </>

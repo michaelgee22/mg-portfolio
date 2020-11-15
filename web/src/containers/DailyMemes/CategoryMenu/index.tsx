@@ -32,7 +32,7 @@ export const CategoryMenu = () => {
       </MenuButton>
 
       <MenuList>
-        <MenuGroup title="More Categories Coming Soon...">
+        <MenuGroup title="Categories Coming Soon...">
           {/* <MenuItem
             onClick={() => setCurrentCategory(CATEGORIES.dev)}
             disabled={currentCategory === CATEGORIES.dev}
