@@ -1,4 +1,4 @@
-import { Heading, Flex } from '@chakra-ui/core'
+import { Heading, Flex } from '@chakra-ui/react'
 import Particles from 'react-tsparticles'
 import { SocialIcon } from './SocialIcon'
 

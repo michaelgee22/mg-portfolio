@@ -1,4 +1,4 @@
-import { IconButton } from '@chakra-ui/core'
+import { IconButton } from '@chakra-ui/react'
 
 type Props = {
   icon: React.ElementType

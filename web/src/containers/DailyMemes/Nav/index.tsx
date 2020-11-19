@@ -1,4 +1,4 @@
-import { Flex, Box, IconButton, Tag, TagLabel } from '@chakra-ui/core'
+import { Flex, Box, IconButton, Tag, TagLabel } from '@chakra-ui/react'
 import { FaRedditAlien } from 'react-icons/fa'
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'
 

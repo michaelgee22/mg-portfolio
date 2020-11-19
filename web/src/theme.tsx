@@ -1,13 +1,11 @@
-import { theme as chakraTheme } from '@chakra-ui/core'
+import { extendTheme } from '@chakra-ui/react'
 
 const breakpoints = ['40em', '52em', '64em']
 const theme = {
-  ...chakraTheme,
   breakpoints,
   colors: {
-    ...chakraTheme.colors,
     reddit: { orange: '#FF4602', gray: '#1B1B1C', black: '#030303' }
   }
 }
 
-export default theme
+export default extendTheme(theme)
