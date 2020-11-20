@@ -1,10 +1,10 @@
 import { PageHead } from '../../components/PageHead'
-import { Nav } from './Nav'
-import { ImageRenderer } from './ImageRenderer'
 import { CategoryMenu } from './CategoryMenu'
+import { ImageRenderer } from './ImageRenderer'
+import { Nav } from './Nav'
 
 type Props = {
-  children?: React.ReactChild | React.ReactChild[]
+  children?: React.ReactNode
 }
 
 export const DailyMemes = (props: Props) => {
@@ -25,5 +25,5 @@ export const DailyMemes = (props: Props) => {
 }
 
 DailyMemes.CategoryMenu = CategoryMenu
-DailyMemes.Nav = Nav
 DailyMemes.ImageRenderer = ImageRenderer
+DailyMemes.Nav = Nav

@@ -5,7 +5,7 @@ type Props = {
   description: string
   url?: string
   type?: string
-  children?: React.ReactChild | React.ReactChild[]
+  children?: React.ReactNode
 }
 
 export const PageHead = (props: Props) => {
