@@ -17,6 +17,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "deploy": "jest && next build",
     "type-check": "tsc",
     "test": "jest",
     "test:watch": "jest --watch"
