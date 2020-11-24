@@ -1,5 +1,5 @@
 service:
-  name: mg-sandbox-server
+  name: michaelgee-dev-server
 
 package:
   individually: true

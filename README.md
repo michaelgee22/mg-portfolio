@@ -1,3 +1,7 @@
-# mg-sandbox
+# michaelgee.dev
 
-Currently in development
+## Currently in development
+
+### Tech Stack
+web - React / TypeScript / Next / Chakra UI
+server - Node / TypeScript / AWS /Serverless Framework
