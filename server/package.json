@@ -1,18 +1,19 @@
 {
   "name": "mg-sandbox-server",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "source-map-support": "^0.5.10"
+    "uuid": "^8.3.1"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.17",
     "@types/node": "^10.12.18",
-    "serverless-webpack": "^5.2.0",
-    "ts-loader": "^5.3.3",
-    "typescript": "^3.2.4",
-    "webpack": "^4.29.0"
+    "aws-sdk": "^2.798.0",
+    "serverless-bundle": "^4.1.0",
+    "serverless-dotenv-plugin": "^3.1.0",
+    "serverless-offline": "^6.8.0",
+    "typescript": "^3.2.4"
   }
 }
