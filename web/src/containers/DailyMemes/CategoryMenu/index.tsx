@@ -17,7 +17,7 @@ export const CategoryMenu = () => {
 
   return (
     <Menu>
-      <MenuButton pos="absolute" top="8px" right="8px" zIndex={50}>
+      <MenuButton pos="absolute" top="8px" right="6px" zIndex={10}>
         <IconButton
           as="span"
           icon={<FiMenu />}
