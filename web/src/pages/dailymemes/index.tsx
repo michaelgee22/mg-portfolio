@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { DailyMemes } from '../../containers/DailyMemes'
+import { Flex, Box } from '@chakra-ui/react'
+import { FaRedditAlien } from 'react-icons/fa'
 
 type Props = {
   memes: string[]
@@ -17,8 +19,15 @@ const DailyMemesPage = (props: Props) => {
   return (
     <DailyMemes>
       <DailyMemes.CategoryMenu />
+
+      <Flex justify="center" align="center" p="16px 0" bgColor="reddit.black">
+        <Box as={FaRedditAlien} w={5} h={5} color="white" mr="8px" />
+        <Box as="span">Daily Memes</Box>
+      </Flex>
+
       <DailyMemes.ImageRenderer src={imageSrc} key={`image-${memeIndex}`} />
-      <DailyMemes.Nav
+
+      <DailyMemes.BottomNav
         next={() => setMemeIndex(memeIndex + 1)}
         prev={() => setMemeIndex(memeIndex - 1)}
         memeIndex={memeIndex}
