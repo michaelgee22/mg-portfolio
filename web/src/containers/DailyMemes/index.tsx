@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { PageHead } from '../../components/PageHead'
 import { CategoryMenu } from './CategoryMenu'
 import { ImageRenderer } from './ImageRenderer'
@@ -9,18 +8,6 @@ type Props = {
 }
 
 export const DailyMemes = (props: Props) => {
-  const [height, setHeight] = useState('calc(100vh - 90px)')
-
-  useEffect(() => {
-    window.addEventListener('resize', calculatePageHeight)
-    return () => window.removeEventListener('resize', calculatePageHeight)
-
-    function calculatePageHeight() {
-      const viewHeight = window.innerHeight
-      setHeight(`${viewHeight}`)
-    }
-  }, [])
-
   return (
     <>
       <PageHead
@@ -30,7 +17,7 @@ export const DailyMemes = (props: Props) => {
         url="https://mg-sandbox.com/dailymemes"
       />
 
-      <main style={{ width: '100%', height }}>{props.children}</main>
+      <main>{props.children}</main>
     </>
   )
 }

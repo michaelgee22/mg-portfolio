@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { Box, Flex, Link } from '@chakra-ui/react'
 
@@ -7,10 +8,24 @@ type Props = {
 }
 
 export const ImageRenderer = (props: Props) => {
+  const [height, setHeight] = useState('')
   const isValidSrc = props.src !== 'invalid'
 
+  useEffect(() => {
+    calculatePageHeight()
+    window.addEventListener('resize', calculatePageHeight)
+    return () => window.removeEventListener('resize', calculatePageHeight)
+
+    function calculatePageHeight() {
+      const viewHeight = window.innerHeight
+      setHeight(`calc(${viewHeight}px - 90px)`)
+    }
+  }, [])
+
+  console.log(height)
+
   return (
-    <Flex w="100%" h="100%" justify="center" align="center" bgColor="reddit.black">
+    <Flex w="100%" h={height} justify="center" align="center" bgColor="reddit.black">
       <Flex pos="relative" w="100%" h="100%" maxW="500px" maxH="500px" justify="center">
         {isValidSrc ? (
           <Image src={props.src} layout="fill" data-testid="meme-img" />
