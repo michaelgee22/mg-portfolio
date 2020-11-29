@@ -12,12 +12,13 @@ export const ImageRenderer = (props: Props) => {
   const isValidSrc = props.src !== 'invalid'
 
   useEffect(() => {
+    calculatePageHeight()
     window.addEventListener('resize', calculatePageHeight)
     return () => window.removeEventListener('resize', calculatePageHeight)
 
     function calculatePageHeight() {
-      const viewHeight = window.innerHeight * 0.01
-      setHeight(`calc(calc(${viewHeight}px * 100) - 90px)`)
+      const viewHeight = window.innerHeight
+      setHeight(`calc(${viewHeight}px - 90px)`)
     }
   }, [])
 
