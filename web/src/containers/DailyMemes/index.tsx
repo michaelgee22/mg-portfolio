@@ -1,7 +1,7 @@
 import { PageHead } from '../../components/PageHead'
 import { CategoryMenu } from './CategoryMenu'
 import { ImageRenderer } from './ImageRenderer'
-import { BottomNav } from './BottomNav'
+import { Nav } from './Nav'
 
 type Props = {
   children?: React.ReactNode
@@ -17,13 +17,11 @@ export const DailyMemes = (props: Props) => {
         url="https://mg-sandbox.com/dailymemes"
       />
 
-      <main style={{ width: '100%', height: '100vh', backgroundColor: '#030303' }}>
-        {props.children}
-      </main>
+      <main>{props.children}</main>
     </>
   )
 }
 
 DailyMemes.CategoryMenu = CategoryMenu
 DailyMemes.ImageRenderer = ImageRenderer
-DailyMemes.BottomNav = BottomNav
+DailyMemes.Nav = Nav
