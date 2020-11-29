@@ -8,7 +8,7 @@ type Props = {
 }
 
 export const ImageRenderer = (props: Props) => {
-  const [height, setHeight] = useState('')
+  const [height, setHeight] = useState('calc(100vh - 90px)')
   const isValidSrc = props.src !== 'invalid'
 
   useEffect(() => {

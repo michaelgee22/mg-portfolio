@@ -8,10 +8,12 @@ type Props = {
 const DailyMemesPage = (props: Props) => {
   const [memes] = useState(props.memes)
   const [memeIndex, setMemeIndex] = useState(0)
-  const [imageSrc, setImageSrc] = useState(memes && memes.length > 0 ? memes[memeIndex] : 'invalid')
+  const [imageSrc, setImageSrc] = useState('invalid')
 
   useEffect(() => {
-    setImageSrc(memes[memeIndex])
+    if (memes && memes.length > 0) {
+      setImageSrc(memes[memeIndex])
+    }
   }, [memeIndex])
 
   return (
@@ -31,14 +33,14 @@ const DailyMemesPage = (props: Props) => {
 export async function getServerSideProps() {
   const res = await fetch(`https://www.reddit.com/r/dankmemes/.json?&limit=100`)
   const { data } = await res.json()
-  let memes = []
+  let memes: string[] = []
 
   if (data.children) {
     memes = data.children
       .map((item: any) => {
         if (item.data && item.data.url) {
           const imageType = item.data.url.slice(-3)
-          if (imageType === 'jpg' || imageType === 'png' || imageType === 'gif') {
+          if (imageType === 'jpg' || imageType === 'png') {
             return item.data.url
           }
         }

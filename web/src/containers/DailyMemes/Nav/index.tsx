@@ -46,7 +46,7 @@ export const Nav = (props: Props) => {
           bgColor="reddit.orange"
           _hover={{ opacity: 0.8 }}
           color="white"
-          disabled={props.memeIndex + 1 === props.memeTotal}
+          disabled={props.memeIndex + 1 === props.memeTotal || props.memeTotal === 0}
           aria-label=""
         />
       </Flex>
