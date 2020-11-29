@@ -1,4 +1,4 @@
-import { Flex, Box, IconButton, Tag, TagLabel } from '@chakra-ui/react'
+import { Box, IconButton } from '@chakra-ui/react'
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'
 
 type Props = {
