@@ -1,5 +1,6 @@
 import React from 'react'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 
 import { DailyMemes } from './'
 
@@ -12,7 +13,7 @@ describe('<DailyMemes />', () => {
         </DailyMemes>
       )
 
-      const MenuIconButton = screen.getByRole('button')
+      const MenuIconButton = screen.getByRole('button', { name: /Category Selection Menu Button/i })
 
       expect(MenuIconButton).toBeInTheDocument()
       expect(MenuIconButton.getAttribute('aria-expanded')).toEqual('false')
@@ -25,13 +26,13 @@ describe('<DailyMemes />', () => {
         </DailyMemes>
       )
 
-      const MenuIconButton = screen.getByRole('button')
+      const MenuIconButton = screen.getByRole('button', { name: /Category Selection Menu Button/i })
 
       expect(MenuIconButton.getAttribute('aria-expanded')).toEqual('false')
-      fireEvent.click(MenuIconButton)
+      userEvent.click(MenuIconButton)
       expect(MenuIconButton.getAttribute('aria-expanded')).toEqual('true')
-      expect(screen.getByText(/Categories Coming Soon.../)).toBeInTheDocument()
-      expect(screen.getByText(/Go To Homepage/)).toBeInTheDocument()
+      expect(screen.getByText(/Categories Coming Soon.../i)).toBeInTheDocument()
+      expect(screen.getByText(/Go To Homepage/i)).toBeInTheDocument()
     })
 
     // failing test
@@ -42,14 +43,14 @@ describe('<DailyMemes />', () => {
         </DailyMemes>
       )
 
-      const MenuIconButton = screen.getByRole('button')
-      fireEvent.click(MenuIconButton)
+      const MenuIconButton = screen.getByRole('button', { name: /Category Selection Menu Button/i })
+      userEvent.click(MenuIconButton)
 
       const MenuItems = await screen.findAllByRole('menuitem')
       const GoToHomepageMenuItem = MenuItems[MenuItems.length - 1]
       console.log(GoToHomepageMenuItem)
 
-      fireEvent.click(GoToHomepageMenuItem)
+      userEvent.click(GoToHomepageMenuItem)
       // debug()
     })
   })
@@ -63,7 +64,7 @@ describe('<DailyMemes />', () => {
           </DailyMemes>
         )
 
-        expect(screen.getByText(/Whoops/)).toBeInTheDocument()
+        expect(screen.getByText(/Whoops/i)).toBeInTheDocument()
         expect(screen.queryByTestId('meme-img')).not.toBeInTheDocument()
       })
     })
@@ -76,7 +77,7 @@ describe('<DailyMemes />', () => {
           </DailyMemes>
         )
 
-        expect(screen.queryByText(/Whoops/)).not.toBeInTheDocument()
+        expect(screen.queryByText(/Whoops/i)).not.toBeInTheDocument()
         expect(screen.getByTestId('meme-img')).toBeInTheDocument()
       })
     })
