@@ -1,25 +1,41 @@
 import { useState, useEffect } from 'react'
 import { DailyMemes } from '../../containers/DailyMemes'
+import { Flex, Box } from '@chakra-ui/react'
+import { FaRedditAlien } from 'react-icons/fa'
 
 type Props = {
   memes: string[]
 }
 
 const DailyMemesPage = (props: Props) => {
-  const [memes] = useState(props.memes)
-  const [memeIndex, setMemeIndex] = useState(0)
-  const [imageSrc, setImageSrc] = useState('invalid')
+  const [memes] = useState<string[]>(props.memes)
+  const [memeIndex, setMemeIndex] = useState<number>(0)
+  const [imageSrc, setImageSrc] = useState<string | undefined>()
 
   useEffect(() => {
-    if (memes && memes.length > 0) {
-      setImageSrc(memes[memeIndex])
-    }
+    if (!memes || (memes && memes.length === 0)) setImageSrc('invalid')
+    else if (memes && memes.length > 0) setImageSrc(memes[memeIndex])
+  }, [props.memes])
+
+  useEffect(() => {
+    if (memes && memes.length > 0) setImageSrc(memes[memeIndex])
   }, [memeIndex])
 
   return (
     <DailyMemes>
-      <DailyMemes.CategoryMenu />
+      <Box as="header">
+        <Flex align="center" p="16px 0" pl="16px" backgroundColor="reddit.black">
+          <Box as={FaRedditAlien} w={6} h={6} color="white" mr="10px" />
+          <Box as="span" fontSize="1.2em">
+            Daily Memes
+          </Box>
+        </Flex>
+
+        <DailyMemes.CategoryMenu />
+      </Box>
+
       <DailyMemes.ImageRenderer src={imageSrc} key={`image-${memeIndex}`} />
+
       <DailyMemes.Nav
         next={() => setMemeIndex(memeIndex + 1)}
         prev={() => setMemeIndex(memeIndex - 1)}

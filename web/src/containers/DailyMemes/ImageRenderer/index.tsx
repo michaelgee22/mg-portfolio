@@ -3,13 +3,12 @@ import Image from 'next/image'
 import { Box, Flex, Link } from '@chakra-ui/react'
 
 type Props = {
-  src: string
+  src?: string
   key: string
 }
 
 export const ImageRenderer = (props: Props) => {
-  const [height, setHeight] = useState('calc(100vh - 90px)')
-  const isValidSrc = props.src !== 'invalid'
+  const [height, setHeight] = useState('calc(100vh - 112px)')
 
   useEffect(() => {
     calculatePageHeight()
@@ -18,16 +17,20 @@ export const ImageRenderer = (props: Props) => {
 
     function calculatePageHeight() {
       const viewHeight = window.innerHeight
-      setHeight(`calc(${viewHeight}px - 90px)`)
+      setHeight(`calc(${viewHeight}px - 112px)`)
     }
   }, [])
 
   return (
-    <Flex w="100%" h={height} justify="center" align="center" bgColor="reddit.black">
+    <Flex as="main" w="100%" h={height} justify="center" align="center" bgColor="reddit.black">
       <Flex pos="relative" w="100%" h="100%" maxW="500px" maxH="500px" justify="center">
-        {isValidSrc ? (
+        {props.src && props.src !== 'invalid' ? (
           <Image src={props.src} layout="fill" data-testid="meme-img" />
         ) : (
+          <></>
+        )}
+
+        {props.src && props.src === 'invalid' ? (
           <Box>
             Whoops!
             <br />
@@ -45,6 +48,8 @@ export const ImageRenderer = (props: Props) => {
             </Link>{' '}
             to let me know there is an issue.
           </Box>
+        ) : (
+          <></>
         )}
       </Flex>
     </Flex>

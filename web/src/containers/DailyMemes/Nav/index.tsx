@@ -1,5 +1,4 @@
 import { Flex, Box, IconButton, Tag, TagLabel } from '@chakra-ui/react'
-import { FaRedditAlien } from 'react-icons/fa'
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'
 
 type Props = {
@@ -12,11 +11,6 @@ type Props = {
 export const Nav = (props: Props) => {
   return (
     <Box as="footer" bgColor="reddit.black" color="white">
-      <Flex justify="center" align="center" pb="10px">
-        <Box as={FaRedditAlien} w={5} h={5} color="white" mr="10px" />
-        <span>Daily Memes</span>
-      </Flex>
-
       <Flex as="nav" justify="center" p="12px" bgColor="reddit.gray">
         <IconButton
           icon={<BiChevronLeft />}

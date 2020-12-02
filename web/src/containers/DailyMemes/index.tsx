@@ -17,7 +17,7 @@ export const DailyMemes = (props: Props) => {
         url="https://mg-sandbox.com/dailymemes"
       />
 
-      <main>{props.children}</main>
+      {props.children}
     </>
   )
 }
