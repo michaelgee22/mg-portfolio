@@ -4,7 +4,15 @@ import { icons } from './static'
 
 export const Header = () => {
   return (
-    <Flex as="header" h="64px" bgColor="#000" p="0 24px" justify="space-between" align="center">
+    <Flex
+      as="header"
+      h="100px"
+      bgColor="#000"
+      p="0 24px"
+      flexDir="column"
+      justify="center"
+      align="center"
+    >
       <Heading as="h1" color="whitesmoke" fontSize="2em">
         michaelgee.dev
       </Heading>
