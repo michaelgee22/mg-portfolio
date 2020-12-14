@@ -12,8 +12,7 @@ export const DailyMemes = (props: Props) => {
     <>
       <PageHead
         title="Daily Memes | MG Sandbox"
-        description="Michael Gee's sandbox project where I learn and build new things with various web technologies."
-        type="article"
+        description="Top daily software development memes fetched from Reddit."
         url="https://mg-sandbox.com/dailymemes"
       />
 

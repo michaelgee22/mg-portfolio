@@ -1,17 +1,12 @@
 import { Heading, Flex } from '@chakra-ui/react'
-import Particles from 'react-tsparticles'
 import { SocialIcon } from './SocialIcon'
-
-import { particles, icons } from './static'
-import styles from './Header.module.css'
+import { icons } from './static'
 
 export const Header = () => {
   return (
-    <Flex as="header" h={400} flexDirection="column" justifyContent="center" alignItems="center">
-      <Particles className={styles.tsParticles} options={particles} />
-
-      <Heading color="whitesmoke" fontSize="6em" lineHeight="1em" pb="8px">
-        MG Sandbox
+    <Flex as="header" h="64px" bgColor="#000" p="0 24px" justify="space-between" align="center">
+      <Heading as="h1" color="whitesmoke" fontSize="2em">
+        michaelgee.dev
       </Heading>
 
       <Flex>

@@ -16,6 +16,7 @@ export const SocialIcon = (props: Props) => {
       rel="noopener noreferrer"
       size="lg"
       m="0 8px"
+      bgColor="#000"
       isRound
       aria-label={props.ariaLabel}
     />

@@ -1,3 +1,19 @@
-import { Homepage } from '../containers/Homepage'
+import Link from 'next/link'
+import { Flex, Link as ChakraLink } from '@chakra-ui/react'
+import { Home } from '../containers/Home'
 
-export default Homepage
+const HomePage = () => {
+  return (
+    <Home>
+      <Home.Header />
+
+      <Flex justify="center" align="center" h="80px">
+        <Link href="/dailymemes">
+          <ChakraLink color="#000">Daily DEV Memes</ChakraLink>
+        </Link>
+      </Flex>
+    </Home>
+  )
+}
+
+export default HomePage
