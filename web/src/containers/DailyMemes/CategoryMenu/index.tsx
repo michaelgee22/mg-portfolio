@@ -21,7 +21,7 @@ export const CategoryMenu = () => {
         <IconButton
           as="span"
           icon={<FiMenu />}
-          bgColor="reddit.orange"
+          bgColor="reddit.100"
           _hover={{ opacity: 0.8 }}
           fontSize="1.2em"
           p="20px 8px"

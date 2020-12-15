@@ -22,7 +22,7 @@ export const ImageRenderer = (props: Props) => {
   }, [])
 
   return (
-    <Flex as="main" w="100%" h={height} justify="center" align="center" bgColor="reddit.black">
+    <Flex as="main" w="100%" h={height} justify="center" align="center" bgColor="reddit.300">
       <Flex pos="relative" w="100%" h="100%" maxW="500px" maxH="500px" justify="center">
         {props.src && props.src !== 'invalid' ? (
           <Image src={props.src} layout="fill" data-testid="meme-img" />
@@ -42,7 +42,7 @@ export const ImageRenderer = (props: Props) => {
               href="https://michaelgee.com/contact"
               target="_blank"
               rel="noopener noreferrer"
-              color="reddit.orange"
+              color="reddit.100"
             >
               Contact Me
             </Link>{' '}
