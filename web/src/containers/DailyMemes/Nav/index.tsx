@@ -22,12 +22,12 @@ export const Nav = (props: Props) => {
           _hover={{ opacity: 0.8 }}
           color="white"
           disabled={props.memeIndex === 0}
-          aria-label=""
+          aria-label="Go To Previous Meme Button"
         />
 
         <Tag p="0 16px" m="0 16px" bgColor="reddit.orange" color="white">
           <TagLabel>
-            Dev - {props.memeIndex + 1} / {props.memeTotal}
+            Dev - {props.memeTotal > 0 ? props.memeIndex + 1 : 0} / {props.memeTotal}
           </TagLabel>
         </Tag>
 
@@ -41,7 +41,7 @@ export const Nav = (props: Props) => {
           _hover={{ opacity: 0.8 }}
           color="white"
           disabled={props.memeIndex + 1 === props.memeTotal || props.memeTotal === 0}
-          aria-label=""
+          aria-label="Go To Next Meme Button"
         />
       </Flex>
     </Box>
