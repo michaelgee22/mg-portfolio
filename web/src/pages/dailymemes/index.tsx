@@ -1,10 +1,10 @@
 import { DailyMemes } from '../../containers/DailyMemes'
-import { useMemes } from '../../containers/DailyMemes/useMemes'
+import { useMemes, NavTypes } from '../../containers/DailyMemes/useMemes'
 import { Flex, Box } from '@chakra-ui/react'
 import { FaRedditAlien } from 'react-icons/fa'
 
 const DailyMemesPage = () => {
-  const { src, index, total, onUpdateMeme, isLoading } = useMemes()
+  const { status, current, total, onUpdateMeme } = useMemes()
 
   return (
     <DailyMemes>
@@ -19,14 +19,14 @@ const DailyMemesPage = () => {
         <DailyMemes.CategoryMenu />
       </Box>
 
-      <DailyMemes.ImageRenderer src={src} isLoading={isLoading} key={`meme-${index}`} />
+      <DailyMemes.ImageRenderer src={current?.src} status={status} key={`meme-${current?.index}`} />
 
       <DailyMemes.Nav
-        next={() => onUpdateMeme(index + 1)}
-        prev={() => onUpdateMeme(index - 1)}
-        memeIndex={index}
+        next={() => onUpdateMeme(NavTypes.NEXT)}
+        prev={() => onUpdateMeme(NavTypes.PREV)}
+        memeIndex={current && current.index ? current.index : 0}
         memeTotal={total}
-        isLoading={isLoading}
+        status={status}
       />
     </DailyMemes>
   )

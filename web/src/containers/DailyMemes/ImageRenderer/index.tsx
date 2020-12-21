@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { Box, Flex, Link, Spinner } from '@chakra-ui/react'
+import { LoadStates } from '../../../constants/async'
 
 type Props = {
-  src: string | null
-  isLoading: boolean
+  src?: string
+  status: string
   key: string
 }
 
@@ -25,13 +26,14 @@ export const ImageRenderer = (props: Props) => {
   return (
     <Flex as="main" w="100%" h={height} justify="center" align="center" bgColor="reddit.300">
       <Flex pos="relative" w="100%" h="100%" maxW="500px" maxH="500px" justify="center">
-        {props.isLoading && <Spinner color="reddit.100" size="lg" />}
+        {props.status === LoadStates.IDLE ||
+          (props.status === LoadStates.LOADING && <Spinner color="reddit.100" size="lg" />)}
 
-        {!props.isLoading && props.src && (
+        {props.status === LoadStates.SUCCESS && props.src && (
           <Image src={props.src} layout="fill" data-testid="meme-img" />
         )}
 
-        {!props.isLoading && !props.src && (
+        {props.status === LoadStates.ERROR && (
           <Box>
             Whoops!
             <br />
