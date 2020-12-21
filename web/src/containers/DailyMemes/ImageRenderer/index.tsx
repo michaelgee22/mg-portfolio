@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { Box, Flex, Link } from '@chakra-ui/react'
+import { Box, Flex, Link, Spinner } from '@chakra-ui/react'
 
 type Props = {
-  src?: string
+  src: string | null
+  isLoading: boolean
   key: string
 }
 
 export const ImageRenderer = (props: Props) => {
-  const [height, setHeight] = useState('calc(100vh - 112px)')
+  const [height, setHeight] = useState('calc(100vh - 116px)')
 
   useEffect(() => {
     calculatePageHeight()
@@ -17,20 +18,20 @@ export const ImageRenderer = (props: Props) => {
 
     function calculatePageHeight() {
       const viewHeight = window.innerHeight
-      setHeight(`calc(${viewHeight}px - 112px)`)
+      setHeight(`calc(${viewHeight}px - 116px)`)
     }
   }, [])
 
   return (
     <Flex as="main" w="100%" h={height} justify="center" align="center" bgColor="reddit.300">
       <Flex pos="relative" w="100%" h="100%" maxW="500px" maxH="500px" justify="center">
-        {props.src && props.src !== 'invalid' ? (
+        {props.isLoading && <Spinner color="reddit.100" size="lg" />}
+
+        {!props.isLoading && props.src && (
           <Image src={props.src} layout="fill" data-testid="meme-img" />
-        ) : (
-          <></>
         )}
 
-        {props.src && props.src === 'invalid' ? (
+        {!props.isLoading && !props.src && (
           <Box>
             Whoops!
             <br />
@@ -48,8 +49,6 @@ export const ImageRenderer = (props: Props) => {
             </Link>{' '}
             to let me know there is an issue.
           </Box>
-        ) : (
-          <></>
         )}
       </Flex>
     </Flex>

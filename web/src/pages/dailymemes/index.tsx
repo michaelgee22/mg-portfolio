@@ -1,25 +1,10 @@
-import { useState, useEffect } from 'react'
 import { DailyMemes } from '../../containers/DailyMemes'
+import { useMemes } from '../../containers/DailyMemes/useMemes'
 import { Flex, Box } from '@chakra-ui/react'
 import { FaRedditAlien } from 'react-icons/fa'
 
-type Props = {
-  memes: string[]
-}
-
-const DailyMemesPage = (props: Props) => {
-  const [memes] = useState<string[]>(props.memes)
-  const [memeIndex, setMemeIndex] = useState<number>(0)
-  const [imageSrc, setImageSrc] = useState<string | undefined>()
-
-  useEffect(() => {
-    if (!memes || (memes && memes.length === 0)) setImageSrc('invalid')
-    else if (memes && memes.length > 0) setImageSrc(memes[memeIndex])
-  }, [props.memes])
-
-  useEffect(() => {
-    if (memes && memes.length > 0) setImageSrc(memes[memeIndex])
-  }, [memeIndex])
+const DailyMemesPage = () => {
+  const { src, index, total, onUpdateMeme, isLoading } = useMemes()
 
   return (
     <DailyMemes>
@@ -34,37 +19,17 @@ const DailyMemesPage = (props: Props) => {
         <DailyMemes.CategoryMenu />
       </Box>
 
-      <DailyMemes.ImageRenderer src={imageSrc} key={`image-${memeIndex}`} />
+      <DailyMemes.ImageRenderer src={src} isLoading={isLoading} key={`meme-${index}`} />
 
       <DailyMemes.Nav
-        next={() => setMemeIndex(memeIndex + 1)}
-        prev={() => setMemeIndex(memeIndex - 1)}
-        memeIndex={memeIndex}
-        memeTotal={memes.length}
+        next={() => onUpdateMeme(index + 1)}
+        prev={() => onUpdateMeme(index - 1)}
+        memeIndex={index}
+        memeTotal={total}
+        isLoading={isLoading}
       />
     </DailyMemes>
   )
-}
-
-export async function getServerSideProps() {
-  const res = await fetch(`https://www.reddit.com/r/ProgrammerHumor/.json?&limit=100`)
-  const { data } = await res.json()
-  let memes: string[] = []
-
-  if (data.children) {
-    memes = data.children
-      .map((item: any) => {
-        if (item.data && item.data.url) {
-          const imageType = item.data.url.slice(-3)
-          if (imageType === 'jpg' || imageType === 'png') {
-            return item.data.url
-          }
-        }
-      })
-      .filter((meme: string) => typeof meme === 'string')
-  }
-
-  return { props: { memes } }
 }
 
 export default DailyMemesPage

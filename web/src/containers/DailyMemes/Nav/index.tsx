@@ -6,6 +6,7 @@ type Props = {
   prev: () => void
   memeIndex: number
   memeTotal: number
+  isLoading: boolean
 }
 
 export const Nav = (props: Props) => {
@@ -27,7 +28,9 @@ export const Nav = (props: Props) => {
 
         <Tag p="0 16px" m="0 16px" bgColor="reddit.100" color="white">
           <TagLabel>
-            Dev - {props.memeTotal > 0 ? props.memeIndex + 1 : 0} / {props.memeTotal}
+            {!props.isLoading
+              ? `Dev - ${props.memeTotal > 0 ? props.memeIndex + 1 : 0} / ${props.memeTotal}`
+              : 'Loading...'}
           </TagLabel>
         </Tag>
 
