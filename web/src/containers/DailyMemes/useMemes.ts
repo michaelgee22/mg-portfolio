@@ -1,58 +1,78 @@
 import { useState, useEffect } from 'react'
+import { LoadStates } from '../../constants/async'
+import { IMeme } from './IMeme'
 
-type Meme = {
-  src: string
-  title: string
+export enum NavTypes {
+  NEXT = 'next',
+  PREV = 'prev'
 }
 
 export function useMemes() {
-  const [isLoading, setIsLoading] = useState<boolean>(true)
-  const [memes, setMemes] = useState<Meme[]>([])
-  const [memeIndex, setMemeIndex] = useState<number>(0)
-  const [imageSrc, setImageSrc] = useState<string | null>(null)
+  const [status, setStatus] = useState<LoadStates>(LoadStates.IDLE)
+  const [list, setList] = useState<IMeme[]>([])
+  const [current, setCurrent] = useState<IMeme | null>(null)
 
   useEffect(() => {
+    setStatus(LoadStates.LOADING)
+
     _fetchMemes()
 
     async function _fetchMemes() {
       const res = await fetch(`https://www.reddit.com/r/ProgrammerHumor/.json?&limit=100`)
       const { data } = await res.json()
-      let memeArr: Meme[] = []
+      let memes: IMeme[] = []
 
       if (data.children) {
-        memeArr = data.children
-          .map((item: any) => {
+        memes = data.children
+          .filter((item: any) => {
             if (item.data && item.data.url) {
               const imageType = item.data.url.slice(-3)
               if (imageType === 'jpg' || imageType === 'png') {
-                return { src: item.data.url, title: item.data.title }
+                return true
               }
             }
 
-            return undefined
+            return false
           })
-          .filter((meme: Meme) => meme !== undefined)
+          .map((item: any, index: number) => {
+            return { src: item.data.url, title: item.data.title, index }
+          })
       }
 
-      setMemes(memeArr)
-      setIsLoading(false)
+      if (memes.length > 0) {
+        setList(memes)
+        setStatus(LoadStates.SUCCESS)
+      } else {
+        setStatus(LoadStates.ERROR)
+      }
     }
   }, [])
 
   useEffect(() => {
-    if (!memes || (memes && memes.length === 0)) setImageSrc(null)
-    else if (memes && memes.length > 0) setImageSrc(memes[memeIndex].src)
-  }, [memes])
+    if (!list || (list && list.length === 0)) setCurrent(null)
+    else if (list && list.length > 0) setCurrent(list[0])
+  }, [list])
 
-  useEffect(() => {
-    if (memes && memes.length > 0) setImageSrc(memes[memeIndex].src)
-  }, [memeIndex])
+  function _onUpdateMeme(navigate: NavTypes) {
+    if (current) {
+      let currentIndex = current.index
+
+      if (navigate === NavTypes.NEXT) {
+        currentIndex += 1
+      }
+
+      if (navigate === NavTypes.PREV) {
+        currentIndex -= 1
+      }
+
+      setCurrent(list[currentIndex])
+    }
+  }
 
   return {
-    src: imageSrc,
-    index: memeIndex,
-    total: memes.length,
-    onUpdateMeme: setMemeIndex,
-    isLoading
+    status,
+    current,
+    total: list.length,
+    onUpdateMeme: _onUpdateMeme
   }
 }
