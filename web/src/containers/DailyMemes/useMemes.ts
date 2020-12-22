@@ -1,11 +1,6 @@
 import { useState, useEffect } from 'react'
 import { LoadStates } from '../../constants/async'
-
-type Meme = {
-  src: string
-  title: string
-  index: number
-}
+import { IMeme } from './IMeme'
 
 export enum NavTypes {
   NEXT = 'next',
@@ -14,8 +9,8 @@ export enum NavTypes {
 
 export function useMemes() {
   const [status, setStatus] = useState<LoadStates>(LoadStates.IDLE)
-  const [list, setList] = useState<Meme[]>([])
-  const [current, setCurrent] = useState<Meme | null>(null)
+  const [list, setList] = useState<IMeme[]>([])
+  const [current, setCurrent] = useState<IMeme | null>(null)
 
   useEffect(() => {
     setStatus(LoadStates.LOADING)
@@ -25,7 +20,7 @@ export function useMemes() {
     async function _fetchMemes() {
       const res = await fetch(`https://www.reddit.com/r/ProgrammerHumor/.json?&limit=100`)
       const { data } = await res.json()
-      let memes: Meme[] = []
+      let memes: IMeme[] = []
 
       if (data.children) {
         memes = data.children

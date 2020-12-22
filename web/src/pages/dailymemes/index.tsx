@@ -19,7 +19,7 @@ const DailyMemesPage = () => {
         <DailyMemes.CategoryMenu />
       </Box>
 
-      <DailyMemes.ImageRenderer src={current?.src} status={status} key={`meme-${current?.index}`} />
+      <DailyMemes.ImageRenderer meme={current} status={status} />
 
       <DailyMemes.Nav
         next={() => onUpdateMeme(NavTypes.NEXT)}

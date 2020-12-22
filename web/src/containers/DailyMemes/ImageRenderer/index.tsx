@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { Box, Flex, Link, Spinner } from '@chakra-ui/react'
 import { LoadStates } from '../../../constants/async'
+import { IMeme } from '../IMeme'
 
 type Props = {
-  src?: string
+  meme: IMeme | null
   status: string
-  key: string
 }
 
 export const ImageRenderer = (props: Props) => {
@@ -24,13 +24,21 @@ export const ImageRenderer = (props: Props) => {
   }, [])
 
   return (
-    <Flex as="main" w="100%" h={height} justify="center" align="center" bgColor="reddit.300">
+    <Flex
+      as="main"
+      w="100%"
+      h={height}
+      direction="column"
+      justify="center"
+      align="center"
+      bgColor="reddit.300"
+    >
       <Flex pos="relative" w="100%" h="100%" maxW="500px" maxH="500px" justify="center">
         {props.status === LoadStates.IDLE ||
           (props.status === LoadStates.LOADING && <Spinner color="reddit.100" size="lg" />)}
 
-        {props.status === LoadStates.SUCCESS && props.src && (
-          <Image src={props.src} layout="fill" data-testid="meme-img" />
+        {props.status === LoadStates.SUCCESS && props.meme && (
+          <Image src={props.meme.src} layout="fill" data-testid="meme-img" />
         )}
 
         {props.status === LoadStates.ERROR && (
@@ -53,6 +61,12 @@ export const ImageRenderer = (props: Props) => {
           </Box>
         )}
       </Flex>
+
+      {props.status === LoadStates.SUCCESS && props.meme && (
+        <Box as="span" fontSize="1.2em" p="16px">
+          {props.meme.title}
+        </Box>
+      )}
     </Flex>
   )
 }
