@@ -33,7 +33,7 @@ describe('<DailyMemes />', () => {
       expect(MenuIconButton.getAttribute('aria-expanded')).toEqual('false')
       userEvent.click(MenuIconButton)
       expect(MenuIconButton.getAttribute('aria-expanded')).toEqual('true')
-      expect(screen.getByText(/Categories Coming Soon.../i)).toBeInTheDocument()
+      expect(screen.getByText(/Source Code/i)).toBeInTheDocument()
       expect(screen.getByText(/Go To Homepage/i)).toBeInTheDocument()
     })
 
