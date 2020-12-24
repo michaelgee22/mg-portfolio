@@ -23,6 +23,8 @@ export const ImageRenderer = (props: Props) => {
     }
   }, [])
 
+  const isLoading = props.status === LoadStates.IDLE || props.status === LoadStates.LOADING
+
   return (
     <Flex
       as="main"
@@ -34,8 +36,7 @@ export const ImageRenderer = (props: Props) => {
       bgColor="reddit.300"
     >
       <Flex pos="relative" w="100%" h="100%" maxW="500px" maxH="500px" justify="center">
-        {props.status === LoadStates.IDLE ||
-          (props.status === LoadStates.LOADING && <Spinner color="reddit.100" size="lg" />)}
+        {isLoading && <Spinner color="reddit.100" size="lg" data-testid="loading-spinner" />}
 
         {props.status === LoadStates.SUCCESS && props.meme && (
           <Image src={props.meme.src} layout="fill" data-testid="meme-img" />

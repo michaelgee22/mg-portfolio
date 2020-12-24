@@ -2,14 +2,18 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
-import DailyMemesPage from '../../pages/dailymemes'
-
-jest.mock('next/link', () => (props: any) => props.children)
+import { DailyMemes } from '../../containers/DailyMemes'
+import { LoadStates } from '../../constants/async'
+import { IMeme } from '../../containers/DailyMemes/IMeme'
 
 describe('<DailyMemes />', () => {
   describe('when <CategoryMenu /> is rendered', () => {
     it('should render the category menu button with the menu hidden by default', () => {
-      render(<DailyMemesPage />)
+      render(
+        <DailyMemes>
+          <DailyMemes.CategoryMenu />
+        </DailyMemes>
+      )
 
       const MenuIconButton = screen.getByRole('button', { name: /Category Selection Menu Button/i })
 
@@ -18,7 +22,11 @@ describe('<DailyMemes />', () => {
     })
 
     it('should display the menu items after the menu button is clicked', () => {
-      render(<DailyMemesPage />)
+      render(
+        <DailyMemes>
+          <DailyMemes.CategoryMenu />
+        </DailyMemes>
+      )
 
       const MenuIconButton = screen.getByRole('button', { name: /Category Selection Menu Button/i })
 
@@ -31,7 +39,11 @@ describe('<DailyMemes />', () => {
 
     // @@@@@ failing test
     xit('should navigate to the homepage after the Go To Homepage option is clicked', async () => {
-      const { debug } = render(<DailyMemesPage />)
+      const { debug } = render(
+        <DailyMemes>
+          <DailyMemes.CategoryMenu />
+        </DailyMemes>
+      )
 
       const MenuIconButton = screen.getByRole('button', { name: /Category Selection Menu Button/i })
       userEvent.click(MenuIconButton)
@@ -47,19 +59,59 @@ describe('<DailyMemes />', () => {
   })
 
   describe('when <ImageRenderer /> is rendered', () => {
-    describe('when the api request is unsuccessful and no memes are loaded', () => {
-      xit('should pass the src props as "invalid" and render the error message', () => {
-        render(<DailyMemesPage />)
+    describe('when the memes list api request is idle or currently being loaded', () => {
+      it('should render a loading spinner', () => {
+        const { rerender } = render(
+          <DailyMemes>
+            <DailyMemes.ImageRenderer meme={null} status={LoadStates.IDLE} />
+          </DailyMemes>
+        )
 
+        expect(screen.getByTestId('loading-spinner')).toBeInTheDocument()
+        expect(screen.queryByText(/Whoops/i)).not.toBeInTheDocument()
+        expect(screen.queryByTestId('meme-img')).not.toBeInTheDocument()
+
+        rerender(
+          <DailyMemes>
+            <DailyMemes.ImageRenderer meme={null} status={LoadStates.LOADING} />
+          </DailyMemes>
+        )
+
+        expect(screen.getByTestId('loading-spinner')).toBeInTheDocument()
+        expect(screen.queryByText(/Whoops/i)).not.toBeInTheDocument()
+        expect(screen.queryByTestId('meme-img')).not.toBeInTheDocument()
+      })
+    })
+
+    describe('when the api request is unsuccessful and no memes are loaded', () => {
+      it('should pass the meme prop as null and render the error message', () => {
+        render(
+          <DailyMemes>
+            <DailyMemes.ImageRenderer meme={null} status={LoadStates.ERROR} />
+          </DailyMemes>
+        )
+
+        expect(screen.queryByTestId('loading-spinner')).not.toBeInTheDocument()
         expect(screen.getByText(/Whoops/i)).toBeInTheDocument()
         expect(screen.queryByTestId('meme-img')).not.toBeInTheDocument()
       })
     })
 
     describe('when the api request is successful and memes are loaded', () => {
-      xit('should pass a valid image src from the api and render the initial meme', () => {
-        render(<DailyMemesPage />)
+      it('should pass a valid image src from the api and render the initial meme', () => {
+        const mockCurrentMeme: IMeme = {
+          src: 'https://i.redd.it/mock-image.png',
+          title: 'This is a mock meme for testing',
+          index: 0
+        }
 
+        render(
+          <DailyMemes>
+            <DailyMemes.ImageRenderer meme={mockCurrentMeme} status={LoadStates.SUCCESS} />
+          </DailyMemes>
+        )
+
+        expect(screen.queryByTestId('loading-spinner')).not.toBeInTheDocument()
         expect(screen.queryByText(/Whoops/i)).not.toBeInTheDocument()
         expect(screen.getByTestId('meme-img')).toBeInTheDocument()
       })
@@ -68,13 +120,33 @@ describe('<DailyMemes />', () => {
 
   describe('when <Nav /> is rendered', () => {
     describe('when the api request is unsuccessful and no memes are loaded', () => {
-      xit('should display 0 as the current meme count & total', () => {
-        render(<DailyMemesPage />)
+      it('should display 0 as the current meme count & total', () => {
+        render(
+          <DailyMemes>
+            <DailyMemes.Nav
+              next={jest.fn()}
+              prev={jest.fn()}
+              memeIndex={0}
+              memeTotal={0}
+              status={LoadStates.ERROR}
+            />
+          </DailyMemes>
+        )
         expect(screen.getByText(/0 \/ 0/i)).toBeInTheDocument()
       })
 
-      xit('should disable "Previous" & "Next" meme buttons', () => {
-        render(<DailyMemesPage />)
+      it('should disable "Previous" & "Next" meme buttons', () => {
+        render(
+          <DailyMemes>
+            <DailyMemes.Nav
+              next={jest.fn()}
+              prev={jest.fn()}
+              memeIndex={0}
+              memeTotal={0}
+              status={LoadStates.ERROR}
+            />
+          </DailyMemes>
+        )
 
         const PrevButton = screen
           .getAllByRole('button')
@@ -90,13 +162,34 @@ describe('<DailyMemes />', () => {
     })
 
     describe('when the api request is successful and memes are loaded', () => {
-      xit('should display the current meme count & total of memes loaded', () => {
-        render(<DailyMemesPage />)
+      it('should display the current meme count & total of memes loaded', () => {
+        render(
+          <DailyMemes>
+            <DailyMemes.Nav
+              next={jest.fn()}
+              prev={jest.fn()}
+              memeIndex={0}
+              memeTotal={15}
+              status={LoadStates.SUCCESS}
+            />
+          </DailyMemes>
+        )
         expect(screen.getByText(/1 \/ 15/i)).toBeInTheDocument()
       })
 
+      // @@@@@ failing test
       xit('should render & disable "Previous" & "Next" meme buttons as expected', () => {
-        render(<DailyMemesPage />)
+        render(
+          <DailyMemes>
+            <DailyMemes.Nav
+              next={jest.fn()}
+              prev={jest.fn()}
+              memeIndex={0}
+              memeTotal={5}
+              status={LoadStates.SUCCESS}
+            />
+          </DailyMemes>
+        )
 
         const PrevButton = screen
           .getAllByRole('button')

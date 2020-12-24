@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, MenuButton, MenuList, MenuGroup, MenuItem, IconButton } from '@chakra-ui/react'
+import { Menu, MenuButton, MenuList, MenuItem, IconButton } from '@chakra-ui/react'
 import { FiMenu } from 'react-icons/fi'
-import { FaHome } from 'react-icons/fa'
+import { FaHome, FaCode } from 'react-icons/fa'
 
 const CATEGORIES = {
   dev: 'dev',
@@ -17,7 +17,7 @@ export const CategoryMenu = () => {
 
   return (
     <Menu>
-      <MenuButton pos="absolute" top="8px" right="6px" zIndex={10}>
+      <MenuButton pos="absolute" top="8px" right="8px" zIndex={10}>
         <IconButton
           as="span"
           icon={<FiMenu />}
@@ -32,30 +32,18 @@ export const CategoryMenu = () => {
       </MenuButton>
 
       <MenuList>
-        <MenuGroup title="Categories Coming Soon...">
-          {/* <MenuItem
-            onClick={() => setCurrentCategory(CATEGORIES.dev)}
-            disabled={currentCategory === CATEGORIES.dev}
-          >
-            Dev
-          </MenuItem>
-          <MenuItem
-            onClick={() => setCurrentCategory(CATEGORIES.dank)}
-            disabled={currentCategory === CATEGORIES.dank}
-          >
-            Dank
-          </MenuItem>
-          <MenuItem
-            onClick={() => setCurrentCategory(CATEGORIES.general)}
-            disabled={currentCategory === CATEGORIES.general}
-          >
-            General
-          </MenuItem> */}
-        </MenuGroup>
+        <MenuItem
+          as="a"
+          href="https://github.com/michaelgee22/michaelgee.dev/blob/master/web/src/pages/dailymemes/index.tsx"
+          target="_blank"
+          rel="noopener noreferrer"
+          icon={<FaCode />}
+        >
+          Source Code
+        </MenuItem>
 
-        {/* <MenuDivider /> */}
         <Link href="/">
-          <MenuItem as="a" icon={<FaHome />}>
+          <MenuItem as="a" icon={<FaHome />} cursor="pointer">
             Go To Homepage
           </MenuItem>
         </Link>
