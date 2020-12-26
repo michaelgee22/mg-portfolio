@@ -1,20 +1,9 @@
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu, MenuButton, MenuList, MenuItem, IconButton } from '@chakra-ui/react'
 import { FiMenu } from 'react-icons/fi'
 import { FaHome, FaCode } from 'react-icons/fa'
 
-const CATEGORIES = {
-  dev: 'dev',
-  dank: 'dank',
-  general: 'general'
-}
-
 export const CategoryMenu = () => {
-  const [currentCategory] = useState(CATEGORIES.dev)
-
-  useEffect(() => {}, [currentCategory])
-
   return (
     <Menu>
       <MenuButton pos="absolute" top="8px" right="8px" zIndex={10}>
