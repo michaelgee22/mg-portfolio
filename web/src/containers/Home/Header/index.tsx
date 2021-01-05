@@ -6,7 +6,7 @@ export const Header = () => {
   return (
     <Flex
       as="header"
-      h="100px"
+      h="124px"
       bgColor="#000"
       p="0 24px"
       flexDir="column"
@@ -17,7 +17,7 @@ export const Header = () => {
         michaelgee.dev
       </Heading>
 
-      <Flex>
+      <Flex p="16px 0">
         {icons.map(item => {
           return (
             <SocialIcon

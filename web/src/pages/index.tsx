@@ -7,9 +7,17 @@ const HomePage = () => {
     <Home>
       <Home.Header />
 
-      <Flex justify="center" align="center" h="80px">
+      <Flex direction="column" justify="center" align="center">
+        <Link href="/books">
+          <ChakraLink color="#000" p="16px 0 8px 0">
+            Books 4 Devs
+          </ChakraLink>
+        </Link>
+
         <Link href="/dailymemes">
-          <ChakraLink color="#000">Daily DEV Memes</ChakraLink>
+          <ChakraLink color="#000" p="8px 0">
+            Daily DEV Memes
+          </ChakraLink>
         </Link>
       </Flex>
     </Home>

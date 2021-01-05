@@ -6,7 +6,11 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "preserve",
-    "lib": ["dom", "dom.iterable", "es2017"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es2017"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -21,7 +25,14 @@
     "strictFunctionTypes": true,
     "noImplicitThis": true,
     "noImplicitReturns": true,
+    "isolatedModules": true
   },
-  "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }

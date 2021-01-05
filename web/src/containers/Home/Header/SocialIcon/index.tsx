@@ -14,9 +14,8 @@ export const SocialIcon = (props: Props) => {
       href={props.href}
       target="_blank"
       rel="noopener noreferrer"
-      size="lg"
+      size="md"
       m="0 8px"
-      bgColor="#000"
       isRound
       aria-label={props.ariaLabel}
     />
