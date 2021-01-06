@@ -10,11 +10,7 @@ type Props = {
 }
 
 export const Books4Devs = (props: Props) => {
-  return (
-    <Box as="main" w="100%" textAlign="center">
-      {props.children}
-    </Box>
-  )
+  return <Box as="main">{props.children}</Box>
 }
 
 Books4Devs.SubscriptionForm = SubscriptionForm
