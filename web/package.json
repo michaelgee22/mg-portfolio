@@ -2,8 +2,8 @@
   "name": "michaelgee-dev-web",
   "version": "0.0.1",
   "dependencies": {
-    "@chakra-ui/icons": "^1.0.1",
-    "@chakra-ui/react": "^1.0.3",
+    "@chakra-ui/icons": "^1.0.2",
+    "@chakra-ui/react": "^1.1.1",
     "@emotion/react": "^11.1.2",
     "@emotion/styled": "^11.0.0",
     "framer-motion": "^2.9.5",

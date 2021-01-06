@@ -64,7 +64,7 @@ export const ImageRenderer = (props: Props) => {
       </Flex>
 
       {props.status === LoadStates.SUCCESS && props.meme && (
-        <Box as="span" fontSize="1.2em" p="16px">
+        <Box as="span" color="whitesmoke" fontSize="1.2em" p="16px">
           {props.meme.title}
         </Box>
       )}

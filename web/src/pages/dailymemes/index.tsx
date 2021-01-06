@@ -10,8 +10,8 @@ const DailyMemesPage = () => {
     <DailyMemes>
       <Box as="header">
         <Flex align="center" p="16px 0" pl="8px" backgroundColor="reddit.300">
-          <Box as={FaRedditAlien} w={6} h={6} color="white" mr="10px" />
-          <Box as="span" fontSize="1.2em">
+          <Box as={FaRedditAlien} w={6} h={6} color="whitesmoke" mr="10px" />
+          <Box as="span" color="whitesmoke" fontSize="1.2em">
             Daily Memes
           </Box>
         </Flex>
