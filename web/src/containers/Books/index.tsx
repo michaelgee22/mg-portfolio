@@ -1,7 +1,6 @@
 import { SubscriptionForm } from './SubscriptionForm'
-import { FeaturedBook } from './Featured'
 import { BooksList } from './List'
-import { BookItem } from './List/BookItem'
+import { Recommendation } from './Recommendation'
 
 import { Box } from '@chakra-ui/react'
 
@@ -14,6 +13,5 @@ export const Books4Devs = (props: Props) => {
 }
 
 Books4Devs.SubscriptionForm = SubscriptionForm
-Books4Devs.FeaturedBook = FeaturedBook
 Books4Devs.BooksList = BooksList
-Books4Devs.BookItem = BookItem
+Books4Devs.Recommendation = Recommendation
