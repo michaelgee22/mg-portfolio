@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { Flex, Link as ChakraLink } from '@chakra-ui/react'
 import { Home } from '../containers/Home'
+import { Flex, Link as ChakraLink } from '@chakra-ui/react'
 
 const HomePage = () => {
   return (

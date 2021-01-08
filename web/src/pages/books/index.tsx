@@ -2,6 +2,7 @@ import { Box, Heading } from '@chakra-ui/react'
 import { Books4Devs } from '../../containers/Books'
 
 import { RecommendationTypes } from '../../containers/Books/Recommendation'
+import { recommendations } from '../../constants/books4devs'
 
 const Books4DevsPage = () => {
   return (
@@ -24,13 +25,15 @@ const Books4DevsPage = () => {
 
       <Books4Devs.SubscriptionForm />
 
-      <Books4Devs.Recommendation type={RecommendationTypes.featured} />
-
-      <Books4Devs.BooksList>
-        <Books4Devs.Recommendation type={RecommendationTypes.listItem} />
-        <Books4Devs.Recommendation type={RecommendationTypes.listItem} />
-        <Books4Devs.Recommendation type={RecommendationTypes.listItem} />
-      </Books4Devs.BooksList>
+      {recommendations.map((item, index) => {
+        return (
+          <Books4Devs.Recommendation
+            type={index === 0 ? RecommendationTypes.featured : RecommendationTypes.listItem}
+            {...item}
+            key={index}
+          />
+        )
+      })}
     </Books4Devs>
   )
 }

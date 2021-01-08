@@ -1,9 +1,0 @@
-.avatarImg {
-  position: relative;
-  border-radius: 50%;
-  background: linear-gradient(to bottom right, #e94057, #f27121);
-}
-
-.avatarImg img {
-  border-radius: 50%;
-}

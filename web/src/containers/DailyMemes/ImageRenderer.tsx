@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { Box, Flex, Link, Spinner } from '@chakra-ui/react'
-import { LoadStates } from '../../../constants/async'
-import { IMeme } from '../IMeme'
+
+import { useState, useEffect } from 'react'
+import { LoadStates } from '../../constants/async'
+import { IMeme } from './IMeme'
 
 type Props = {
   meme: IMeme | null

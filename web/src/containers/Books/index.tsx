@@ -1,7 +1,6 @@
+import { PageHead } from '../../components/PageHead'
 import { SubscriptionForm } from './SubscriptionForm'
-import { BooksList } from './List'
 import { Recommendation } from './Recommendation'
-
 import { Box } from '@chakra-ui/react'
 
 type Props = {
@@ -9,9 +8,18 @@ type Props = {
 }
 
 export const Books4Devs = (props: Props) => {
-  return <Box as="main">{props.children}</Box>
+  return (
+    <>
+      <PageHead
+        title="Books 4 Devs"
+        description="All-time favorite book recommendations from developers for developers."
+        url="https://michaelgee.dev/books"
+      />
+
+      <Box as="main">{props.children}</Box>
+    </>
+  )
 }
 
 Books4Devs.SubscriptionForm = SubscriptionForm
-Books4Devs.BooksList = BooksList
 Books4Devs.Recommendation = Recommendation

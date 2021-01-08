@@ -33,7 +33,7 @@ export const CategoryMenu = () => {
 
         <Link href="/">
           <MenuItem as="a" icon={<FaHome />} cursor="pointer">
-            Go To Homepage
+            Homepage
           </MenuItem>
         </Link>
       </MenuList>
