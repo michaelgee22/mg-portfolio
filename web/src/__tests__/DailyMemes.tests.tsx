@@ -34,11 +34,11 @@ describe('<DailyMemes />', () => {
       userEvent.click(MenuIconButton)
       expect(MenuIconButton.getAttribute('aria-expanded')).toEqual('true')
       expect(screen.getByText(/Source Code/i)).toBeInTheDocument()
-      expect(screen.getByText(/Go To Homepage/i)).toBeInTheDocument()
+      expect(screen.getByText(/Homepage/i)).toBeInTheDocument()
     })
 
     // @@@@@ failing test
-    xit('should navigate to the homepage after the Go To Homepage option is clicked', async () => {
+    xit('should navigate to the homepage after the "Homepage" option is clicked', async () => {
       const { debug } = render(
         <DailyMemes>
           <DailyMemes.CategoryMenu />
