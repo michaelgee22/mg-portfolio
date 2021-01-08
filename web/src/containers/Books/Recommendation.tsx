@@ -28,6 +28,7 @@ export const Recommendation = (props: Props) => {
         minW={displayConfig.width}
         maxH={displayConfig.height}
         p={displayConfig.avatarBorderSize}
+        className="round-next-image"
       >
         <Image src={props.avatar} width={displayConfig.width} height={displayConfig.height} />
       </Flex>

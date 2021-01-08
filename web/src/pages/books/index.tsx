@@ -34,6 +34,8 @@ const Books4DevsPage = () => {
           />
         )
       })}
+
+      <Books4Devs.Footer />
     </Books4Devs>
   )
 }

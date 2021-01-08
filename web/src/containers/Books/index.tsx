@@ -1,6 +1,7 @@
 import { PageHead } from '../../components/PageHead'
 import { SubscriptionForm } from './SubscriptionForm'
 import { Recommendation } from './Recommendation'
+import { Footer } from './Footer'
 import { Box } from '@chakra-ui/react'
 
 type Props = {
@@ -23,3 +24,4 @@ export const Books4Devs = (props: Props) => {
 
 Books4Devs.SubscriptionForm = SubscriptionForm
 Books4Devs.Recommendation = Recommendation
+Books4Devs.Footer = Footer
