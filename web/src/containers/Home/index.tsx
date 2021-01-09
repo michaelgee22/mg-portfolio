@@ -15,7 +15,7 @@ export const Home = (props: Props) => {
         url="https://michaelgee.dev"
       />
 
-      <Box as="main" w="100%" h="100%" backgroundColor="whitesmoke">
+      <Box as="main" w="100%" h="100%">
         {props.children}
       </Box>
     </>

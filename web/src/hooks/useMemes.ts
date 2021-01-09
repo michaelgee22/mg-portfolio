@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { LoadStates } from '../../constants/async'
-import { IMeme } from './IMeme'
+import { LoadStates } from '../constants/async'
+import { IMeme } from '../containers/DailyMemes/IMeme'
 
 export enum NavTypes {
   NEXT = 'next',

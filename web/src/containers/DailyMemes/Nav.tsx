@@ -1,6 +1,6 @@
 import { Flex, Box, IconButton, Tag, TagLabel } from '@chakra-ui/react'
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'
-import { LoadStates } from '../../../constants/async'
+import { LoadStates } from '../../constants/async'
 
 type Props = {
   next: () => void
@@ -28,9 +28,9 @@ export const Nav = (props: Props) => {
         />
 
         <Tag p="0 16px" m="0 16px" bgColor="reddit.100" color="white">
-          <TagLabel>
+          <TagLabel minW="65px" textAlign="center">
             {props.status !== LoadStates.IDLE && props.status !== LoadStates.LOADING
-              ? `Dev - ${props.memeTotal > 0 ? props.memeIndex + 1 : 0} / ${props.memeTotal}`
+              ? `${props.memeTotal > 0 ? props.memeIndex + 1 : 0} / ${props.memeTotal}`
               : 'Loading...'}
           </TagLabel>
         </Tag>

@@ -11,9 +11,9 @@ export const DailyMemes = (props: Props) => {
   return (
     <>
       <PageHead
-        title="Daily Memes | MG Sandbox"
+        title="Daily Dev Memes"
         description="Top daily software development memes fetched from Reddit."
-        url="https://mg-sandbox.com/dailymemes"
+        url="https://michaelgee.dev/dailymemes"
       />
 
       {props.children}

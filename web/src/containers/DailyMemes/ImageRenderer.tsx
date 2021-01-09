@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { Box, Flex, Link, Spinner } from '@chakra-ui/react'
-import { LoadStates } from '../../../constants/async'
-import { IMeme } from '../IMeme'
+
+import { useState, useEffect } from 'react'
+import { LoadStates } from '../../constants/async'
+import { IMeme } from './IMeme'
 
 type Props = {
   meme: IMeme | null
@@ -64,7 +65,7 @@ export const ImageRenderer = (props: Props) => {
       </Flex>
 
       {props.status === LoadStates.SUCCESS && props.meme && (
-        <Box as="span" fontSize="1.2em" p="16px">
+        <Box as="span" color="whitesmoke" fontSize="1.2em" p="16px">
           {props.meme.title}
         </Box>
       )}

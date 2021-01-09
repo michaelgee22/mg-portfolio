@@ -2,9 +2,9 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
-import { DailyMemes } from '../../containers/DailyMemes'
-import { LoadStates } from '../../constants/async'
-import { IMeme } from '../../containers/DailyMemes/IMeme'
+import { DailyMemes } from '../containers/DailyMemes'
+import { LoadStates } from '../constants/async'
+import { IMeme } from '../containers/DailyMemes/IMeme'
 
 describe('<DailyMemes />', () => {
   describe('when <CategoryMenu /> is rendered', () => {
@@ -34,11 +34,11 @@ describe('<DailyMemes />', () => {
       userEvent.click(MenuIconButton)
       expect(MenuIconButton.getAttribute('aria-expanded')).toEqual('true')
       expect(screen.getByText(/Source Code/i)).toBeInTheDocument()
-      expect(screen.getByText(/Go To Homepage/i)).toBeInTheDocument()
+      expect(screen.getByText(/Homepage/i)).toBeInTheDocument()
     })
 
     // @@@@@ failing test
-    xit('should navigate to the homepage after the Go To Homepage option is clicked', async () => {
+    xit('should navigate to the homepage after the "Homepage" option is clicked', async () => {
       const { debug } = render(
         <DailyMemes>
           <DailyMemes.CategoryMenu />
