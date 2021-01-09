@@ -23,7 +23,7 @@ export const CategoryMenu = () => {
       <MenuList>
         <MenuItem
           as="a"
-          href="https://github.com/michaelgee22/michaelgee.dev/blob/main/web/src/pages/dailymemes/index.tsx"
+          href="https://github.com/michaelgee22/michaelgee.dev"
           target="_blank"
           rel="noopener noreferrer"
           icon={<FaCode />}
