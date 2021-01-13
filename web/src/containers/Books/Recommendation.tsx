@@ -1,10 +1,13 @@
 import Image from 'next/image'
 import { Box, Flex, Heading } from '@chakra-ui/react'
+import { ExpandableDescription } from './ExpandableDescription'
 
 type Props = {
   title: string
   author: string
+  bookImg: string
   avatar: string
+  descPreview: string
   description: Array<string>
   guest: string
   guestUrl: string
@@ -20,28 +23,57 @@ export const Recommendation = (props: Props) => {
   const displayConfig = _returnDisplayConfig()
 
   return (
-    <Flex as="article" maxW="1000px" m={displayConfig.margin} p="0 16px">
+    <Flex
+      as="article"
+      flexDir={['column', 'column', 'row', 'row']}
+      maxW="1000px"
+      m={['16px 0', '16px 0', displayConfig.margin, displayConfig.margin]}
+      p="0 16px"
+    >
       <Flex
         pos="relative"
         borderRadius="50%"
         background="linear-gradient(to bottom right, #e94057, #f27121)"
-        minW={displayConfig.width}
-        maxH={displayConfig.height}
-        p={displayConfig.avatarBorderSize}
+        w={displayConfig.bookImgWidth}
+        h={displayConfig.bookImgHeight}
+        minW={displayConfig.bookImgWidth}
+        minH={displayConfig.bookImgHeight}
+        p={displayConfig.bookBorderSize}
+        m={['0 auto 8px auto', '0 auto 16px auto', '0', '0']}
         className="round-next-image"
       >
-        <Image src={props.avatar} width={displayConfig.width} height={displayConfig.height} />
+        <Image
+          src={props.bookImg}
+          width={displayConfig.bookImgWidth}
+          height={displayConfig.bookImgHeight}
+        />
+
+        <Box
+          pos="absolute"
+          bottom="0"
+          right={displayConfig.avatarRight}
+          w={displayConfig.avatarWidth}
+          h={displayConfig.avatarHeight}
+          mb={displayConfig.avatarBottom}
+        >
+          <Image src={props.avatar} width="80px" height="80px" />
+        </Box>
       </Flex>
 
       <Flex
         direction="column"
-        p="0px 16px 8px 32px"
-        pl={props.type === RecommendationTypes.featured ? '40px' : '32px'}
+        pl={[
+          '0',
+          '0',
+          props.type === RecommendationTypes.featured ? '40px' : '32px',
+          props.type === RecommendationTypes.featured ? '40px' : '32px'
+        ]}
       >
         <Heading
           as="h3"
           fontWeight="normal"
           fontSize={displayConfig.bookTitleFontSize}
+          textAlign={['center', 'center', 'start', 'start']}
           bgGradient="linear-gradient(to bottom right, #e94057, #f27121)"
           bgClip="text"
           fill="transparent"
@@ -58,6 +90,7 @@ export const Recommendation = (props: Props) => {
           color="#78757f"
           fontWeight="normal"
           fontStyle="italic"
+          textAlign={['center', 'center', 'start', 'start']}
           p="6px 0"
         >
           Recommended by {props.guest}
@@ -70,11 +103,11 @@ export const Recommendation = (props: Props) => {
           borderRadius="4px"
         />
 
-        {props.description.map((paragraph, index) => (
-          <Box as="p" p="6px 0 8px 0" fontSize={displayConfig.descFontSize} key={index}>
-            {paragraph}
-          </Box>
-        ))}
+        <ExpandableDescription
+          descPreview={props.descPreview}
+          description={props.description}
+          fontSize={displayConfig.descFontSize}
+        />
       </Flex>
     </Flex>
   )
@@ -82,10 +115,17 @@ export const Recommendation = (props: Props) => {
   function _returnDisplayConfig() {
     if (props.type === RecommendationTypes.featured) {
       return {
-        margin: '40px auto',
-        height: '250px',
-        width: '250px',
-        avatarBorderSize: '6px',
+        margin: '40px auto 64px auto',
+
+        bookImgWidth: '250px',
+        bookImgHeight: '250px',
+        bookBorderSize: '6px',
+
+        avatarWidth: '80px',
+        avatarHeight: '80px',
+        avatarBottom: '24px',
+        avatarRight: '-4',
+
         bookTitleFontSize: '1.6em',
         recommendedByFontSize: 'sm',
         titleBorderHeight: '4px',
@@ -95,9 +135,16 @@ export const Recommendation = (props: Props) => {
 
     return {
       margin: '16px auto',
-      height: '150px',
-      width: '150px',
-      avatarBorderSize: '4px',
+
+      bookImgWidth: '150px',
+      bookImgHeight: '150px',
+      bookBorderSize: '4px',
+
+      avatarWidth: '48px',
+      avatarHeight: '48px',
+      avatarBottom: '12px',
+      avatarRight: '-3',
+
       bookTitleFontSize: '1.2em',
       recommendedByFontSize: 'xs',
       titleBorderHeight: '2px',

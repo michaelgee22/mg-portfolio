@@ -4,7 +4,7 @@ import { FaBook } from 'react-icons/fa'
 
 export const Footer = () => {
   return (
-    <Flex as="footer" direction="column" align="center">
+    <Flex as="footer" direction="column" align="center" pt="16px">
       <Flex align="center">
         <Link href="/">
           <ChakraLink>Homepage</ChakraLink>
