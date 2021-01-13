@@ -1,21 +1,21 @@
 import { Box, Heading } from '@chakra-ui/react'
-import { Books4Devs } from '../../containers/Books'
+import { DevBooks } from '../../containers/Books'
 
 // import { RecommendationTypes } from '../../containers/Books/Recommendation'
 // import { recommendations } from '../../constants/books4devs'
 
-const Books4DevsPage = () => {
+const DevBooksPage = () => {
   return (
-    <Books4Devs>
+    <DevBooks>
       <Box as="header" p="0 16px" pt="16px">
         <Heading
           bgGradient="linear-gradient(to bottom right, #e94057, #f27121)"
           bgClip="text"
           fill="transparent"
-          maxWidth="232px"
+          maxWidth="180px"
           m="0 auto"
         >
-          Books 4 Devs
+          Dev Books
         </Heading>
         <Box as="p" maxWidth="800px" m="0 auto" fontSize="1.2em" textAlign="center">
           All-time favorite book recommendations from developers for developers. Join the
@@ -23,7 +23,7 @@ const Books4DevsPage = () => {
         </Box>
       </Box>
 
-      <Books4Devs.SubscriptionForm />
+      <DevBooks.SubscriptionForm />
 
       <Box as="h2" textAlign="center" fontSize="32px" m="40px">
         🚀 First Book Coming Soon 🚀
@@ -31,7 +31,7 @@ const Books4DevsPage = () => {
 
       {/* {recommendations.map((item, index) => {
         return (
-          <Books4Devs.Recommendation
+          <DevBooks.Recommendation
             type={index === 0 ? RecommendationTypes.featured : RecommendationTypes.listItem}
             {...item}
             key={index}
@@ -39,9 +39,9 @@ const Books4DevsPage = () => {
         )
       })} */}
 
-      <Books4Devs.Footer />
-    </Books4Devs>
+      <DevBooks.Footer />
+    </DevBooks>
   )
 }
 
-export default Books4DevsPage
+export default DevBooksPage
