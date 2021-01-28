@@ -4,20 +4,12 @@ import { icons } from '../../constants/homepage'
 
 export const Header = () => {
   return (
-    <Flex
-      as="header"
-      h="124px"
-      bgColor="#000"
-      p="0 24px"
-      flexDir="column"
-      justify="center"
-      align="center"
-    >
-      <Heading as="h1" color="whitesmoke" fontSize="2em">
+    <Flex as="header" h="88px" bgColor="#000" flexDir="column" justify="center" align="center">
+      <Heading as="h1" color="whitesmoke" fontSize="1.6em">
         Michael Gee's Sandbox
       </Heading>
 
-      <Flex p="16px 0">
+      <Flex p="8px 0">
         {icons.map(item => {
           return (
             <SocialIcon
