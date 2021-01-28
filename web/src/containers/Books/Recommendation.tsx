@@ -12,6 +12,7 @@ type Props = {
   description: Array<string>
   guest: string
   guestBio: string
+  guestLinks: Array<any>
   type: RecommendationTypes
 }
 
@@ -93,17 +94,42 @@ export const Recommendation = (props: Props) => {
           </Heading>
         </Box>
 
-        <Heading
-          as="h4"
-          size={displayConfig.recommendedByFontSize}
-          color="#78757f"
-          fontWeight="normal"
-          fontStyle="italic"
-          textAlign={['center', 'center', 'start', 'start']}
-          p="6px 0"
+        <Flex
+          justify={['center', 'center', 'flex-start', 'flex-start']}
+          flexDirection={['column', 'column', 'row', 'row']}
+          mb={['8px', '8px', '0', '0']}
+          align="center"
         >
-          {props.guest} • {props.guestBio}
-        </Heading>
+          <Heading
+            as="h4"
+            size={displayConfig.recommendedByFontSize}
+            color="#78757f"
+            fontWeight="normal"
+            fontStyle="italic"
+            textAlign={['center', 'center', 'start', 'start']}
+            p="6px 0"
+          >
+            {props.guest} • {props.guestBio}
+          </Heading>
+
+          <Flex ml={['0', '0', '4px', '4px']}>
+            {props.guestLinks.map(item => {
+              return (
+                <Box
+                  as="a"
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  color="#78757f"
+                  m={['0 16px', '0 16px', '0 8px', '0 8px']}
+                  key={item.id}
+                >
+                  {item.icon()}
+                </Box>
+              )
+            })}
+          </Flex>
+        </Flex>
 
         <Box
           h={displayConfig.titleBorderHeight}

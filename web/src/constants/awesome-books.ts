@@ -1,3 +1,6 @@
+import { FaTwitter, FaGithub } from 'react-icons/fa'
+import { FiExternalLink } from 'react-icons/fi'
+
 export const recommendations = [
   {
     title: 'War of Art: Break Through the Blocks and Win Your Inner Creative Battles',
@@ -23,9 +26,9 @@ export const recommendations = [
     guest: 'Michael Chan',
     guestBio: 'Host of React Podcast',
     guestLinks: [
-      { id: 'website', icon: '', href: 'https://michaelgee.com' },
-      { id: 'twitter', icon: '', href: 'https://twitter.com/michaelgee7' },
-      { id: 'github', icon: '', href: 'https://github.com/michaelgee22' }
+      { id: 'website', icon: FiExternalLink, href: 'https://chan.dev/posts/' },
+      { id: 'twitter', icon: FaTwitter, href: 'https://twitter.com/chantastic' },
+      { id: 'github', icon: FaGithub, href: 'https://github.com/chantastic' }
     ]
   }
 ]
