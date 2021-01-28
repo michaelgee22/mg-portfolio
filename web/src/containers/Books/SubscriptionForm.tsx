@@ -12,13 +12,19 @@ export const SubscriptionForm = () => {
         data-uid="f4adac1697"
         data-format="inline"
         data-version="5"
-        data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":""},"analytics":{"google":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":true,"url":"https://convertkit.com?utm_source=dynamic&amp;utm_medium=referral&amp;utm_campaign=poweredby&amp;utm_content=form"}'
+        data-options={`{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":${process.env.AWESOME_BOOKS_REDIRECT_URL}},"analytics":{"google":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":true,"url":"https://convertkit.com?utm_source=dynamic&amp;utm_medium=referral&amp;utm_campaign=poweredby&amp;utm_content=form"}`}
       >
         <Flex direction="column" justify="center" data-style="clean">
           <ul data-element="errors" data-group="alert" />
 
-          <Flex maxW="800px" m="16px auto" data-element="fields" data-stacked="false">
-            <InputGroup m="0 4px">
+          <Flex
+            direction={['column', 'column', 'row', 'row']}
+            minW={['90%', '90%', '600px', '600px']}
+            m={['8px auto', '8px auto', '16px auto', '16px auto']}
+            data-element="fields"
+            data-stacked="false"
+          >
+            <InputGroup m={['8px 4px', '8px 4px', '0 4px', '0 4px']}>
               <InputLeftElement children={<Icon as={FaRegUserCircle} />} />
 
               <Input

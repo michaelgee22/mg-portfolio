@@ -13,7 +13,7 @@ export const AwesomeBooks = (props: Props) => {
     <>
       <PageHead
         title="awesome-books"
-        description="All-time favorite book recommendations from developers for developers."
+        description="All-time favorite book recommendations from awesome software developers."
         url="https://michaelgee.dev/books"
       />
 

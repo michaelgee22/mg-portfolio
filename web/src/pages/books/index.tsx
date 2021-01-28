@@ -1,8 +1,9 @@
-import { Box, Heading } from '@chakra-ui/react'
+import Image from 'next/image'
+import { Box, Flex, Heading } from '@chakra-ui/react'
 import { AwesomeBooks } from '../../containers/Books'
 
 // import { RecommendationTypes } from '../../containers/Books/Recommendation'
-// import { recommendations } from '../../constants/awesome-books'
+import { recommendations } from '../../constants/awesome-books'
 
 const AwesomeBooksPage = () => {
   return (
@@ -24,9 +25,54 @@ const AwesomeBooksPage = () => {
 
       <AwesomeBooks.SubscriptionForm />
 
-      <Box as="h2" textAlign="center" fontSize="32px" m="40px">
-        🚀 First Book Coming Soon 🚀
+      <Box as="h2" textAlign="center" fontSize="24px" mt="16px" fontStyle="italic">
+        First Book
       </Box>
+
+      <Box as="h2" textAlign="center" fontSize="24px" mb="16px" fontStyle="italic">
+        🚀{' '}
+        <Box as="span" p="0 8px">
+          Thursday February 4th, 2021 12:00 EST
+        </Box>{' '}
+        🚀
+      </Box>
+
+      <Flex justify="center" className="round-next-image">
+        <Image src="/images/awesome-books/michaelchan/avatar.jpg" width="250px" height="250px" />
+      </Flex>
+
+      <Box
+        as="h3"
+        textAlign="center"
+        color="#78757f"
+        fontWeight="normal"
+        fontStyle="italic"
+        pt="16px"
+      >
+        Recommended By
+      </Box>
+
+      <Box as="h3" textAlign="center" color="#78757f" fontWeight="normal" fontStyle="italic">
+        Michael Chan • Host of React Podcast
+      </Box>
+
+      <Flex justify="center" m="8px 0">
+        {recommendations[0].guestLinks.map(item => {
+          return (
+            <Box
+              as="a"
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              color="#78757f"
+              m="0 16px"
+              key={item.id}
+            >
+              <item.icon />
+            </Box>
+          )
+        })}
+      </Flex>
 
       {/* {recommendations.map((item, index) => {
         return (
