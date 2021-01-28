@@ -14,7 +14,7 @@ export const Header = () => {
       align="center"
     >
       <Heading as="h1" color="whitesmoke" fontSize="2em">
-        michaelgee.dev
+        Michael Gee's Sandbox
       </Heading>
 
       <Flex p="16px 0">

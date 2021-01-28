@@ -6,11 +6,12 @@ type Props = {
   title: string
   author: string
   bookImg: string
+  bookUrl: string
   avatar: string
-  descPreview: string
+  descPreview: Array<string>
   description: Array<string>
   guest: string
-  guestUrl: string
+  guestBio: string
   type: RecommendationTypes
 }
 
@@ -32,15 +33,14 @@ export const Recommendation = (props: Props) => {
     >
       <Flex
         pos="relative"
-        borderRadius="50%"
+        borderRadius="4px"
         background="linear-gradient(to bottom right, #e94057, #f27121)"
         w={displayConfig.bookImgWidth}
         h={displayConfig.bookImgHeight}
         minW={displayConfig.bookImgWidth}
         minH={displayConfig.bookImgHeight}
         p={displayConfig.bookBorderSize}
-        m={['0 auto 8px auto', '0 auto 16px auto', '0', '0']}
-        className="round-next-image"
+        m={['0 auto 16px auto', '0 auto 32px auto', '0', '0']}
       >
         <Image
           src={props.bookImg}
@@ -55,8 +55,9 @@ export const Recommendation = (props: Props) => {
           w={displayConfig.avatarWidth}
           h={displayConfig.avatarHeight}
           mb={displayConfig.avatarBottom}
+          className="round-next-image"
         >
-          <Image src={props.avatar} width="80px" height="80px" />
+          <Image src={props.avatar} width="100px" height="100px" />
         </Box>
       </Flex>
 
@@ -65,24 +66,32 @@ export const Recommendation = (props: Props) => {
         pl={[
           '0',
           '0',
-          props.type === RecommendationTypes.featured ? '40px' : '32px',
-          props.type === RecommendationTypes.featured ? '40px' : '32px'
+          props.type === RecommendationTypes.featured ? '64px' : '48px',
+          props.type === RecommendationTypes.featured ? '64px' : '48px'
         ]}
       >
-        <Heading
-          as="h3"
-          fontWeight="normal"
-          fontSize={displayConfig.bookTitleFontSize}
-          textAlign={['center', 'center', 'start', 'start']}
-          bgGradient="linear-gradient(to bottom right, #e94057, #f27121)"
-          bgClip="text"
-          fill="transparent"
+        <Box
+          as="a"
+          href={props.bookUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          _hover={{ opacity: 0.8 }}
         >
-          <Box as="span">{props.title}</Box>{' '}
-          <Box as="span" fontSize=".6em" fontStyle="italic">
-            by {props.author}
-          </Box>
-        </Heading>
+          <Heading
+            as="h3"
+            fontWeight="normal"
+            fontSize={displayConfig.bookTitleFontSize}
+            textAlign={['center', 'center', 'start', 'start']}
+            bgGradient="linear-gradient(to bottom right, #e94057, #f27121)"
+            bgClip="text"
+            fill="transparent"
+          >
+            <Box as="span">{props.title}</Box>{' '}
+            <Box as="span" fontSize=".6em" fontStyle="italic">
+              by {props.author}
+            </Box>
+          </Heading>
+        </Box>
 
         <Heading
           as="h4"
@@ -93,7 +102,7 @@ export const Recommendation = (props: Props) => {
           textAlign={['center', 'center', 'start', 'start']}
           p="6px 0"
         >
-          Recommended by {props.guest}
+          {props.guest} • {props.guestBio}
         </Heading>
 
         <Box
@@ -115,16 +124,16 @@ export const Recommendation = (props: Props) => {
   function _returnDisplayConfig() {
     if (props.type === RecommendationTypes.featured) {
       return {
-        margin: '40px auto 64px auto',
+        margin: '48px auto 80px auto',
 
-        bookImgWidth: '250px',
-        bookImgHeight: '250px',
+        bookImgWidth: '224px',
+        bookImgHeight: '335px',
         bookBorderSize: '6px',
 
-        avatarWidth: '80px',
-        avatarHeight: '80px',
-        avatarBottom: '24px',
-        avatarRight: '-4',
+        avatarWidth: '100px',
+        avatarHeight: '100px',
+        avatarBottom: '-32px',
+        avatarRight: '-48px',
 
         bookTitleFontSize: '1.6em',
         recommendedByFontSize: 'sm',
@@ -134,16 +143,16 @@ export const Recommendation = (props: Props) => {
     }
 
     return {
-      margin: '16px auto',
+      margin: '0 auto 48px auto',
 
-      bookImgWidth: '150px',
-      bookImgHeight: '150px',
+      bookImgWidth: '132px',
+      bookImgHeight: '188px',
       bookBorderSize: '4px',
 
-      avatarWidth: '48px',
-      avatarHeight: '48px',
-      avatarBottom: '12px',
-      avatarRight: '-3',
+      avatarWidth: '64px',
+      avatarHeight: '64px',
+      avatarBottom: '-20px',
+      avatarRight: '-32px',
 
       bookTitleFontSize: '1.2em',
       recommendedByFontSize: 'xs',

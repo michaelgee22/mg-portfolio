@@ -4,41 +4,29 @@ import { FiChevronsUp, FiChevronsDown } from 'react-icons/fi'
 
 type Props = {
   fontSize: string
-  descPreview: string
+  descPreview: Array<string>
   description: Array<string>
 }
 
 export const ExpandableDescription = (props: Props) => {
   const [expanded, setExpanded] = useState<boolean>(false)
+  const desc = expanded ? props.description : props.descPreview
 
   return (
     <>
-      {expanded ? (
-        <>
-          {props.description.map((paragraph, index) => {
-            return (
-              <Box
-                as="p"
-                p="6px 0 8px 0"
-                fontSize={props.fontSize}
-                textAlign={['center', 'center', 'start', 'start']}
-                key={index}
-              >
-                {paragraph}
-              </Box>
-            )
-          })}
-        </>
-      ) : (
-        <Box
-          as="p"
-          p="6px 0 8px 0"
-          fontSize={props.fontSize}
-          textAlign={['center', 'center', 'start', 'start']}
-        >
-          {props.descPreview}
-        </Box>
-      )}
+      {desc.map((paragraph: string, index: number) => {
+        return (
+          <Box
+            as="p"
+            p="6px 0 8px 0"
+            fontSize={props.fontSize}
+            textAlign={['center', 'center', 'start', 'start']}
+            key={index}
+          >
+            {paragraph}
+          </Box>
+        )
+      })}
 
       <IconButton
         icon={expanded ? <FiChevronsUp /> : <FiChevronsDown />}

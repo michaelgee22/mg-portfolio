@@ -8,11 +8,11 @@ type Props = {
   children?: React.ReactNode
 }
 
-export const DevBooks = (props: Props) => {
+export const AwesomeBooks = (props: Props) => {
   return (
     <>
       <PageHead
-        title="Dev Books"
+        title="awesome-books"
         description="All-time favorite book recommendations from developers for developers."
         url="https://michaelgee.dev/books"
       />
@@ -22,6 +22,6 @@ export const DevBooks = (props: Props) => {
   )
 }
 
-DevBooks.SubscriptionForm = SubscriptionForm
-DevBooks.Recommendation = Recommendation
-DevBooks.Footer = Footer
+AwesomeBooks.SubscriptionForm = SubscriptionForm
+AwesomeBooks.Recommendation = Recommendation
+AwesomeBooks.Footer = Footer
