@@ -1,3 +1,11 @@
 .round-next-image img {
   border-radius: 50%;
 }
+
+.books-quote {
+  border-left: 2px solid #ed5544;
+  padding: 0 0 0 24px !important;
+  color: #7d8a97;
+  font-style: italic;
+  margin: 8px 0;
+}

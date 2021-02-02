@@ -21,7 +21,9 @@ export const recommendations = [
       'The War of Art hurts like hell to read. Once you\'ve read it, you can\'t go back to "just doing the dishes before starting" or "just replying to a few emails before diving in" because you know it\'s a trick!',
       'If you want to achieve your creative goals, read this and endure the pain.',
       "If you're pretty happy with your life as it is, stay away.",
-      '- Michael Chan'
+      '- Michael Chan',
+      'Quote From The Book :',
+      "<quote>“ You know, Hitler wanted to be an artist. At eighteen he took his inheritance, seven hundred kronen, and moved to Vienna to live and study... Ever see one of his paintings? Neither have I. Resistance beat him. Call it overstatement but I'll say it anyway: it was easier for Hitler to start World War II than it was for him to face a blank square of canvas. ”"
     ],
     guest: 'Michael Chan',
     guestBio: 'Host of React Podcast',

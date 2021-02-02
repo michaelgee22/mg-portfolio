@@ -15,12 +15,19 @@ export const ExpandableDescription = (props: Props) => {
   return (
     <>
       {desc.map((paragraph: string, index: number) => {
+        let className = ''
+        if (paragraph.startsWith('<quote>')) {
+          paragraph = paragraph.split('<quote>')[1]
+          className = 'books-quote'
+        }
+
         return (
           <Box
             as="p"
             p="6px 0 8px 0"
             fontSize={props.fontSize}
             textAlign={['center', 'center', 'start', 'start']}
+            className={className}
             key={index}
           >
             {paragraph}
