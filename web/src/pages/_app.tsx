@@ -4,11 +4,11 @@ import theme from '../theme'
 import '../index.css'
 
 const App = ({ Component, pageProps }: AppProps) => {
-  return (
-    <ChakraProvider resetCSS theme={theme}>
-      <Component {...pageProps} />
-    </ChakraProvider>
-  )
+	return (
+		<ChakraProvider resetCSS theme={theme}>
+			<Component {...pageProps} />
+		</ChakraProvider>
+	)
 }
 
 export default App

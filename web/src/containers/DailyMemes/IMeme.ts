@@ -1,5 +1,5 @@
 export interface IMeme {
-  src: string
-  title: string
-  index: number
+	src: string
+	title: string
+	index: number
 }

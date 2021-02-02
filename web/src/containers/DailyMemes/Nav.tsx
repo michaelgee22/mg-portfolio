@@ -3,51 +3,51 @@ import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'
 import { LoadStates } from '../../constants/async'
 
 type Props = {
-  next: () => void
-  prev: () => void
-  memeIndex: number
-  memeTotal: number
-  status: string
+	next: () => void
+	prev: () => void
+	memeIndex: number
+	memeTotal: number
+	status: string
 }
 
 export const Nav = (props: Props) => {
-  return (
-    <Box as="footer" bgColor="reddit.300" color="white">
-      <Flex as="nav" justify="center" p="12px" bgColor="reddit.200">
-        <IconButton
-          icon={<BiChevronLeft />}
-          onClick={props.prev}
-          size="sm"
-          fontSize="1.4em"
-          p="0 16px"
-          bgColor="reddit.100"
-          _hover={{ opacity: 0.8 }}
-          color="white"
-          disabled={props.memeIndex === 0}
-          aria-label="Go To Previous Meme Button"
-        />
+	return (
+		<Box as="footer" bgColor="reddit.300" color="white">
+			<Flex as="nav" justify="center" p="12px" bgColor="reddit.200">
+				<IconButton
+					icon={<BiChevronLeft />}
+					onClick={props.prev}
+					size="sm"
+					fontSize="1.4em"
+					p="0 16px"
+					bgColor="reddit.100"
+					_hover={{ opacity: 0.8 }}
+					color="white"
+					disabled={props.memeIndex === 0}
+					aria-label="Go To Previous Meme Button"
+				/>
 
-        <Tag p="0 16px" m="0 16px" bgColor="reddit.100" color="white">
-          <TagLabel minW="65px" textAlign="center">
-            {props.status !== LoadStates.IDLE && props.status !== LoadStates.LOADING
-              ? `${props.memeTotal > 0 ? props.memeIndex + 1 : 0} / ${props.memeTotal}`
-              : 'Loading...'}
-          </TagLabel>
-        </Tag>
+				<Tag p="0 16px" m="0 16px" bgColor="reddit.100" color="white">
+					<TagLabel minW="65px" textAlign="center">
+						{props.status !== LoadStates.IDLE && props.status !== LoadStates.LOADING
+							? `${props.memeTotal > 0 ? props.memeIndex + 1 : 0} / ${props.memeTotal}`
+							: 'Loading...'}
+					</TagLabel>
+				</Tag>
 
-        <IconButton
-          icon={<BiChevronRight />}
-          onClick={props.next}
-          size="sm"
-          fontSize="1.4em"
-          p="0 16px"
-          bgColor="reddit.100"
-          _hover={{ opacity: 0.8 }}
-          color="white"
-          disabled={props.memeIndex + 1 === props.memeTotal || props.memeTotal === 0}
-          aria-label="Go To Next Meme Button"
-        />
-      </Flex>
-    </Box>
-  )
+				<IconButton
+					icon={<BiChevronRight />}
+					onClick={props.next}
+					size="sm"
+					fontSize="1.4em"
+					p="0 16px"
+					bgColor="reddit.100"
+					_hover={{ opacity: 0.8 }}
+					color="white"
+					disabled={props.memeIndex + 1 === props.memeTotal || props.memeTotal === 0}
+					aria-label="Go To Next Meme Button"
+				/>
+			</Flex>
+		</Box>
+	)
 }

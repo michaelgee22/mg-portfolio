@@ -5,21 +5,21 @@ import { Footer } from './Footer'
 import { Box } from '@chakra-ui/react'
 
 type Props = {
-  children?: React.ReactNode
+	children?: React.ReactNode
 }
 
 export const AwesomeBooks = (props: Props) => {
-  return (
-    <>
-      <PageHead
-        title="awesome-books"
-        description="All-time favorite book recommendations from awesome software developers."
-        url="https://michaelgee.dev/books"
-      />
+	return (
+		<>
+			<PageHead
+				title="awesome-books"
+				description="All-time favorite book recommendations from awesome software developers."
+				url="https://michaelgee.dev/books"
+			/>
 
-      <Box as="main">{props.children}</Box>
-    </>
-  )
+			<Box as="main">{props.children}</Box>
+		</>
+	)
 }
 
 AwesomeBooks.SubscriptionForm = SubscriptionForm
