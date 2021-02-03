@@ -22,7 +22,11 @@ export const Footer = () => {
 
 				<Box w="8px" h="8px" backgroundColor="#EC5147" borderRadius="50%" m="0 8px" />
 
-				<ChakraLink href="https://dev.to/michaelgee" target="_blank" rel="noopener noreferrer">
+				<ChakraLink
+					href="https://dev.to/michaelgee/new-year-new-project-introducing-awesome-books-55kk"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
 					Inspiration
 				</ChakraLink>
 			</Flex>
