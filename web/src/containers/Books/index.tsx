@@ -15,6 +15,7 @@ export const AwesomeBooks = (props: Props) => {
 				title="awesome-books"
 				description="All-time favorite book recommendations from awesome software developers."
 				url="https://michaelgee.dev/books"
+				image="/images/awesome-books/books.jpg"
 			/>
 
 			<Box as="main">{props.children}</Box>
