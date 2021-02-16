@@ -1,6 +1,6 @@
 import { Flex, Box, IconButton, Tag, TagLabel } from '@chakra-ui/react'
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'
-import { LoadStates } from '../../constants/async'
+import { LoadStates } from '@/constants/async'
 
 type Props = {
 	next: () => void

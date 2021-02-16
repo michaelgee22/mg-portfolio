@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Box, Button, Heading } from '@chakra-ui/react'
-import { Footer } from '../../../containers/Books/Footer'
+import { Footer } from '@/containers/Books/Footer'
 import { IoMdArrowBack } from 'react-icons/io'
 
 const AwesomeBooksSuccessPage = () => {

@@ -2,9 +2,9 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
-import { DailyMemes } from '../containers/DailyMemes'
-import { LoadStates } from '../constants/async'
-import { IMeme } from '../containers/DailyMemes/IMeme'
+import { DailyMemes } from '@/containers/DailyMemes'
+import { LoadStates } from '@/constants/async'
+import { IMeme } from '@/containers/DailyMemes/IMeme'
 
 describe('<DailyMemes />', () => {
 	describe('when <CategoryMenu /> is rendered', () => {

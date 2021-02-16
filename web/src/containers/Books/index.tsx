@@ -1,4 +1,4 @@
-import { PageHead } from '../../components/PageHead'
+import { PageHead } from '@/components/PageHead'
 import { SubscriptionForm } from './SubscriptionForm'
 import { Recommendation } from './Recommendation'
 import { Footer } from './Footer'

@@ -1,4 +1,4 @@
-import { PageHead } from '../../components/PageHead'
+import { PageHead } from '@/components/PageHead'
 import { CategoryMenu } from './CategoryMenu'
 import { ImageRenderer } from './ImageRenderer'
 import { Nav } from './Nav'

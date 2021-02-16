@@ -1,7 +1,7 @@
-import { DailyMemes } from '../../containers/DailyMemes'
+import { DailyMemes } from '@/containers/DailyMemes'
 import { Flex, Box } from '@chakra-ui/react'
 
-import { useMemes, NavTypes } from '../../hooks/useMemes'
+import { useMemes, NavTypes } from '@/hooks/useMemes'
 import { FaRedditAlien } from 'react-icons/fa'
 
 const DailyMemesPage = () => {

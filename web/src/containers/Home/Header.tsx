@@ -1,6 +1,6 @@
 import { Heading, Flex } from '@chakra-ui/react'
 import { SocialIcon } from './SocialIcon'
-import { icons } from '../../constants/homepage'
+import { icons } from '@/constants/homepage'
 
 export const Header = () => {
 	return (
