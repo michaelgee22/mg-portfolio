@@ -3,7 +3,7 @@ import { CategoryMenu } from './CategoryMenu'
 import { ImageRenderer } from './ImageRenderer'
 import { Nav } from './Nav'
 
-type Props = {
+interface Props {
 	children?: React.ReactNode
 }
 

@@ -1,18 +1,9 @@
 import Image from 'next/image'
 import { Box, Flex, Heading } from '@chakra-ui/react'
 import { ExpandableDescription } from './ExpandableDescription'
+import { RecommendationItem } from '@/constants/awesome-books'
 
-type Props = {
-	title: string
-	author: string
-	bookImg: string
-	bookUrl: string
-	avatar: string
-	descPreview: Array<string>
-	description: Array<string>
-	guest: string
-	guestBio: string
-	guestLinks: Array<any>
+interface Props extends RecommendationItem {
 	type: RecommendationTypes
 }
 
@@ -22,7 +13,7 @@ export enum RecommendationTypes {
 }
 
 export const Recommendation = (props: Props) => {
-	const displayConfig = _returnDisplayConfig()
+	const displayConfig = _returnDisplayConfig(props.type)
 
 	return (
 		<Flex
@@ -113,7 +104,7 @@ export const Recommendation = (props: Props) => {
 					</Heading>
 
 					<Flex ml={['0', '0', '4px', '4px']}>
-						{props.guestLinks.map(item => {
+						{props.guestLinks.map((item) => {
 							return (
 								<Box
 									as="a"
@@ -124,7 +115,7 @@ export const Recommendation = (props: Props) => {
 									m={['0 16px', '0 16px', '0 8px', '0 8px']}
 									key={item.id}
 								>
-									{item.icon()}
+									{item.icon({})}
 								</Box>
 							)
 						})}
@@ -146,44 +137,44 @@ export const Recommendation = (props: Props) => {
 			</Flex>
 		</Flex>
 	)
+}
 
-	function _returnDisplayConfig() {
-		if (props.type === RecommendationTypes.featured) {
-			return {
-				margin: '48px auto 80px auto',
-
-				bookImgWidth: '224px',
-				bookImgHeight: '335px',
-				bookBorderSize: '6px',
-
-				avatarWidth: '100px',
-				avatarHeight: '100px',
-				avatarBottom: '-32px',
-				avatarRight: '-48px',
-
-				bookTitleFontSize: '1.6em',
-				recommendedByFontSize: 'sm',
-				titleBorderHeight: '4px',
-				descFontSize: '1em'
-			}
-		}
-
+function _returnDisplayConfig(type: RecommendationTypes) {
+	if (type === RecommendationTypes.featured) {
 		return {
-			margin: '0 auto 48px auto',
+			margin: '48px auto 80px auto',
 
-			bookImgWidth: '132px',
-			bookImgHeight: '188px',
-			bookBorderSize: '4px',
+			bookImgWidth: '224px',
+			bookImgHeight: '335px',
+			bookBorderSize: '6px',
 
-			avatarWidth: '64px',
-			avatarHeight: '64px',
-			avatarBottom: '-20px',
-			avatarRight: '-32px',
+			avatarWidth: '100px',
+			avatarHeight: '100px',
+			avatarBottom: '-32px',
+			avatarRight: '-48px',
 
-			bookTitleFontSize: '1.2em',
-			recommendedByFontSize: 'xs',
-			titleBorderHeight: '2px',
-			descFontSize: '.8em'
+			bookTitleFontSize: '1.6em',
+			recommendedByFontSize: 'sm',
+			titleBorderHeight: '4px',
+			descFontSize: '1em'
 		}
+	}
+
+	return {
+		margin: '0 auto 48px auto',
+
+		bookImgWidth: '132px',
+		bookImgHeight: '188px',
+		bookBorderSize: '4px',
+
+		avatarWidth: '64px',
+		avatarHeight: '64px',
+		avatarBottom: '-20px',
+		avatarRight: '-32px',
+
+		bookTitleFontSize: '1.2em',
+		recommendedByFontSize: 'xs',
+		titleBorderHeight: '2px',
+		descFontSize: '.8em'
 	}
 }

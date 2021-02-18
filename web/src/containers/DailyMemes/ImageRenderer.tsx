@@ -3,10 +3,10 @@ import { Box, Flex, Link, Spinner } from '@chakra-ui/react'
 
 import { useState, useEffect } from 'react'
 import { LoadStates } from '@/constants/async'
-import { IMeme } from './IMeme'
+import { Meme } from './Meme'
 
-type Props = {
-	meme: IMeme | null
+interface Props {
+	meme: Meme | null
 	status: string
 }
 

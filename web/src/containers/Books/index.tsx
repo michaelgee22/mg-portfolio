@@ -4,7 +4,7 @@ import { Recommendation } from './Recommendation'
 import { Footer } from './Footer'
 import { Box } from '@chakra-ui/react'
 
-type Props = {
+interface Props {
 	children?: React.ReactNode
 }
 

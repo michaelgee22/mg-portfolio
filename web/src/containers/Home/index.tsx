@@ -2,7 +2,7 @@ import { PageHead } from '@/components/PageHead'
 import { Box } from '@chakra-ui/react'
 import { Header } from './Header'
 
-type Props = {
+interface Props {
 	children?: React.ReactNode
 }
 

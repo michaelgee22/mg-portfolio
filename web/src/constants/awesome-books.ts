@@ -1,7 +1,21 @@
+import { IconType } from 'react-icons/lib'
 import { FaTwitter, FaGithub } from 'react-icons/fa'
 import { FiExternalLink } from 'react-icons/fi'
 
-export const recommendations = [
+export interface RecommendationItem {
+	title: string
+	author: string
+	bookImg: string
+	bookUrl: string
+	avatar: string
+	descPreview: string[]
+	description: string[]
+	guest: string
+	guestBio: string
+	guestLinks: { id: string; icon: IconType; href: string }[]
+}
+
+export const recommendations: RecommendationItem[] = [
 	{
 		title: 'War of Art: Break Through the Blocks and Win Your Inner Creative Battles',
 		author: 'Steven Pressfield',

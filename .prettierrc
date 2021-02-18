@@ -8,5 +8,5 @@
   "jsxBracketSameLine": false,
   "parser": "typescript",
   "bracketSpacing": true,
-  "arrowParens": "avoid"
+  "arrowParens": "always"
 }

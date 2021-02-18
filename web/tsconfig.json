@@ -32,6 +32,7 @@
       "@/constants/*": ["src/constants/*"],
       "@/containers/*": ["src/containers/*"],
       "@/hooks/*": ["src/hooks/*"],
+      "@/interfaces/*": ["src/interfaces/*"],
       "@/pages/*": ["src/pages/*"],
       "@/services/*": ["src/services/*"],
       "@/utils/*": ["src/utils/*"],

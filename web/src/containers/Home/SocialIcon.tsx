@@ -1,6 +1,6 @@
 import { IconButton } from '@chakra-ui/react'
 
-type Props = {
+interface Props {
 	icon: React.ElementType
 	href: string
 	ariaLabel: string

@@ -2,7 +2,7 @@ import { Flex, Box, IconButton, Tag, TagLabel } from '@chakra-ui/react'
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'
 import { LoadStates } from '@/constants/async'
 
-type Props = {
+interface Props {
 	next: () => void
 	prev: () => void
 	memeIndex: number

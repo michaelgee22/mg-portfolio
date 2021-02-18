@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event'
 
 import { DailyMemes } from '@/containers/DailyMemes'
 import { LoadStates } from '@/constants/async'
-import { IMeme } from '@/containers/DailyMemes/IMeme'
+import { Meme } from '@/containers/DailyMemes/Meme'
 
 describe('<DailyMemes />', () => {
 	describe('when <CategoryMenu /> is rendered', () => {
@@ -99,7 +99,7 @@ describe('<DailyMemes />', () => {
 
 		describe('when the api request is successful and memes are loaded', () => {
 			it('should pass a valid image src from the api and render the initial meme', () => {
-				const mockCurrentMeme: IMeme = {
+				const mockCurrentMeme: Meme = {
 					src: 'https://i.redd.it/mock-image.png',
 					title: 'This is a mock meme for testing',
 					index: 0
@@ -150,11 +150,11 @@ describe('<DailyMemes />', () => {
 
 				const PrevButton = screen
 					.getAllByRole('button')
-					.find(btn => btn.getAttribute('aria-label') === 'Go To Previous Meme Button')
+					.find((btn) => btn.getAttribute('aria-label') === 'Go To Previous Meme Button')
 
 				const NextButton = screen
 					.getAllByRole('button')
-					.find(btn => btn.getAttribute('aria-label') === 'Go To Next Meme Button')
+					.find((btn) => btn.getAttribute('aria-label') === 'Go To Next Meme Button')
 
 				expect(PrevButton).toBeDisabled()
 				expect(NextButton).toBeDisabled()
@@ -193,11 +193,11 @@ describe('<DailyMemes />', () => {
 
 				const PrevButton = screen
 					.getAllByRole('button')
-					.find(btn => btn.getAttribute('aria-label') === 'Go To Previous Meme Button')
+					.find((btn) => btn.getAttribute('aria-label') === 'Go To Previous Meme Button')
 
 				const NextButton = screen
 					.getAllByRole('button')
-					.find(btn => btn.getAttribute('aria-label') === 'Go To Next Meme Button')
+					.find((btn) => btn.getAttribute('aria-label') === 'Go To Next Meme Button')
 
 				if (PrevButton && NextButton) {
 					// Previous meme button should be disabled when the current meme is the first available item

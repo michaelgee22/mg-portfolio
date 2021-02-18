@@ -2,10 +2,10 @@ import { Box, IconButton } from '@chakra-ui/react'
 import { useState } from 'react'
 import { FiChevronsUp, FiChevronsDown } from 'react-icons/fi'
 
-type Props = {
+interface Props {
 	fontSize: string
-	descPreview: Array<string>
-	description: Array<string>
+	descPreview: string[]
+	description: string[]
 }
 
 export const ExpandableDescription = (props: Props) => {
