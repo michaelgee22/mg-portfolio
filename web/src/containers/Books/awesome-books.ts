@@ -29,7 +29,7 @@ export const recommendations: RecommendationItem[] = [
 			'Truly one of my favs.'
 		],
 		guest: 'Saron Yitbarek',
-		guestBio: 'Founder of Disco & CodeNewbies',
+		guestBio: 'Founder of Disco & CodeNewbie',
 		guestLinks: [
 			{ id: 'website', icon: FiExternalLink, href: 'https://www.heydisco.com/' },
 			{ id: 'twitter', icon: FaTwitter, href: 'https://twitter.com/saronyitbarek' }
