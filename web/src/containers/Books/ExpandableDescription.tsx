@@ -4,13 +4,13 @@ import { FiChevronsUp, FiChevronsDown } from 'react-icons/fi'
 
 interface Props {
 	fontSize: string
-	descPreview: string[]
+	descPreview: string[] | null
 	description: string[]
 }
 
 export const ExpandableDescription = (props: Props) => {
 	const [expanded, setExpanded] = useState<boolean>(false)
-	const desc = expanded ? props.description : props.descPreview
+	const desc = !expanded && props.descPreview ? props.descPreview : props.description
 
 	return (
 		<>
@@ -24,7 +24,7 @@ export const ExpandableDescription = (props: Props) => {
 				return (
 					<Box
 						as="p"
-						p="6px 0 8px 0"
+						p="4px 0"
 						fontSize={props.fontSize}
 						textAlign={['center', 'center', 'start', 'start']}
 						className={className}
@@ -35,13 +35,15 @@ export const ExpandableDescription = (props: Props) => {
 				)
 			})}
 
-			<IconButton
-				icon={expanded ? <FiChevronsUp /> : <FiChevronsDown />}
-				onClick={_toggleDescriptionExpand}
-				backgroundColor="transparent"
-				_focus={{ outline: 'none' }}
-				aria-label="Expandable Description Toggle Button"
-			/>
+			{props.descPreview && (
+				<IconButton
+					icon={expanded ? <FiChevronsUp /> : <FiChevronsDown />}
+					onClick={_toggleDescriptionExpand}
+					backgroundColor="transparent"
+					_focus={{ outline: 'none' }}
+					aria-label="Expandable Description Toggle Button"
+				/>
+			)}
 		</>
 	)
 

@@ -8,7 +8,7 @@ export interface RecommendationItem {
 	bookImg: string
 	bookUrl: string
 	avatar: string
-	descPreview: string[]
+	descPreview: string[] | null
 	description: string[]
 	guest: string
 	guestBio: string
@@ -17,16 +17,35 @@ export interface RecommendationItem {
 
 export const recommendations: RecommendationItem[] = [
 	{
+		title: 'Shoe Dog: A Memoir by the Creator of NIKE',
+		author: 'Phil Knight',
+		bookImg: '/images/awesome-books/saronyitbarek/book.jpg',
+		bookUrl: 'https://www.goodreads.com/book/show/27220736-shoe-dog',
+		avatar: '/images/awesome-books/saronyitbarek/avatar.jpg',
+		descPreview: null,
+		description: [
+			"One of the most inspirational books about business you'll find.",
+			'It really gives you an up close and personal look at the sweat, patience, time, and endurance it takes to build a multi-billion powerhouse brand and company.',
+			'Truly one of my favs.'
+		],
+		guest: 'Saron Yitbarek',
+		guestBio: 'Founder of Disco & CodeNewbies',
+		guestLinks: [
+			{ id: 'website', icon: FiExternalLink, href: 'https://www.heydisco.com/' },
+			{ id: 'twitter', icon: FaTwitter, href: 'https://twitter.com/saronyitbarek' }
+			// { id: 'github', icon: FaGithub, href: 'https://github.com/chantastic' }
+		]
+	},
+	{
 		title: 'War of Art: Break Through the Blocks and Win Your Inner Creative Battles',
 		author: 'Steven Pressfield',
-		bookImg: '/images/awesome-books/michaelchan/thewarofart.jpg',
+		bookImg: '/images/awesome-books/michaelchan/book.jpg',
 		bookUrl: 'https://www.goodreads.com/book/show/1319.The_War_of_Art',
 		avatar: '/images/awesome-books/michaelchan/avatar.jpg',
 		descPreview: [
 			"This book is the only reason that I've produced anything.",
 			'It\'s like a shot of adrenaline to the heart for anyone who believes they are smart, creative, and have good things to offer but "just haven\'t had a shot".',
-			'This book is about shutting up, doing the work, and personifying the dark force of Resistance that presses back against your creative work.',
-			"The War of Art hurts like hell to read. Once you've read it, you can't go back to..."
+			'This book is about shutting up, doing the work, and personifying the dark force of Resistance that presses back against your creative work.'
 		],
 		description: [
 			"This book is the only reason that I've produced anything.",

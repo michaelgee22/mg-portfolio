@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Box, Flex, Heading } from '@chakra-ui/react'
 import { ExpandableDescription } from './ExpandableDescription'
-import { RecommendationItem } from '@/constants/awesome-books'
+import { RecommendationItem } from '@/containers/Books/awesome-books'
 
 interface Props extends RecommendationItem {
 	type: RecommendationTypes
@@ -127,6 +127,7 @@ export const Recommendation = (props: Props) => {
 					w="100%"
 					background="linear-gradient(to right, #e94057, #f27121)"
 					borderRadius="4px"
+					mb="8px"
 				/>
 
 				<ExpandableDescription

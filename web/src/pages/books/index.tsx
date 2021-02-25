@@ -2,7 +2,7 @@ import { Box, Heading } from '@chakra-ui/react'
 import { AwesomeBooks } from '@/containers/Books'
 
 import { RecommendationTypes } from '@/containers/Books/Recommendation'
-import { recommendations } from '@/constants/awesome-books'
+import { recommendations } from '@/containers/Books/awesome-books'
 
 const AwesomeBooksPage = () => {
 	return (
